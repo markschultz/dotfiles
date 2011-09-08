@@ -1,0 +1,14 @@
+startup_message off
+defscrollback 30000
+vbell on
+autodetach on
+verbose on
+nethack on
+defutf8 on
+#hardstatus alwayslastline
+#hardstatus string '%{= kG}[%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
+attrcolor b ".I"
+termcapinfo xterm "Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm"
+termcapinfo xterm-color "Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm"
+termcapinfo xterm-color256 "Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm"
+defbce "on"

@@ -1,0 +1,11 @@
+
+[Dir Hist New Right Panel]
+0=/home/razor
+
+[cmdline]
+0=
+
+[Dir Hist New Left Panel]
+0=/var
+1=/var/spool
+2=/var/spool/cron
