@@ -52,7 +52,7 @@ set history=1000 "1000 levels of search and command history
 set undolevels=1000 "now i can undo 1000 times
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set ttymouse=xterm
-set mouse=a
+set mouse=v
 
 "search stuff
 set ignorecase

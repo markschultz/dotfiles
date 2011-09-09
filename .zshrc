@@ -28,4 +28,4 @@ stty -ixon -ixoff
 alias irssissh='ssh -L 1234:irc.freenode.net:6667 thenihilistx@clamham.com'
 alias ssheecs='ssh mxs802@eecslinab.case.edu'
 export TERM=xterm-256color
-eval `dircolors ./dircolors.ansi-dark`
+eval `dircolors ~/dircolors.ansi-dark`
