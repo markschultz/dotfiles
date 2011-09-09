@@ -59,6 +59,8 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
+hi clear Search
+hi Search cterm=underline
 
 "tab stuff
 set tabstop=4 "tab is 4 spaces
