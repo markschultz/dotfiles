@@ -28,6 +28,8 @@
 
 [core]
 	pager = less -FRSX
+	excludesfile = /home/razor/.gitignore_global
+	editor = vim
 	#whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 
 [alias]
@@ -41,3 +43,5 @@
 	token = 01955453b740abf7e245931bfc6ab343
 [merge]
 	tool = vimdiff
+[web]
+	browser = lynx

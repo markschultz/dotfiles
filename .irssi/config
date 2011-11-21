@@ -1,4 +1,12 @@
 servers = (
+  { address = "irc.case.edu"; port = "6667"; autoconnect = "yes"; },
+  {
+    address = "testing.bitlbee.org";
+    chatnet = "bitlbee";
+    port = "6668";
+    autoconnect = "yes";
+    use_ssl = "yes";
+  },
   { address = "irc.ubuntu.com"; chatnet = "Ubuntu"; port = "8001"; },
   { address = "eu.irc6.net"; chatnet = "IRCnet"; port = "6667"; },
   { address = "open.ircnet.net"; chatnet = "IRCnet"; port = "6667"; },
@@ -34,6 +42,10 @@ servers = (
 );
 
 chatnets = {
+  bitlbee = {
+    type = "IRC";
+    autosendcmd = "/^msg -bitlbee &bitlbee identify fix863; wait -bitlbee 2000";
+  };
   IRCnet = {
     type = "IRC";
     max_kicks = "4";
@@ -282,7 +294,7 @@ settings = {
   core = {
     real_name = "Unknown";
     user_name = "razor";
-    nick = "razor";
+    nick = "eskimod";
     timestamp_format = "%H:%M:%S";
   };
   "fe-text" = { actlist_sort = "refnum"; };
@@ -290,6 +302,8 @@ settings = {
   "perl/core/scripts" = {
     awl_display_key = "$Q%K|%n$H$C$S";
     awl_block = "-15";
+    bitlbee_hide_joins = "yes";
+    bitlbee_hide_quits = "yes";
   };
 };
 hilights = ( { text = "eskimod"; nick = "yes"; word = "yes"; } );
@@ -330,3 +344,4 @@ mainwindows = {
   3 = { first_line = "8"; lines = "40"; };
   4 = { first_line = "1"; lines = "7"; };
 };
+logs = { };
