@@ -1,0 +1,3 @@
+to use scrooloose snippets instead of msanders snippets just change
+rakefile to point to snipmate.vim instead of snipmate and then run the
+rakefile.

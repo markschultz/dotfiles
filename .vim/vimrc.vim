@@ -112,9 +112,11 @@ set history=1000
 set undolevels=1000
 set undoreload=10000
 set undofile
+"test comment
 set undodir=~/.vim/_undo//
 set backupdir=~/.vim/_backup//
 set directory=~/.vim/_temp//
+set viewdir=~/.vim/_view//
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem,*.pyc
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*.swp,*~,._*
