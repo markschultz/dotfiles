@@ -9,6 +9,10 @@ git submodule update
 # install dotfiles
 rake install
 # mantual link certain files
+mkdir vim/_undo
+mkdir vim/_backup
+mkdir vim/_view
+mkdir vim/_temp
 mkdir ~/.fonts
 mkdir ~/.ssh
 mkdir -p ~/.gconf/apps/gnome-terminal/profiles/Solarized
