@@ -3,6 +3,7 @@ export ZSH=$HOME/.oh-my-zsh
 export TEMP=/tmp
 export SDL_VIDEO_FULLSCREEN_DISPLAY=0
 #export SDL_VIDEO_FULLSCREEN_HEAD=1
+export FCEDIT=vim
 #export PATH=$PATH:
 
 # Set to the name theme to load.
