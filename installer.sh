@@ -17,7 +17,7 @@ ln -sf ~/git/dotfiles/fonts/Inconsolata-dz-Powerline.otf ~/.fonts/Inconsolata-dz
 ln -sf ~/git/dotfiles/ssh/config ~/.ssh/config
 ln -sf ~/git/dotfiles/ssh/known_hosts ~/.ssh/known_hosts
 ln -sf ~/git/dotfiles/gconf/apps/gnome-terminal/profiles/Solarized/%gconf.xml ~/.gconf/apps/gnome-terminal/profiles/Solarized/%gconf.xml
-ln -sf ~/git/dotfiles/kde/share/apps/konsole/* ~/.kde/share/apps/konsole/
+ln -sf ~/git/dotfiles/kde/share/apps/konsole/ ~/.kde/share/apps/konsole/
 
 cd ..
 # get gitflow
