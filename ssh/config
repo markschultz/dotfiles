@@ -8,6 +8,11 @@ Host picon
 	Hostname picon.case.edu
 	IdentityFile ~/.ssh/id_rsa
 
+Host dreamhost
+	User eskimod
+	Hostname sualocin.dreamhost.com
+	IdentityFile ~/.ssh/id_rsa
+
 Host *
 	ControlMaster auto
 	ControlPath /tmp/%r@%h:%p

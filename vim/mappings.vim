@@ -47,7 +47,8 @@ nnoremap k gk
 map <silent> <C-u> :GundoToggle<cr>
 map <silent> <C-o> :CtrlP<cr>
 map <leader>/ <plug>NERDCommenterToggle<cr>
-map <silent> <C-t> :TagbarToggle<cr>
+map <silent> <C-t> :TagbarOpenAutoClose<cr>
+":TagbarToggle<cr>
 map <leader>zw :ZoomWin<cr>
 
 let g:syntastic_enable_signs=1
