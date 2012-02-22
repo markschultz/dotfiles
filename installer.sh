@@ -2,13 +2,16 @@
 mkdir ~/git
 cd ~/git
 git clone git@github.com:eskimod/dotfiles.git
-cd dotfiles
-git clone https://github.com/gmarik/vundle.git vim/bundle/vundle
-# clone submodules
-git submodule init
-git submodule update
+git clone https://github.com/gmarik/vundle.git dotfiles/vim/bundle/vundle
+git clone https://github.com/robbyrussell/oh-my-zsh.git dotfiles/oh-my-zsh
+git clone https://github.com/nvie/gitflow.git
+git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git gnome-terminal-solarized
+# install solarize for gnome terminal
+gnome-terminal-solarized/install.sh
+# install gitflow
+sudo make -C gitflow install
 # install dotfiles
-rake install
+rake -f dotfiles/rakefile install
 # mantual link certain files
 mkdir vim/_undo
 mkdir vim/_backup
@@ -21,15 +24,6 @@ ln -sf ~/git/dotfiles/fonts/Inconsolata-dz-Powerline.otf ~/.fonts/Inconsolata-dz
 ln -sf ~/git/dotfiles/ssh/config ~/.ssh/config
 ln -sf ~/git/dotfiles/ssh/known_hosts ~/.ssh/known_hosts
 ln -sf ~/git/dotfiles/kde/share/apps/konsole/* ~/.kde/share/apps/konsole/
-
-cd ..
-# get gitflow
-git clone https://github.com/nvie/gitflow.git
-cd gitflow
-sudo make install
-cd ..
-git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git gnome-terminal-solarized
-gnome-terminal-solarized/install.sh
 
 echo 'edit your passwords in .netrc, .gitconfig'
 #passwords in dropbox
