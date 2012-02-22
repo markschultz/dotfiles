@@ -3,6 +3,7 @@ mkdir ~/git
 cd ~/git
 git clone git@github.com:eskimod/dotfiles.git
 cd dotfiles
+git clone https://github.com/gmarik/vundle.git vim/bundle/vundle
 # clone submodules
 git submodule init
 git submodule update

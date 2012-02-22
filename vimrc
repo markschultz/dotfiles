@@ -33,6 +33,7 @@ Bundle 'sickill/vim-pasta'
 Bundle 'mileszs/ack.vim'
 "Bundle 'sjbach/lusty'
 "Bundle 'chrisbra/NrrwRgn'
+Bundle 'rdark'
 
 " filetype git repos
 Bundle 'tpope/vim-markdown'
@@ -93,7 +94,7 @@ augroup end
 " genereal editor settings
 set noautowrite " dont writeout when you switch buffers
 set colorcolumn=80 " 80 char 'column'
-set cursorline " highlight current line
+"set cursorline " highlight current line
 set autoread " reload file when its been modified from the outside
 set ttyfast
 "set number " line numbers
