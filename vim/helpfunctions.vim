@@ -1,5 +1,6 @@
 let g:skipview_files = [
-            \ '[EXAMPLE PLUGIN BUFFER]'
+            \ '[EXAMPLE PLUGIN BUFFER]',
+            \ 'COMMIT_EDITMSG',
             \ ]
 function! MakeViewCheck()
     if has('quickfix') && &buftype =~ 'nofile'
