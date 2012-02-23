@@ -10,7 +10,7 @@ Host picon
 
 Host dreamhost
 	User eskimod
-	Hostname sualocin.dreamhost.com
+	Hostname eskimod.net
 	IdentityFile ~/.ssh/id_rsa
 
 Host *

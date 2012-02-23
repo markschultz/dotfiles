@@ -12,6 +12,7 @@ gnome-terminal-solarized/install.sh
 sudo make -C gitflow install
 # install dotfiles
 cd dotfiles
+scp eskimod@eskimod.net:~/files/{gitconfig,netrc} ./
 rake install
 # mantual link certain files
 mkdir vim/_undo
