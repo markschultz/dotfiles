@@ -11,7 +11,8 @@ gnome-terminal-solarized/install.sh
 # install gitflow
 sudo make -C gitflow install
 # install dotfiles
-rake -f dotfiles/rakefile install
+cd dotfiles
+rake install
 # mantual link certain files
 mkdir vim/_undo
 mkdir vim/_backup
