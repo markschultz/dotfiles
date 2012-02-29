@@ -24,10 +24,11 @@ export ZSH_THEME="flazz"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow command-not-found vundle extract deb vi-mode rails3 ruby rake gpg-agent ssh-agent)
+plugins=(git git-flow command-not-found vundle extract deb rails3 ruby rake gpg-agent ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 source /opt/ros/electric/setup.zsh
+export ROS_PACKAGE_PATH=~/git/eecs_376_alpha:$ROS_PACKAGE_PATH
 
 # Customize to your needs...
 stty -ixon -ixoff
