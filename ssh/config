@@ -16,4 +16,7 @@ Host dreamhost
 Host *
 	ControlMaster auto
 	ControlPath /tmp/%r@%h:%p
+	Compression yes
+	TCPKeepAlive yes
+	ForwardAgent yes
 

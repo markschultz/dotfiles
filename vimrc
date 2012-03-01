@@ -78,10 +78,10 @@ set backspace=eol,start,indent " backspace config
 "set whichwrap+=<,>
 
 " folding options
-"set foldmethod=indent
-set foldmethod=syntax
+set foldmethod=indent
+"set foldmethod=syntax
 "set foldnestmax=10
-"set nofoldenable
+set nofoldenable
 "set foldlevel=1
 
 " save and load fold automatically
@@ -91,12 +91,22 @@ augroup vimrcAutoView
     autocmd BufWinEnter ?* if MakeViewCheck() | silent loadview | endif
 augroup end
 
+" omni set - dunno if this is necessary or what it really does
+set completefunc=syntaxcomplete#Complete
+autocmd FileType c 				set omnifunc=ccomplete#Complete
+autocmd FileType javascript 	set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html 			set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css 			set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml 			set omnifunc=xmlcomplete#CompleteTags
+
 " genereal editor settings
+set noshowmode " dont show current mode because displayed in bar already
 set noautowrite " dont writeout when you switch buffers
 set colorcolumn=80 " 80 char 'column'
 "set cursorline " highlight current line
 set autoread " reload file when its been modified from the outside
 set ttyfast
+set showcmd " show last cmd in bottom right corner
 "set number " line numbers
 set relativenumber " relative line numbers
 set ruler
