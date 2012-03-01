@@ -27,7 +27,7 @@ export ZSH_THEME="flazz"
 plugins=(git git-flow command-not-found vundle extract deb vi-mode rails3 ruby rake gpg-agent ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
-source /opt/ros/electric/setup.zsh
+#source /opt/ros/electric/setup.zsh
 
 # Customize to your needs...
 stty -ixon -ixoff

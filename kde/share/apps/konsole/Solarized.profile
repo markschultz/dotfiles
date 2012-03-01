@@ -1,6 +1,7 @@
 [Appearance]
+BoldIntense=false
 ColorScheme=Solarized Dark
-Font=Inconsolata-dz for Powerline,11
+Font=Inconsolata-dz for Powerline,11,-1,5,50,0,0,0,0,0
 
 [General]
 Environment=\\0
