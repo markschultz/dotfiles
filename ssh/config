@@ -3,6 +3,11 @@ Host vorlon
 	Hostname vorlon.case.edu
 	IdentityFile ~/.ssh/id_rsa
 
+Host tauron
+	User eskimod
+	Hostname tauron.case.edu
+	IdentityFile ~/.ssh/id_rsa
+
 Host picon
 	User razor
 	Hostname picon.case.edu
