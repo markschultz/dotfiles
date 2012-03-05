@@ -15,15 +15,15 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'Lokaltog/vim-easymotion'
+"Bundle 'Lokaltog/vim-easymotion'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'mattn/zencoding-vim'
+"Bundle 'mattn/zencoding-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
-Bundle 'scrooloose/nerdtree'
+"Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/snipmate-snippets'
 Bundle 'majutsushi/tagbar'
@@ -36,10 +36,11 @@ Bundle 'mileszs/ack.vim'
 Bundle 'rdark'
 
 " filetype git repos
-Bundle 'tpope/vim-markdown'
+"Bundle 'tpope/vim-markdown'
+Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'tpope/vim-git'
 Bundle 'pangloss/vim-javascript'
-Bundle 'vim-scripts/csv.vim'
+"Bundle 'vim-scripts/csv.vim'
 
 " vim-scripts repos
 "Bundle 'FuzzyFinder'
@@ -61,8 +62,15 @@ endif
 
 set laststatus=2 " statusline is 2 rows
 set t_Co=256
-let g:gist_clip_command = 'xclip -selection clipboard'
-let g:gist_detect_filetype = 1
+let g:gist_clip_command='xclip -selection clipboard'
+let g:gist_detect_filetype=1
+let g:syntastic_enable_signs=1
+let g:syntastic_quiet_warning=0
+let g:syntastic_auto_loc_list=2
+let g:SuperTabDefaultComplettionType="context"
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+let g:pandoc_use_hard_wraps=1
+let g:pandoc_auto_format=1
 let g:Powerline_symbols = 'fancy' " fancy symbols for powerline
 color solarized
 set background=dark
@@ -72,7 +80,7 @@ set ffs=unix,dos,mac
 set encoding=utf-8
 
 set linebreak " linebreak in editor
-set textwidth=500 " max textwidth
+"set textwidth=500 " max textwidth
 set wrap " wrap lines
 set backspace=eol,start,indent " backspace config
 "set whichwrap+=<,>
@@ -163,19 +171,10 @@ set list
 "set listchars=tab:>.,trail:.,extends:#,nbsp:. "make vim show all whitespace
 set listchars=tab:»\ ,trail:·,eol:¬,
 
-" special markdown function
-function! s:setupWrapping()
-	set wrap
-	set linebreak
-	set textwidth=72
-	set nolist
-endfunction
 " do some filetype stuff
 if has ('autocmd')
 	au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,config.ru,*.rake} set ft=ruby
-	au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown | call s:setupWrapping()
 	au BufRead,BufNewFile *.json set ft=javascript
-	"au FileType markdown set wrap set linebreak set textwidth=72 set nolist
 	au FileType make set noexpandtab
 	au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 	autocmd! bufwritepost .vimrc source ~/.vimrc " when vimrc is saved, reload it

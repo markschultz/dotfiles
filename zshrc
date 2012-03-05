@@ -29,6 +29,7 @@ plugins=(git git-flow command-not-found vundle extract deb rails3 ruby rake gpg-
 source $ZSH/oh-my-zsh.sh
 #source /opt/ros/electric/setup.zsh
 export ROS_PACKAGE_PATH=~/git/eecs_376_alpha:$ROS_PACKAGE_PATH
+export PATH=~/.cabal/bin:$PATH
 
 # Customize to your needs...
 stty -ixon -ixoff

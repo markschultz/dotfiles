@@ -50,7 +50,3 @@ map <leader>/ <plug>NERDCommenterToggle<cr>
 map <silent> <C-t> :TagbarOpenAutoClose<cr>
 ":TagbarToggle<cr>
 map <leader>zw :ZoomWin<cr>
-
-let g:syntastic_enable_signs=1
-let g:syntastic_quiet_warning=0
-let g:syntastic_auto_loc_list=2
