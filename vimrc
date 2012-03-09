@@ -40,6 +40,8 @@ Bundle 'rdark'
 Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'tpope/vim-git'
 Bundle 'pangloss/vim-javascript'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'Rip-Rip/clang_complete'
 "Bundle 'vim-scripts/csv.vim'
 
 " vim-scripts repos
@@ -67,7 +69,9 @@ let g:gist_detect_filetype=1
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warning=0
 let g:syntastic_auto_loc_list=2
-let g:SuperTabDefaultComplettionType="context"
+let g:SuperTabDefaultCompletionType="context"
+let g:clang_complete_auto = 1
+let g:clang_complete_copen = 0
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 let g:pandoc_use_hard_wraps=1
 let g:pandoc_auto_format=1
@@ -100,12 +104,25 @@ augroup vimrcAutoView
 augroup end
 
 " omni set - dunno if this is necessary or what it really does
-set completefunc=syntaxcomplete#Complete
-autocmd FileType c 				set omnifunc=ccomplete#Complete
+"set completefunc=syntaxcomplete#Complete
+"set omnifunc=syntaxcomplete#Complete
+set completeopt=longest,menu " add ,preview for scratch preview
+autocmd FileType ruby,eruby 	set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby 	let g:SuperTabContextDefaultCompletionType="<c-x><c-o>"
+autocmd FileType ruby,eruby 	let g:rubycomplete_buffer_loading=1
+autocmd FileType ruby,eruby 	let g:rubycomplete_rails=1
+autocmd FileType ruby,eruby 	let g:rubycomplete_classes_in_global=1
+"autocmd FileType c 				set omnifunc=ccomplete#Complete
 autocmd FileType javascript 	set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html 			set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css 			set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml 			set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType python 		set omnifunc=pythoncomplete#Complete
+"improve autocomplete menu color
+highlight Pmenu ctermbg=238 gui=bold
+set wildmenu
+set wildmode=longest,list:full
+"set complete=.,t,w
 
 " genereal editor settings
 set noshowmode " dont show current mode because displayed in bar already
