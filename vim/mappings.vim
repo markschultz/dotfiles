@@ -20,9 +20,6 @@ nmap <silent> <leader>cd :lcd %:h<cr>
 " create the directory containing the file in the buffer
 nmap <silent> <leader>md :!mkdir -p %:p:h<cr>
 
-" underline the current line with '='
-nmap <silent> <leader>ul :t.\|s/./=/g\|:nohls<cr>
-
 " moving windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k

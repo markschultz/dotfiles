@@ -19,13 +19,13 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'altercation/vim-colors-solarized'
 "Bundle 'mattn/zencoding-vim'
 Bundle 'mattn/gist-vim'
-Bundle 'msanders/snipmate.vim'
+"Bundle 'msanders/snipmate.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
 "Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/snipmate-snippets'
+"Bundle 'scrooloose/snipmate-snippets'
 Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'sjl/gundo.vim'
@@ -34,6 +34,11 @@ Bundle 'mileszs/ack.vim'
 "Bundle 'sjbach/lusty'
 "Bundle 'chrisbra/NrrwRgn'
 Bundle 'rdark'
+"new snipmate & dependencies
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'honza/snipmate-snippets'
+Bundle 'garbas/vim-snipmate'
 
 " filetype git repos
 "Bundle 'tpope/vim-markdown'
@@ -187,6 +192,8 @@ set smarttab " inserts tabs at beginning of line according to shiftwidth instead
 set list
 "set listchars=tab:>.,trail:.,extends:#,nbsp:. "make vim show all whitespace
 set listchars=tab:»\ ,trail:·,eol:¬,
+autocmd FileType pandoc setlocal spell spelllang=en_us
+autocmd FileType text setlocal spell spelllang=en_us
 
 " do some filetype stuff
 if has ('autocmd')
@@ -195,7 +202,7 @@ if has ('autocmd')
 	au FileType make set noexpandtab
 	au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 	autocmd! bufwritepost .vimrc source ~/.vimrc " when vimrc is saved, reload it
-	autocmd filetype svn, *commit* setlocal spell
+	autocmd FileType svn, *commit*, *COMMIT* setlocal spell spelllang=en_us
 	autocmd BufReadPost fugitive://* set bufhidden=delete
 	autocmd BufReadPost fugitive://*
 	 \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
