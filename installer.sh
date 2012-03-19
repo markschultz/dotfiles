@@ -28,4 +28,5 @@ ln -sf ~/git/dotfiles/ssh/known_hosts ~/.ssh/known_hosts
 ln -sf ~/git/dotfiles/kde/share/apps/konsole/* ~/.kde/share/apps/konsole/
 
 echo 'edit your passwords in .netrc, .gitconfig'
+echo '.config/google-talk/config -> audio-flags=1'
 #passwords in dropbox
