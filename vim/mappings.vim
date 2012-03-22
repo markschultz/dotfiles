@@ -31,8 +31,8 @@ nnoremap <right> :bn<cr>
 nnoremap <left> :bp<cr>
 nnoremap <up> <nop>
 nnoremap <down> <nop>
-inoremap <right> <nop>
-inoremap <left> <nop>
+"inoremap <right> <nop>
+"inoremap <left> <nop>
 inoremap <up> <nop>
 inoremap <down> <nop>
 
@@ -47,3 +47,17 @@ map <leader>/ <plug>NERDCommenterToggle<cr>
 map <silent> <C-t> :TagbarOpenAutoClose<cr>
 ":TagbarToggle<cr>
 map <leader>zw :ZoomWin<cr>
+
+" SuperTab like snippets behavior
+"imap <expr><Tab> neocomplcache#sources#snippets_complete#expandable() ?
+"			\ "<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<Tab>"
+imap <C-k> <Plug>(neocomplcache_snippets_expand)
+smap <C-k> <Plug>(neocomplcache_snippets_expand)
+"inoremap <expr><C-g> neocomplcache#undo_completion()
+"inoremap <expr><C-l> neocomplcache#complete_common_string()
+
+" recommended settings for neocomplcache
+" <cr> close popup and save indent
+inoremap <expr><CR> neocomplcache#smart_close_popup() . "\<CR>"
+" <Tab> completion
+inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"

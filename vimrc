@@ -14,44 +14,57 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-vividchalk'
 Bundle 'Lokaltog/vim-powerline'
-"Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'xolox/vim-easytags'
+Bundle 'xolox/vim-session'
+Bundle 'Raimondi/delimitMate'
+Bundle 'thinca/vim-quickrun'
+Bundle 'Shougo/neocomplcache'
+"Bundle 'Shougo/neocomplcache-snippets-complete'
+Bundle 'Shougo/neocomplcache-clang_complete'
+Bundle 'SirVer/ultisnips'
 Bundle 'altercation/vim-colors-solarized'
-"Bundle 'mattn/zencoding-vim'
+"Bundle 'rstacruz/sparkup'
 Bundle 'mattn/gist-vim'
-"Bundle 'msanders/snipmate.vim'
 Bundle 'kien/ctrlp.vim'
-Bundle 'ervandew/supertab'
+"Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
 "Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
 "Bundle 'scrooloose/snipmate-snippets'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'godlygeek/tabular'
 Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'sjl/gundo.vim'
 Bundle 'sickill/vim-pasta'
 Bundle 'mileszs/ack.vim'
-"Bundle 'sjbach/lusty'
+Bundle 'sjbach/lusty'
 "Bundle 'chrisbra/NrrwRgn'
-Bundle 'rdark'
+
 "new snipmate & dependencies
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'honza/snipmate-snippets'
-Bundle 'garbas/vim-snipmate'
+"Bundle 'MarcWeber/vim-addon-mw-utils'
+"Bundle 'tomtom/tlib_vim'
+"Bundle 'honza/snipmate-snippets'
+"Bundle 'garbas/vim-snipmate'
 
 " filetype git repos
-"Bundle 'tpope/vim-markdown'
 Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'tpope/vim-git'
 Bundle 'pangloss/vim-javascript'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'kana/vim-textobj-function'
+Bundle 'kana/vim-textobj-user'
 Bundle 'Rip-Rip/clang_complete'
 "Bundle 'vim-scripts/csv.vim'
 
 " vim-scripts repos
 "Bundle 'FuzzyFinder'
 "Bundle 'MatlabFilesEdition'
+Bundle 'matchit.zip'
+Bundle 'YankRing.vim'
 
 " non-github repos
 "Bundle 'git://git.wincent.com/command-t.git'
@@ -63,24 +76,26 @@ syntax enable " syntax highlighting
 if filereadable(expand("~/.vim/mappings.vim"))
 	source ~/.vim/mappings.vim
 endif
-if filereadable(expand("~/.vim/helpfunctions.vim"))
-	source ~/.vim/helpfunctions.vim
-endif
 
 set laststatus=2 " statusline is 2 rows
 set t_Co=256
+let g:yankring_history_file='~/.vim/yankring-history'
 let g:gist_clip_command='xclip -selection clipboard'
 let g:gist_detect_filetype=1
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warning=0
 let g:syntastic_auto_loc_list=2
 let g:SuperTabDefaultCompletionType="context"
+let g:SuperTabCrMapping=0
+let g:neocomplcache_enable_at_startup=1
+let g:neocomplcache_force_overwrite_completefunc=1
 let g:clang_complete_auto = 1
-let g:clang_complete_copen = 0
+"let g:clang_complete_copen = 0
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 let g:pandoc_use_hard_wraps=1
 let g:pandoc_auto_format=1
 let g:Powerline_symbols = 'fancy' " fancy symbols for powerline
+"let g:solarized_visibility='low' " doesnt actually work right
 color solarized
 set background=dark
 
@@ -100,13 +115,6 @@ set foldmethod=indent
 "set foldnestmax=10
 set nofoldenable
 "set foldlevel=1
-
-" save and load fold automatically
-augroup vimrcAutoView
-    autocmd!
-    autocmd BufWritePost,BufLeave,WinLeave ?* if MakeViewCheck() | mkview | endif
-    autocmd BufWinEnter ?* if MakeViewCheck() | silent loadview | endif
-augroup end
 
 " omni set - dunno if this is necessary or what it really does
 "set completefunc=syntaxcomplete#Complete
@@ -161,7 +169,7 @@ set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem,*.pyc
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*.swp,*~,._*
 set formatoptions-=o " dont continue comments when pushing o/O
-set mouse=a
+set mouse=n
 "set ttymouse=xterm2
 set pastetoggle=<F2>
 set clipboard=unnamedplus " use system clipboard by default
