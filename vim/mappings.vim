@@ -51,8 +51,8 @@ map <leader>zw :ZoomWin<cr>
 " SuperTab like snippets behavior
 "imap <expr><Tab> neocomplcache#sources#snippets_complete#expandable() ?
 "			\ "<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<Tab>"
-imap <C-k> <Plug>(neocomplcache_snippets_expand)
-smap <C-k> <Plug>(neocomplcache_snippets_expand)
+"imap <C-k> <Plug>(neocomplcache_snippets_expand)
+"smap <C-k> <Plug>(neocomplcache_snippets_expand)
 "inoremap <expr><C-g> neocomplcache#undo_completion()
 "inoremap <expr><C-l> neocomplcache#complete_common_string()
 

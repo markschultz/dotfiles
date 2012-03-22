@@ -9,7 +9,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My installed bundles
-
 " github repos
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
@@ -79,7 +78,8 @@ endif
 
 set laststatus=2 " statusline is 2 rows
 set t_Co=256
-let g:yankring_history_file='~/.vim/yankring-history'
+"let g:yankring_history_file='.yankring-history'
+let g:yankring_history_file = '.yankring_history'
 let g:gist_clip_command='xclip -selection clipboard'
 let g:gist_detect_filetype=1
 let g:syntastic_enable_signs=1
@@ -88,15 +88,29 @@ let g:syntastic_auto_loc_list=2
 let g:SuperTabDefaultCompletionType="context"
 let g:SuperTabCrMapping=0
 let g:neocomplcache_enable_at_startup=1
+let g:neocomplcache_enable_smart_case=1
+let g:neocomplcache_enable_camel_case_completion=1
+let g:neocomplcache_enable_underbar_completion=1
+let g:neocomplcache_snippets_disable_runtime_snippets = 1
+let g:neocomplcache_plugin_disable = { 'snippets_complete':1 }
 let g:neocomplcache_force_overwrite_completefunc=1
-let g:clang_complete_auto = 1
+let g:clang_complete_auto=1
+let g:UltiSnipsSnippetsDir='~/.vim/bundle/ultisnips/UltiSnips'
 "let g:clang_complete_copen = 0
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 let g:pandoc_use_hard_wraps=1
 let g:pandoc_auto_format=1
-let g:Powerline_symbols = 'fancy' " fancy symbols for powerline
+let g:Powerline_symbols = 'fancy' " 'fancy'/'unicode'/'compatible' symbols for powerline
+if !exists('g:neocomplcache_omni_patterns')
+	let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
+let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 "let g:solarized_visibility='low' " doesnt actually work right
 color solarized
+"color vividchalk
 set background=dark
 
 " default filetypes
