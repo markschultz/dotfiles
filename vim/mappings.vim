@@ -10,9 +10,8 @@ cmap w!! w !sudo tee % >/dev/null<cr>
 " format the entire file
 nmap <leader>fef ggVG=
 
-" upper/lower word
-nmap <leader>u mQviwU`Q
-nmap <leader>l mQviwu`Q
+" shortcut for toggling set list
+nmap <leader>i :set list!<cr>
 
 " cd to the directory containing the file in the buffer
 nmap <silent> <leader>cd :lcd %:h<cr>
@@ -41,8 +40,8 @@ nnoremap j gj
 nnoremap k gk
 
 " Plugin configs
-map <silent> <C-u> :GundoToggle<cr>
-"map <silent> <C-o> :CtrlP<cr>
+"map <silent> <C-u> :GundoToggle<cr>
+map <leader>u :GundoToggle<cr>
 map <leader>/ <plug>NERDCommenterToggle<cr>
 map <silent> <C-t> :TagbarOpenAutoClose<cr>
 ":TagbarToggle<cr>

@@ -14,6 +14,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-vividchalk'
+Bundle 'tpope/vim-unimpaired'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'xolox/vim-easytags'
@@ -47,6 +48,7 @@ Bundle 'sjbach/lusty'
 "Bundle 'tomtom/tlib_vim'
 "Bundle 'honza/snipmate-snippets'
 "Bundle 'garbas/vim-snipmate'
+"Bundle 'eskimod/snipmate-snippets'
 
 " filetype git repos
 Bundle 'vim-pandoc/vim-pandoc'
@@ -120,6 +122,7 @@ set encoding=utf-8
 set linebreak " linebreak in editor
 "set textwidth=500 " max textwidth
 set wrap " wrap lines
+set showbreak=…\ 
 set backspace=eol,start,indent " backspace config
 "set whichwrap+=<,>
 
@@ -148,7 +151,7 @@ autocmd FileType python 		set omnifunc=pythoncomplete#Complete
 "improve autocomplete menu color
 highlight Pmenu ctermbg=238 gui=bold
 set wildmenu
-set wildmode=longest,list:full
+set wildmode=longest,list,full
 "set complete=.,t,w
 
 " genereal editor settings
@@ -210,12 +213,16 @@ set copyindent " copy previous indentation when autoindenting
 set smartindent
 set shiftwidth=4 " number of spaces for autoindenting
 set smarttab " inserts tabs at beginning of line according to shiftwidth instead of tabstop
+set softtabstop=4 "length of 'soft' tabs. should be the same as other tab lengths
 
 set list
 "set listchars=tab:>.,trail:.,extends:#,nbsp:. "make vim show all whitespace
 set listchars=tab:»\ ,trail:·,eol:¬,
+"set listchars=tab:▸\ ,eol:¬
+
 autocmd FileType pandoc setlocal spell spelllang=en_us
 autocmd FileType text setlocal spell spelllang=en_us
+autocmd FileType python setlocal expandtab
 
 " do some filetype stuff
 if has ('autocmd')
