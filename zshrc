@@ -29,7 +29,10 @@ export ZSH_THEME="flazz"
 plugins=(git git-flow command-not-found vundle extract deb rails3 ruby rake gpg-agent ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
-#source /opt/ros/electric/setup.zsh
+if [ -e "~/.zshrc.local" ]
+then
+	source /opt/ros/electric/setup.zsh
+fi
 export ROS_PACKAGE_PATH=~/git/eecs_376_alpha:$ROS_PACKAGE_PATH
 export PATH=~/.cabal/bin:$PATH
 
