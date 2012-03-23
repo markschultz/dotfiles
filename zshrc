@@ -1,6 +1,8 @@
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 export TEMP=/tmp
+export SOLARIZED=1
+export POWERLINE=1
 export SDL_VIDEO_FULLSCREEN_DISPLAY=0
 #export SDL_VIDEO_FULLSCREEN_HEAD=1
 export FCEDIT=vim

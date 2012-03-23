@@ -1,1 +1,6 @@
-let g:Powerline_symbols='fancy'
+if $POWERLINE==1
+	" 'fancy'/'unicode'/'compatible' symbols for powerline
+	let g:Powerline_symbols = 'fancy'
+else
+	let g:Powerline_symbols = 'compatible'
+endif

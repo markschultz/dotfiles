@@ -74,20 +74,15 @@ filetype plugin indent on " required!
 syntax enable " syntax highlighting
 
 " source other files
-if filereadable(expand("~/.vim/mappings.vim"))
-	source ~/.vim/mappings.vim
-endif
+" if filereadable(expand("~/.vim/mappings.vim"))
+" 	source ~/.vim/mappings.vim
+" endif
+for f in split(glob('~/.vim/plugin/settings/*.vim'), '\n')
+	exe 'source' f
+endfor
 
 set laststatus=2 " statusline is 2 rows
 set t_Co=256
-let g:yankring_paste_n_bkey = ''
-let g:yankring_paste_n_akey = ''
-let g:yankring_history_file = '.yankring_history'
-let g:gist_clip_command='xclip -selection clipboard'
-let g:gist_detect_filetype=1
-let g:syntastic_enable_signs=1
-let g:syntastic_quiet_warning=0
-let g:syntastic_auto_loc_list=2
 let g:SuperTabDefaultCompletionType="context"
 let g:SuperTabCrMapping=0
 let g:clang_complete_auto=1
@@ -96,11 +91,7 @@ let g:UltiSnipsSnippetsDir='~/.vim/bundle/ultisnips/UltiSnips'
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 let g:pandoc_use_hard_wraps=1
 let g:pandoc_auto_format=1
-let g:Powerline_symbols = 'fancy' " 'fancy'/'unicode'/'compatible' symbols for powerline
 "let g:solarized_visibility='low' " doesnt actually work right
-color solarized
-"color vividchalk
-set background=dark
 
 " default filetypes
 set ffs=unix,dos,mac
@@ -121,11 +112,9 @@ set nofoldenable
 "set foldlevel=1
 
 " omni set - dunno if this is necessary or what it really does
-set completefunc=syntaxcomplete#Complete
-set omnifunc=syntaxcomplete#Complete
+"set completefunc=syntaxcomplete#Complete
+"set omnifunc=syntaxcomplete#Complete
 set completeopt=longest,menu " add ,preview for scratch preview
-"improve autocomplete menu color
-highlight Pmenu ctermbg=238 gui=bold
 set wildmenu
 set wildmode=longest,list,full
 "set complete=.,t,w
@@ -172,13 +161,7 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
-set sm
-hi clear NonText
-hi NonText ctermfg=green
-hi clear SpecialKey
-hi SpecialKey ctermfg=green
-hi clear Search
-hi Search cterm=underline
+set sm "automatic brace matching
 
 " tab settings
 set tabstop=4 " tab is 4 spaces
