@@ -38,7 +38,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'sjl/gundo.vim'
-Bundle 'sickill/vim-pasta'
+"Bundle 'sickill/vim-pasta'
 Bundle 'mileszs/ack.vim'
 Bundle 'sjbach/lusty'
 "Bundle 'chrisbra/NrrwRgn'
@@ -80,7 +80,8 @@ endif
 
 set laststatus=2 " statusline is 2 rows
 set t_Co=256
-"let g:yankring_history_file='.yankring-history'
+let g:yankring_paste_n_bkey = ''
+let g:yankring_paste_n_akey = ''
 let g:yankring_history_file = '.yankring_history'
 let g:gist_clip_command='xclip -selection clipboard'
 let g:gist_detect_filetype=1
@@ -89,27 +90,13 @@ let g:syntastic_quiet_warning=0
 let g:syntastic_auto_loc_list=2
 let g:SuperTabDefaultCompletionType="context"
 let g:SuperTabCrMapping=0
-let g:neocomplcache_enable_at_startup=1
-let g:neocomplcache_enable_smart_case=1
-let g:neocomplcache_enable_camel_case_completion=1
-let g:neocomplcache_enable_underbar_completion=1
-let g:neocomplcache_snippets_disable_runtime_snippets = 1
-let g:neocomplcache_plugin_disable = { 'snippets_complete':1 }
-let g:neocomplcache_force_overwrite_completefunc=1
 let g:clang_complete_auto=1
-let g:UltiSnipsSnippetsDir='~/.vim/bundle/ultisnips/UltiSnips'
 "let g:clang_complete_copen = 0
+let g:UltiSnipsSnippetsDir='~/.vim/bundle/ultisnips/UltiSnips'
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 let g:pandoc_use_hard_wraps=1
 let g:pandoc_auto_format=1
 let g:Powerline_symbols = 'fancy' " 'fancy'/'unicode'/'compatible' symbols for powerline
-if !exists('g:neocomplcache_omni_patterns')
-	let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
-let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 "let g:solarized_visibility='low' " doesnt actually work right
 color solarized
 "color vividchalk
@@ -134,20 +121,9 @@ set nofoldenable
 "set foldlevel=1
 
 " omni set - dunno if this is necessary or what it really does
-"set completefunc=syntaxcomplete#Complete
-"set omnifunc=syntaxcomplete#Complete
+set completefunc=syntaxcomplete#Complete
+set omnifunc=syntaxcomplete#Complete
 set completeopt=longest,menu " add ,preview for scratch preview
-autocmd FileType ruby,eruby 	set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby 	let g:SuperTabContextDefaultCompletionType="<c-x><c-o>"
-autocmd FileType ruby,eruby 	let g:rubycomplete_buffer_loading=1
-autocmd FileType ruby,eruby 	let g:rubycomplete_rails=1
-autocmd FileType ruby,eruby 	let g:rubycomplete_classes_in_global=1
-"autocmd FileType c 				set omnifunc=ccomplete#Complete
-autocmd FileType javascript 	set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html 			set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css 			set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml 			set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType python 		set omnifunc=pythoncomplete#Complete
 "improve autocomplete menu color
 highlight Pmenu ctermbg=238 gui=bold
 set wildmenu
@@ -191,7 +167,6 @@ set mouse=n
 set pastetoggle=<F2>
 set clipboard=unnamedplus " use system clipboard by default
 
-
 " search settings
 set ignorecase
 set smartcase
@@ -219,23 +194,4 @@ set list
 "set listchars=tab:>.,trail:.,extends:#,nbsp:. "make vim show all whitespace
 set listchars=tab:»\ ,trail:·,eol:¬,
 "set listchars=tab:▸\ ,eol:¬
-
-autocmd FileType pandoc setlocal spell spelllang=en_us
-autocmd FileType text setlocal spell spelllang=en_us
-autocmd FileType python setlocal expandtab
-
-" do some filetype stuff
-if has ('autocmd')
-	au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,config.ru,*.rake} set ft=ruby
-	au BufRead,BufNewFile *.json set ft=javascript
-	au FileType make set noexpandtab
-	au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
-	autocmd! bufwritepost .vimrc source ~/.vimrc " when vimrc is saved, reload it
-	autocmd FileType svn, *commit*, *COMMIT* setlocal spell spelllang=en_us
-	autocmd BufReadPost fugitive://* set bufhidden=delete
-	autocmd BufReadPost fugitive://*
-	 \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
-	 \ 	nnoremap <buffer> .. :edit %:h<cr> |
-	 \ endif
-endif
 

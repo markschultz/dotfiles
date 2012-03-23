@@ -40,9 +40,6 @@ nnoremap j gj
 nnoremap k gk
 
 " Plugin configs
-"map <silent> <C-u> :GundoToggle<cr>
-map <leader>u :GundoToggle<cr>
-map <leader>/ <plug>NERDCommenterToggle<cr>
 map <silent> <C-t> :TagbarOpenAutoClose<cr>
 ":TagbarToggle<cr>
 map <leader>zw :ZoomWin<cr>
