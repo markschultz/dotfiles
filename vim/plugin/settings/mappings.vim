@@ -25,6 +25,18 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" change inside quotes with M-" and M-'
+" wont work in terminal
+nnoremap <M-'> ci'
+nnoremap <M-"> ci"
+
+" the first quote will close so you'll get 'foo' and this will
+" put the cursor right after the quote
+imap <C-;> <Esc>wa
+
+" clear current search highlight by double tapping //
+nmap <silent> // :nohlsearch<CR>
+
 " use the arrows to page buffers
 nnoremap <right> :bn<cr>
 nnoremap <left> :bp<cr>

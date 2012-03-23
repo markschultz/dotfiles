@@ -18,5 +18,5 @@ autocmd FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 autocmd FileType svn, *commit*, *COMMIT* setlocal spell spelllang=en_us
 autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,config.ru,*.rake} set ft=ruby
 autocmd BufRead,BufNewFile *.json set ft=javascript
-autocmd bufwritepost vimrc source ~/.vimrc " when vimrc is saved, reload it
+autocmd BufWritePost *vimrc source ~/.vimrc " when vimrc is saved, reload it
 autocmd BufReadPost fugitive://* set bufhidden=delete
