@@ -32,7 +32,7 @@ nnoremap <M-"> ci"
 
 " the first quote will close so you'll get 'foo' and this will
 " put the cursor right after the quote
-imap <C-l> <Esc>wa
+inoremap <C-l> <Esc>wa
 
 " clear current search highlight by double tapping //
 nmap <silent> // :nohlsearch<CR>
