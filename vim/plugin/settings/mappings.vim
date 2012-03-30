@@ -20,10 +20,10 @@ nmap <silent> <leader>cd :lcd %:h<cr>
 nmap <silent> <leader>md :!mkdir -p %:p:h<cr>
 
 " moving windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+nmap <C-j> <C-W>j
+nmap <C-k> <C-W>k
+nmap <C-h> <C-W>h
+nmap <C-l> <C-W>l
 
 " change inside quotes with M-" and M-'
 " wont work in terminal
@@ -32,7 +32,7 @@ nnoremap <M-"> ci"
 
 " the first quote will close so you'll get 'foo' and this will
 " put the cursor right after the quote
-imap <C-;> <Esc>wa
+imap <C-l> <Esc>wa
 
 " clear current search highlight by double tapping //
 nmap <silent> // :nohlsearch<CR>
