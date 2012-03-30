@@ -25,12 +25,12 @@ Bundle 'thinca/vim-quickrun'
 Bundle 'Shougo/neocomplcache'
 "Bundle 'Shougo/neocomplcache-snippets-complete'
 Bundle 'Shougo/neocomplcache-clang_complete'
-Bundle 'SirVer/ultisnips'
+"Bundle 'SirVer/ultisnips'
 Bundle 'altercation/vim-colors-solarized'
 "Bundle 'rstacruz/sparkup'
 Bundle 'mattn/gist-vim'
 Bundle 'kien/ctrlp.vim'
-"Bundle 'ervandew/supertab'
+Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
 "Bundle 'scrooloose/nerdtree'
 "Bundle 'scrooloose/snipmate-snippets'
@@ -45,11 +45,11 @@ Bundle 'sjbach/lusty'
 "Bundle 'chrisbra/NrrwRgn'
 
 "new snipmate & dependencies
-"Bundle 'MarcWeber/vim-addon-mw-utils'
-"Bundle 'tomtom/tlib_vim'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
 "Bundle 'honza/snipmate-snippets'
-"Bundle 'garbas/vim-snipmate'
-"Bundle 'eskimod/snipmate-snippets'
+Bundle 'garbas/vim-snipmate'
+Bundle 'eskimod/snipmate-snippets'
 
 " filetype git repos
 Bundle 'vim-pandoc/vim-pandoc'
@@ -84,15 +84,6 @@ endfor
 
 set laststatus=2 " statusline is 2 rows
 set t_Co=256
-let g:SuperTabDefaultCompletionType="context"
-let g:SuperTabCrMapping=0
-let g:clang_complete_auto=1
-"let g:clang_complete_copen = 0
-let g:UltiSnipsSnippetsDir='~/.vim/bundle/ultisnips/UltiSnips'
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-let g:pandoc_use_hard_wraps=1
-let g:pandoc_auto_format=1
-"let g:solarized_visibility='low' " doesnt actually work right
 
 " default filetypes
 set ffs=unix,dos,mac
