@@ -6,7 +6,11 @@ export POWERLINE=1
 export SDL_VIDEO_FULLSCREEN_DISPLAY=0
 #export SDL_VIDEO_FULLSCREEN_HEAD=1
 export FCEDIT=vim
+export EDITOR=vim
 #export PATH=$PATH:
+unsetopt nomatch
+setopt autopushd
+bindkey -e
 
 # Set to the name theme to load.
 # Look in ~/.oh-my-zsh/themes/
