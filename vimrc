@@ -68,6 +68,7 @@ Bundle 'Rip-Rip/clang_complete'
 "Bundle 'MatlabFilesEdition'
 Bundle 'matchit.zip'
 Bundle 'YankRing.vim'
+Bundle 'clang'
 
 " non-github repos
 "Bundle 'git://git.wincent.com/command-t.git'
