@@ -7,6 +7,7 @@ export SDL_VIDEO_FULLSCREEN_DISPLAY=0
 #export SDL_VIDEO_FULLSCREEN_HEAD=1
 export FCEDIT=vim
 export EDITOR=vim
+export CLASSPATH=/home/eskimod/android-sdk-linux/platforms/android-15/android.jar:$CLASSPATH
 #export PATH=$PATH:
 unsetopt nomatch
 setopt autopushd
