@@ -10,6 +10,7 @@ export EDITOR=vim
 #export PATH=$PATH:
 unsetopt nomatch
 setopt autopushd
+ulimit -c unlimited
 bindkey -e
 
 # Set to the name theme to load.
@@ -33,9 +34,9 @@ export ZSH_THEME="flazz"
 plugins=(git git-flow command-not-found vundle extract deb rails3 ruby rake gpg-agent ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
-if [ -e "~/.zshrc.local" ]
+if [ -e ~/.zshrc.local ]
 then
-	source /opt/ros/electric/setup.zsh
+	source ~/.zshrc.local
 fi
 export ROS_PACKAGE_PATH=~/git/eecs_376_alpha:$ROS_PACKAGE_PATH
 export PATH=~/.cabal/bin:$PATH

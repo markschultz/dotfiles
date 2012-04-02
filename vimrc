@@ -61,6 +61,7 @@ Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-function'
 Bundle 'kana/vim-textobj-user'
 Bundle 'Rip-Rip/clang_complete'
+Bundle 'javacomplete'
 "Bundle 'vim-scripts/csv.vim'
 
 " vim-scripts repos
