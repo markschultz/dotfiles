@@ -12,7 +12,7 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType pandoc setlocal spell spelllang=en_us
 autocmd FileType text setlocal spell spelllang=en_us
 autocmd FileType make setlocal noexpandtab
-autocmd FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79 expandtab
+autocmd FileType python setlocal autoindent softtabstop=4 tabstop=8 shiftwidth=4 textwidth=79 expandtab
 autocmd FileType svn, *commit*, *COMMIT* setlocal spell spelllang=en_us
 autocmd FileType haskell compiler ghc
 autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,config.ru,*.rake} set ft=ruby

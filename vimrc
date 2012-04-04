@@ -26,6 +26,7 @@ Bundle 'thinca/vim-quickrun'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neocomplcache-snippets-complete'
 Bundle 'Shougo/neocomplcache-clang_complete'
+"Bundle 'chrisbra/SudoEdit.vim'
 "Bundle 'SirVer/ultisnips'
 Bundle 'altercation/vim-colors-solarized'
 "Bundle 'rstacruz/sparkup'
@@ -40,9 +41,9 @@ Bundle 'godlygeek/tabular'
 Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'sjl/gundo.vim'
-"Bundle 'sickill/vim-pasta'
+Bundle 'sickill/vim-pasta'
 Bundle 'mileszs/ack.vim'
-Bundle 'sjbach/lusty'
+"Bundle 'sjbach/lusty'
 "Bundle 'chrisbra/NrrwRgn'
 
 "new snipmate & dependencies
@@ -68,7 +69,7 @@ Bundle 'javacomplete'
 "Bundle 'FuzzyFinder'
 "Bundle 'MatlabFilesEdition'
 Bundle 'matchit.zip'
-Bundle 'YankRing.vim'
+"Bundle 'YankRing.vim'
 Bundle 'clang'
 
 " non-github repos
@@ -109,7 +110,7 @@ set nofoldenable
 " omni set - dunno if this is necessary or what it really does
 "set completefunc=syntaxcomplete#Complete
 "set omnifunc=syntaxcomplete#Complete
-set completeopt=longest,menu " add ,preview for scratch preview
+set completeopt=preview,menu,menuone " add ,preview for scratch preview
 set wildmenu
 set wildmode=longest,list,full
 "set complete=.,t,w
