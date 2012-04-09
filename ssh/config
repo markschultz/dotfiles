@@ -18,6 +18,11 @@ Host dreamhost
 	Hostname eskimod.net
 	IdentityFile ~/.ssh/id_rsa
 
+Host roberto
+	User alpha
+	Hostname robertomini2.case.edu
+	IdentityFile ~/.ssh/id_rsa
+
 Host *
 	ControlMaster auto
 	ControlPath /tmp/%r@%h:%p
