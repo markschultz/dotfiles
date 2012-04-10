@@ -22,6 +22,10 @@ Host roberto
 	User alpha
 	Hostname robertomini2.case.edu
 	IdentityFile ~/.ssh/id_rsa
+	
+Host jinx
+	User jinx
+	Hostname 192.168.0.150
 
 Host *
 	ControlMaster auto
