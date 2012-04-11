@@ -1,4 +1,5 @@
-let g:notes_directory='~/Documents/Dropbox'
+let g:notes_suffix='.note'
+let g:notes_directory='~/Documents/Dropbox/notes'
 let g:notes_title_sync='rename_file'
 let g:notes_indexfile='~/.vim/note_index'
 let g:notes_indexscript='~/.vim/bundle/vim-notes/misc/notes/search-notes.py'
