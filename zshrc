@@ -46,6 +46,7 @@ export PATH=~/.cabal/bin:~/android-sdk-linux/platform-tools/:$PATH
 stty -ixon -ixoff
 alias irssissh='ssh -L 1234:irc.freenode.net:6667 thenihilistx@clamham.com'
 alias ssheecs='ssh mxs802@eecslinab.case.edu'
+alias sshx='ssh -XC'
 alias open='gnome-open'
 export TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color

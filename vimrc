@@ -52,7 +52,7 @@ Bundle 'mileszs/ack.vim'
 "Bundle 'tomtom/tlib_vim'
 "Bundle 'honza/snipmate-snippets'
 "Bundle 'garbas/vim-snipmate'
-Bundle 'eskimod/snipmate-snippets'
+"Bundle 'markschultz/snipmate-snippets'
 
 " filetype git repos
 Bundle 'vim-pandoc/vim-pandoc'
