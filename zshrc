@@ -8,10 +8,13 @@ export SDL_VIDEO_FULLSCREEN_DISPLAY=0
 export FCEDIT=vim
 export EDITOR=vim
 export CLASSPATH=/home/eskimod/android-sdk-linux/platforms/android-15/android.jar:$CLASSPATH
+export CLASSPATH=/usr/share/java/junit.jar:$CLASSPATH
+#export CLASSPATH=/usr/share/java:$CLASSPATH
 #export PATH=$PATH:
 unsetopt nomatch
 setopt autopushd
-ulimit -c unlimited
+#ulimit -c unlimited
+#ulimit -c 100
 bindkey -e
 
 # Set to the name theme to load.
