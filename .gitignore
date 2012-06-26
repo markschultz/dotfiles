@@ -3,7 +3,6 @@ vim/_view/
 vim/_backup/
 vim/_temp/
 vim/_undo/
-gitconfig
 netrc
 oh-my-zsh/
 haskellmode.config

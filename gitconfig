@@ -1,0 +1,41 @@
+[core]
+	editor = vim -f
+	autocrlf = input
+	pager = less -FRSX
+[apply]
+	whitespace = fix
+[user]
+	name = Mark Schultz
+	email = mxs802@case.edu
+[github]
+	user = markschultz
+[color]
+	ui = true
+[merge]
+	tool = fugitive
+[init]
+	templatedir = ~/.git_template
+[alias]
+	ctags = !.git/hooks/ctags
+	st = status
+	ci = commit
+	co = checkout
+	di = diff
+	dc = diff --cached
+	amend = commit --amend
+	aa = add --all
+	ff = merge --ff-only
+	pullff = pull --ff-only
+	div = divergence
+	pom = push origin master
+	b = branch
+	dh1 = diff HEAD~1
+	graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
+[web]
+	browser = google-chrome
+[mergetool "fugitive"]
+	cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+[branch]
+	autosetupmerge = true
+[credential]
+	helper = cache
