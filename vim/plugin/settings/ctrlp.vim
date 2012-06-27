@@ -1,5 +1,5 @@
 " default ctrl-p interferes with yankring
-let g:ctrlp_map = ',t'
+"let g:ctrlp_map = ',t'
 
 " for buffer search
 "nnoremap <leader>b :CtrlPBuffer<CR>
