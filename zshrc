@@ -43,7 +43,7 @@ then
 	source ~/.zshrc.local
 fi
 export ROS_PACKAGE_PATH=~/git/eecs_376_alpha:$ROS_PACKAGE_PATH
-export PATH=~/.cabal/bin:~/android-sdk-linux/platform-tools/:$PATH
+export PATH=~/.cabal/bin:~/android-sdk-linux/platform-tools:/usr/local/go/bin:$PATH
 
 # Customize to your needs...
 stty -ixon -ixoff
