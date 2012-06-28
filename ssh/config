@@ -1,3 +1,8 @@
+Host rpi
+	User root
+	Hostname rpi1.case.edu
+	IdentityFile ~/.ssh/id_rsa
+
 Host vorlon
 	User mxs802
 	Hostname vorlon.case.edu
