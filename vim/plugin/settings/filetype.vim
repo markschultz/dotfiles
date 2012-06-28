@@ -10,6 +10,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails=1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType pandoc setlocal spell spelllang=en_us
+autocmd FileType tex setlocal spell spelllang=en_us
 autocmd FileType text setlocal spell spelllang=en_us
 autocmd FileType make setlocal noexpandtab
 autocmd FileType python setlocal autoindent softtabstop=4 tabstop=8 shiftwidth=4 textwidth=79 expandtab
