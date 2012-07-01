@@ -1,7 +1,7 @@
 #!/bin/bash
 mkdir ~/git
 cd ~/git
-git clone git@github.com:eskimod/dotfiles.git
+git clone https://github.com/markschultz/dotfiles.git
 git clone https://github.com/gmarik/vundle.git dotfiles/vim/bundle/vundle
 git clone https://github.com/robbyrussell/oh-my-zsh.git dotfiles/oh-my-zsh
 git clone https://github.com/nvie/gitflow.git
