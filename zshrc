@@ -51,6 +51,8 @@ alias irssissh='ssh -L 1234:irc.freenode.net:6667 thenihilistx@clamham.com'
 alias ssheecs='ssh mxs802@eecslinab.case.edu'
 alias sshx='ssh -XC'
 alias open='gnome-open'
+alias upgradey='sudo apt-get update && sudo apt-get -y upgrade'
+alias upgrade='sudo apt-get update && sudo apt-get upgrade'
 export TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
 eval `dircolors ~/.dircolors.ansi-dark`

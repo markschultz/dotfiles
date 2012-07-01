@@ -7,6 +7,11 @@ let g:mapleader = ","
 " sudo trick
 cmap w!! w !sudo tee % >/dev/null<cr>
 
+" remap semicolon to colon
+map ; :
+" double tap ; to get regular ; mapping
+noremap ;; ;
+
 " format the entire file
 nmap <leader>fef ggVG=
 
