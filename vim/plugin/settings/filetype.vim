@@ -1,5 +1,6 @@
 " do some filetype stuff
 autocmd FileType haskell compiler ghc
+autocmd FileType haskell setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=0
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
