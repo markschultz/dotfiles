@@ -1,6 +1,17 @@
 " default ctrl-p interferes with yankring
 "let g:ctrlp_map = ',t'
 
+" working path mode - the nearest ancestor that contains revision control
+" directory
+let g:ctrlp_working_path_mode=2
+
+" ctrlp custom ignores
+let g:ctrlp_custom_ignore={
+	\ 'dir':  '\.git$\|\.hg$\|\.svn$',
+	\ 'file': '\.exe$\|\.so$\|\.dll$',
+	\ 'link': '',
+	\ }
+
 " for buffer search
 "nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <C-b> :CtrlPBuffer<CR>
