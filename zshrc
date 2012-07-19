@@ -47,6 +47,7 @@ export PATH=~/.cabal/bin:~/android-sdk-linux/platform-tools:/usr/local/go/bin:$P
 
 # Customize to your needs...
 stty -ixon -ixoff
+alias blog='BlogLiterately -w -g --blog http://eskimod.net/blog/xmlrpc.php --user eskimod --password poster'
 alias irssissh='ssh -L 1234:irc.freenode.net:6667 thenihilistx@clamham.com'
 alias ssheecs='ssh mxs802@eecslinab.case.edu'
 alias sshx='ssh -XC'
