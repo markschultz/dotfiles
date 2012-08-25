@@ -9,6 +9,9 @@ git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git gnome-
 # install solarize for gnome terminal
 gnome-terminal-solarized/install.sh
 # install gitflow
+cd gitflow
+make
+cd ..
 sudo make -C gitflow install
 # install dotfiles
 cd dotfiles
