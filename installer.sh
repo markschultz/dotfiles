@@ -23,7 +23,6 @@ mkdir vim/_backup
 mkdir vim/_temp
 mkdir ~/.ssh
 mkdir -p ~/.kde/share/apps/konsole
-ln -sf ~/git/dotfiles/fonts ~/.fonts
 ln -sf ~/git/dotfiles/ssh/config ~/.ssh/config
 ln -sf ~/git/dotfiles/ssh/known_hosts ~/.ssh/known_hosts
 ln -sf ~/git/dotfiles/kde/share/apps/konsole/* ~/.kde/share/apps/konsole/
