@@ -21,14 +21,13 @@ rake install
 mkdir vim/_undo
 mkdir vim/_backup
 mkdir vim/_temp
-mkdir ~/.fonts
 mkdir ~/.ssh
 mkdir -p ~/.kde/share/apps/konsole
-ln -sf ~/git/dotfiles/fonts/Inconsolata-dz-Powerline.otf ~/.fonts/Inconsolata-dz-Powerline.otf
+ln -sf ~/git/dotfiles/fonts ~/.fonts
 ln -sf ~/git/dotfiles/ssh/config ~/.ssh/config
 ln -sf ~/git/dotfiles/ssh/known_hosts ~/.ssh/known_hosts
 ln -sf ~/git/dotfiles/kde/share/apps/konsole/* ~/.kde/share/apps/konsole/
 
 echo 'edit your passwords in .netrc, .gitconfig'
-echo '.config/google-talk/config -> audio-flags=1'
+echo 'change .config/google-talk/config -> audio-flags=1'
 #passwords in dropbox
