@@ -7,4 +7,5 @@ netrc
 oh-my-zsh/
 haskellmode.config
 vim/note_tag_index
-
+*fonts.dir*
+*fonts.scale*

@@ -35,7 +35,7 @@ export ZSH_THEME="flazz"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow command-not-found vundle extract deb rails3 ruby rake gpg-agent ssh-agent)
+plugins=(git git-flow vundle extract deb rails3 ruby rake gpg-agent ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 if [ -e ~/.zshrc.local ]
@@ -43,10 +43,11 @@ then
 	source ~/.zshrc.local
 fi
 export ROS_PACKAGE_PATH=~/git/eecs_376_alpha:$ROS_PACKAGE_PATH
-export PATH=~/.cabal/bin:~/android-sdk-linux/platform-tools:/usr/local/go/bin:/usr/local/cuda/bin:$PATH
+export PATH=~/.xmonad/bin:~/.cabal/bin:~/android-sdk-linux/platform-tools:/usr/local/go/bin:/usr/local/cuda/bin:$PATH
 
 # Customize to your needs...
 stty -ixon -ixoff
+alias svim='sudoedit'
 alias blog='BlogLiterately -w -g --blog http://eskimod.net/blog/xmlrpc.php --user eskimod --password poster'
 alias irssissh='ssh -L 1234:irc.freenode.net:6667 thenihilistx@clamham.com'
 alias ssheecs='ssh mxs802@eecslinab.case.edu'
