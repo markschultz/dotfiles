@@ -17,8 +17,8 @@ Bundle 'tpope/vim-vividchalk'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-endwise'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'xolox/vim-easytags'
+"Bundle 'Lokaltog/vim-easymotion'
+"Bundle 'xolox/vim-easytags'
 "useful for projects
 "Bundle 'xolox/vim-session'
 "Bundle 'lukerandall/haskellmode-vim'
@@ -82,7 +82,6 @@ Bundle 'Rip-Rip/clang_complete'
 " vim-scripts repos
 "Bundle 'FuzzyFinder'
 "Bundle 'MatlabFilesEdition'
-Bundle 'matchit.zip'
 "Bundle 'YankRing.vim'
 " Bundle 'clang'
 Bundle 'javacomplete'
@@ -190,3 +189,5 @@ set list
 set listchars=tab:»\ ,trail:·,eol:¬,
 "set listchars=tab:▸\ ,eol:¬
 
+"make the timeout shorter than the default 1000ms
+set timeoutlen=400
