@@ -2,7 +2,7 @@
 autocmd FileType haskell map <buffer> <Leader>h :Hoogle 
 autocmd FileType haskell map <buffer> <Leader>hc :HoogleClose<CR>
 autocmd FileType haskell map <buffer> <Leader>hl :HoogleLine<CR>
-autocmd FileType haskell compiler ghc
+"autocmd FileType haskell compiler ghc
 autocmd FileType haskell setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=0
 autocmd FileType haskell setlocal foldenable
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS

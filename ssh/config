@@ -18,6 +18,10 @@ Host picon
 	Hostname picon.case.edu
 	IdentityFile ~/.ssh/id_rsa
 
+Host backup
+	User b1237146
+	Hostname hanjin.dreamhost.com
+
 Host dreamhost
 	User eskimod
 	Hostname eskimod.net
