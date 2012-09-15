@@ -31,3 +31,10 @@ augroup filetypedetect
 	"mail
 	autocmd BufRead,BufNewFile *mutt-*		setfiletype mail
 augroup END
+autocmd FileType mail setlocal spell spelllang=en_us
+autocmd FileType mail nmap <F3> gqap
+autocmd FileType mail nmap <F4> gqqj
+autocmd FileType mail nmap <F5> kgqj
+autocmd FileType mail map! <F3> <ESC>gqapi
+autocmd FileType mail map! <F4> <ESC>gqqji
+autocmd FileType mail map! <F5> <ESC>kgqji
