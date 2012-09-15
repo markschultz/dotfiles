@@ -1,5 +1,5 @@
 " do some filetype stuff
-autocmd FileType haskell map <buffer> <Leader>h :Hoogle 
+autocmd FileType haskell map <buffer> <Leader>h :Hoogle
 autocmd FileType haskell map <buffer> <Leader>hc :HoogleClose<CR>
 autocmd FileType haskell map <buffer> <Leader>hl :HoogleLine<CR>
 "autocmd FileType haskell compiler ghc
@@ -26,3 +26,8 @@ autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,confi
 autocmd BufRead,BufNewFile *.json setlocal ft=javascript
 autocmd BufWritePost *vimrc source ~/.vimrc " when vimrc is saved, reload it
 autocmd BufReadPost fugitive://* set bufhidden=delete
+
+augroup filetypedetect
+	"mail
+	autocmd BufRead,BufNewFile *mutt-*		setfiletype mail
+augroup END
