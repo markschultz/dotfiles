@@ -1,20 +1,22 @@
 !! urxvt
 Xft.dpi: 96
-!Xft.antialias: true
+Xft.antialias: true
 Xft.rgba: rgb
 URxvt*buffered: true
 URxvt*cursorBlink: true
-URxvt*underlineColor: yellow
-URxvt*font: xft:Inconsolata for Powerline:size=11:autohint=true
-URxvt*boldFont: xft:Inconsolata:style=Bold:size=11:autohint=true
+!URxvt*font: xft:Inconsolata for Powerline:size=12:autohint=true
+URxvt*font: xft:Inconsolata:size=12:autohint=true
+!URXVT*boldFont: xft:Inconsolata:size=12:style=Bold:autohint=true
 !URxvt*font: xft:Consolas:pixelsize=12:antialias=true:autohint=true
 URxvt*depth: 32
 URxvt*borderless: 1
 URxvt*scrollBar: false
 URxvt*loginShell: true
 Urxvt*secondaryScroll:  true    # Enable Shift-PageUp/Down in screen
-URxvt*saveLines: 5000
+URxvt*saveLines: 50000
+URxvt*visualBell: True
 URxvt*termName: rxvt-unicode
+URxvt*underlineColor: red
 URxvt.perl-ext-common: default,matcher
 URxvt.urlLauncher: google-chrome
 URxvt.matcher.button: 1
