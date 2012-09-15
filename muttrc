@@ -7,6 +7,7 @@ source ~/.mutt/crypto_config
 #common settings
 set realname = "Mark Schultz"
 set folder = "imaps://imap.gmail.com:993"
+set ssl_force_tls = yes
 set spoolfile = "+INBOX"
 set postponed = "+[Gmail]/Drafts"
 set trash = "imaps://imap.gmail.com/[Gmail]/Trash"
@@ -20,6 +21,7 @@ set move = no # stop asking to "move read messages to mbox"
 set imap_keepalive = 900
 set sort = threads
 set sort_aux = reverse-last-date-received
+set reverse_name								# reply as whomever it was to
 set timeout = 60
 set mail_check = 120
 set query_command = "goobook query '%s'"
@@ -37,6 +39,9 @@ unset imap_passive
 bind editor <space> noop
 bind editor <Tab> complete-query
 macro index,pager a "<pipe-message>goobook add<return>" "Add the Sender Address to Google"
+macro index,pager S "<save-message>=[Gmail]/Spam<enter>" "Mark Message as Spam"
+macro index,pager H "<save-message>=INBOX<enter>" "Mark Message as Ham"
+macro index,pager A "<save-message>=[Gmail]/All Mail" "Move Message to Archive"
 macro index gi "<change-folder>=INBOX<enter>" "Go to Inbox"
 macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to All Mail"
 macro index gs "<change-folder>=[Gmail]/Sent Mail<enter>" "Go to Sent Mail"
