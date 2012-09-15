@@ -2,6 +2,7 @@ source "gpg2 -dq ~/.mutt/my_pwds.gpg |"
 
 #default schultzm8
 source ~/.mutt/schultzm8_config
+source ~/.mutt/crypto_config
 
 #common settings
 set realname = "Mark Schultz"
