@@ -1,0 +1,8 @@
+# vim: filetype=muttrc
+#username and folder options
+set imap_user=schultzm8@gmail.com
+set from = schultzm8@gmail.com
+set realname = "Mark Schultz"
+set smtp_url = "smtp://schultzm8@smtp.gmail.com:587/"
+set imap_pass = $my_pw_schultzm8
+set smtp_pass = $my_pw_schultzm8

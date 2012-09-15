@@ -1,0 +1,52 @@
+source "gpg2 -dq ~/.mutt/my_pwds.gpg |"
+
+#default schultzm8
+source ~/.mutt/schultzm8_config
+
+#common settings
+set realname = "Mark Schultz"
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Drafts"
+set trash = "imaps://imap.gmail.com/[Gmail]/Trash"
+#set record = "+[Gmail]/Sent Mail"
+unset record
+set signature = ~/.mutt/sig
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+set move = no # stop asking to "move read messages to mbox"
+set imap_keepalive = 900
+set sort = threads
+set sort_aux = reverse-last-date-received
+set timeout = 60
+set mail_check = 120
+set query_command = "goobook query '%s'"
+set quit										# dont ask just do
+set smart_wrap									# dont split words
+unset markers									# no ugly plus signs
+set edit_headers								# show headers when composing
+
+#set sidebar_visible = yes
+set sidebar_width=30
+unset imap_passive
+
+
+#keybindings
+bind editor <space> noop
+bind editor <Tab> complete-query
+macro index,pager a "<pipe-message>goobook add<return>" "Add the Sender Address to Google"
+macro index gi "<change-folder>=INBOX<enter>" "Go to Inbox"
+macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to All Mail"
+macro index gs "<change-folder>=[Gmail]/Sent Mail<enter>" "Go to Sent Mail"
+macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to Drafts"
+
+#dual account switch
+folder-hook 'personal' 'source ~/.mutt/schultzm8_config'
+folder-hook 'school' 'source ~/.mutt/mxs802_config'
+#shortcuts
+macro index g1 '<sync-mailbox><enter-command>source ~/.mutt/schultzm8_config<enter><change-folder>!<enter>'
+macro index g2 '<sync-mailbox><enter-command>source ~/.mutt/mxs802_config<enter><change-folder>!<enter>'
+
+#solarized color
+source ~/.mutt/mutt-colors-solarized-dark-16.muttrc

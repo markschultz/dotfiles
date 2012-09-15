@@ -1,0 +1,9 @@
+# vim: filetype=muttrc
+#username and folder options
+set imap_user=mxs802@case.edu
+set from = mxs802@case.edu
+set realname = "Mark Schultz"
+set smtp_url = "smtp://mxs802@smtp.case.edu:25/"
+set ssl_force_tls = yes
+set imap_pass = $my_pw_mxs802
+set smtp_pass = $my_pw_mxs802
