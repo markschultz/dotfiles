@@ -2,7 +2,6 @@
 #username and folder options
 set imap_user=mxs802@case.edu
 set from = mxs802@case.edu
-set realname = "Mark Schultz"
 set smtp_url = "smtps://mxs802@smtp.case.edu:25/"
 set imap_pass = $my_pw_mxs802
 set smtp_pass = $my_pw_mxs802
