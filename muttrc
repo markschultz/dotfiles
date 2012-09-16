@@ -13,11 +13,13 @@ set trash = "imaps://imap.gmail.com/[Gmail]/Trash"
 #set record = "+[Gmail]/Sent Mail"
 unset record
 set signature = ~/.mutt/sig
+set ispell = "aspell -e -c"						# use aspell email file mode
+set print_command = "muttprint"
 set header_cache = ~/.mutt/cache/headers
 set message_cachedir = ~/.mutt/cache/bodies
 set certificate_file = ~/.mutt/certificates
-set move = no # stop asking to "move read messages to mbox"
 set imap_keepalive = 900
+set alternates mxs802@case.edu ronin8@gmail.com schultzm8@gmail.com
 set sort = threads								# like gmail
 set sort_aux = reverse-last-date-received		# like gmail
 unset confirmappend								# dont confirm when appending messagees to an existing mailbox
@@ -25,6 +27,7 @@ set beep_new									# bell on new mail
 set timeout = 60
 set mail_check = 30								# how often to look for mail
 set query_command = "goobook query '%s'"
+unset wait_key									# dont need to press key after external command
 set quit										# dont ask just do
 
 #pager options
