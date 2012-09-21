@@ -1,0 +1,9 @@
+text/html;					w3m -I %{charset} -T text/html -dump; copiousoutput
+#application/pdf;			{ set -m \; /bin/mv -T %s %s.mv \; ( evince %s.mv \; /bin/rm %s.mv \; ) & } \; disown -a; test=runningx
+application/pdf;			mutt_bgrun evince %s; test=runningx
+application/pdf;			pdftotext %s -; copiousoutput
+
+# Microsoft shit
+application/msword;			antiword %s; copiousoutput
+application/vnd.msword;			antiword %s; copiousoutput
+application/vnd.openxmlformats-officedocument.wordprocessingml.document;	antiword-xp %s | less; copiousoutput

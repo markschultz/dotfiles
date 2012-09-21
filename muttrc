@@ -5,11 +5,13 @@ source ~/.mutt/schultzm8_config
 source ~/.mutt/crypto_config
 
 #common settings
+set mailcap_path = ~/.mutt/mailcap
 set folder = "imaps://imap.gmail.com:993"
 set ssl_force_tls = yes
 set spoolfile = "+INBOX"
 set postponed = "+[Gmail]/Drafts"
-set trash = "imaps://imap.gmail.com/[Gmail]/Trash"
+set mbox = "+[Gmail]/All Mail"
+set trash = "+[Gmail]/Trash"
 #set record = "+[Gmail]/Sent Mail"
 unset record
 set signature = ~/.mutt/sig

@@ -1,3 +1,4 @@
+"TODO make keybinding for :%!stylish-haskell
 set nocompatible " be iMproved
 filetype off     " required!
 
