@@ -12,7 +12,7 @@ set spoolfile = "+INBOX"
 set postponed = "+[Gmail]/Drafts"
 set mbox = "+[Gmail]/All Mail"
 set trash = "+[Gmail]/Trash"
-#set record = "+[Gmail]/Sent Mail"
+set record = "+[Gmail]/Sent Mail"
 unset record
 set signature = ~/.mutt/sig
 set ispell = "aspell -e -c"						# use aspell email file mode
@@ -51,8 +51,8 @@ set fast_reply									# skip to compose when reply or forward
 set sendmail_wait = -1							# send in background
 set forward_format = "Fwd: %s"					# make subject like gmail
 set reverse_name								# reply as whomever it was to
-#set include									# include message in replies
-#set forward_quote								# include message in forwards
+set include									# include message in replies
+set forward_quote								# include message in forwards
 
 
 
