@@ -5,5 +5,6 @@ application/pdf;			pdftotext %s -; copiousoutput
 
 # Microsoft shit
 application/msword;			antiword %s; copiousoutput
-application/vnd.msword;			antiword %s; copiousoutput
+application/vnd.msword;		antiword %s; copiousoutput
 application/vnd.openxmlformats-officedocument.wordprocessingml.document;	antiword-xp %s | less; copiousoutput
+image/*;					mutt_bgrun feh %s; edit=mutt_bgrun picasa %s; test=runningx

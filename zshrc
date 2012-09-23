@@ -55,6 +55,6 @@ alias sshx='ssh -XC'
 alias open='gnome-open'
 alias upgradey='sudo apt-get update && sudo apt-get -y upgrade'
 alias upgrade='sudo apt-get update && sudo apt-get upgrade'
-export TERM=xterm-256color
+export TERM=rxvt-unicode-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
-eval `dircolors ~/.dircolors.ansi-dark`
+eval `dircolors ~/.dircolors.256-dark`
