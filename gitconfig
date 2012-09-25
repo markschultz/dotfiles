@@ -38,4 +38,4 @@
 [branch]
 	autosetupmerge = true
 [credential]
-	helper = cache
+	helper = cache --timeout=3600
