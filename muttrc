@@ -13,7 +13,7 @@ set postponed = "+[Gmail]/Drafts"
 set mbox = "+[Gmail]/All Mail"
 set trash = "+[Gmail]/Trash"
 set record = "+[Gmail]/Sent Mail"
-unset record
+#unset record
 set signature = ~/.mutt/sig
 set ispell = "aspell -e -c"						# use aspell email file mode
 set print_command = "muttprint"
