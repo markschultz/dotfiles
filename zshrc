@@ -52,6 +52,7 @@ alias blog='BlogLiterately -w -g --blog http://eskimod.net/blog/xmlrpc.php --use
 alias irssissh='ssh -L 1234:irc.freenode.net:6667 thenihilistx@clamham.com'
 alias ssheecs='ssh mxs802@eecslinab.case.edu'
 alias sshx='ssh -XC'
+alias sar='LANG=C sar'
 alias open='gnome-open'
 alias upgradey='sudo apt-get update && sudo apt-get -y upgrade'
 alias upgrade='sudo apt-get update && sudo apt-get upgrade'
