@@ -36,7 +36,7 @@ Bundle 'Shougo/neocomplcache-clang_complete'
 Bundle 'ujihisa/neco-ghc'
 "Bundle 'SirVer/ultisnips'
 Bundle 'altercation/vim-colors-solarized'
-"Bundle 'rstacruz/sparkup'
+Bundle 'rstacruz/sparkup'
 Bundle 'mattn/gist-vim'
 "required for gist-vim
 Bundle 'mattn/webapi-vim'
