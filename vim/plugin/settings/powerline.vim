@@ -5,5 +5,5 @@ if $POWERLINE==1
 else
 	let g:Powerline_symbols = 'unicode'
 endif
-let g:Powerline_symbols = 'compatible'
+"let g:Powerline_symbols = 'compatible'
 

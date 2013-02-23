@@ -18,6 +18,7 @@ Bundle 'tpope/vim-vividchalk'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-endwise'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'timrobinson/fsharp-vim'
 "Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'xolox/vim-easytags'
 "useful for projects

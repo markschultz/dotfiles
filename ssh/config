@@ -1,22 +1,18 @@
 Host rpi
 	User root
 	Hostname rpi1.case.edu
-	IdentityFile ~/.ssh/id_rsa
 
 Host vorlon
 	User mxs802
 	Hostname vorlon.case.edu
-	IdentityFile ~/.ssh/id_rsa
 
 Host tauron
 	User eskimod
 	Hostname tauron.case.edu
-	IdentityFile ~/.ssh/id_rsa
 
 Host picon
 	User razor
 	Hostname picon.case.edu
-	IdentityFile ~/.ssh/id_rsa
 
 Host backup
 	User b1237146
@@ -25,21 +21,21 @@ Host backup
 Host dreamhost
 	User eskimod
 	Hostname eskimod.net
-	IdentityFile ~/.ssh/id_rsa
 
 Host roberto
 	User alpha
 	Hostname robertomini2.case.edu
-	IdentityFile ~/.ssh/id_rsa
 	
 Host jinx
 	User jinx
 	Hostname 192.168.0.150
 
 Host *
+	Ciphers aes256-cbc,aes256-ctr
+	MACs hmac-sha2-512,hmac-sha2-256,hmac-ripemd160
 	ControlMaster auto
 	ControlPath /tmp/%r@%h:%p
 	Compression yes
-	TCPKeepAlive yes
+	ServerAliveInterval 300
 	ForwardAgent yes
 
