@@ -30,11 +30,6 @@ nmap <C-k> <C-W>k
 nmap <C-h> <C-W>h
 nmap <C-l> <C-W>l
 
-" change inside quotes with M-" and M-'
-" wont work in terminal
-nnoremap <M-'> ci'
-nnoremap <M-"> ci"
-
 " the first quote will close so you'll get 'foo' and this will
 " put the cursor right after the quote
 inoremap <C-l> <Esc>wa

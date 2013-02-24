@@ -89,8 +89,6 @@ map <silent> <C-t> :TagbarOpenAutoClose<cr>
 
 """unimpaired
 
-" https://github.com/carlhuda/janus/blob/master/vimrc
-
 " Bubble single lines
 nmap <C-Up> [e
 nmap <C-Down> ]e
