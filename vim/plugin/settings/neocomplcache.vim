@@ -2,6 +2,13 @@
 " A beter autocomplete system!
 
 " use neocomplcache & clang_complete
+
+"let g:clang_complete_copen = 0
+let g:clang_use_library=1
+let g:clang_library_path="/usr/lib/"
+let g:clang_complete_auto=1
+
+
 " add neocomplcache option
 let g:neocomplcache_force_overwrite_completefunc=1
 " Disable AutoComplPop.
@@ -40,18 +47,16 @@ inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
 " SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " for snippet_complete marker
 if has('conceal')
 	set conceallevel=2 concealcursor=i
 endif
 
-" Recommended key-mappings.
 " <CR>: close popup and save indent.
 inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
-" <TAB>: completion.
-"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
@@ -61,14 +66,7 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 " AutoComplPop like behavior.
 let g:neocomplcache_enable_auto_select = 0
 let g:neocomplcache_enable_auto_delimiter = 1
-"let g:neocomplcache_temporary_dir
 
-" Shell like behavior(not recommended).
-"set completeopt+=longest
-"let g:neocomplcache_enable_auto_select = 1
-"let g:neocomplcache_disable_auto_complete = 1
-"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<TAB>"
-"inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
