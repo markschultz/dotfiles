@@ -18,16 +18,15 @@ Bundle 'tpope/vim-vividchalk'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-markdown'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'timrobinson/fsharp-vim'
-"Bundle 'Valloric/YouCompleteMe'
 Bundle 'dag/vim2hs'
 Bundle 'Raimondi/delimitMate'
 Bundle 'thinca/vim-quickrun'
 Bundle 'Shougo/vimproc'
 Bundle 'Shougo/vimshell'
 Bundle 'ujihisa/repl.vim'
-"Bundle 'Twinside/vim-hoogle'
 Bundle 'ujihisa/neco-ghc'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'rstacruz/sparkup'
@@ -39,11 +38,16 @@ Bundle 'majutsushi/tagbar'
 Bundle 'bitc/lushtags'
 Bundle 'sjl/gundo.vim'
 Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/neocomplcache-clang_complete'
 Bundle 'Shougo/neosnippet'
-Bundle 'Rip-Rip/clang_complete'
 Bundle 'pangloss/vim-javascript'
 Bundle 'godlygeek/tabular'
+Bundle 'mileszs/ack.vim'
+Bundle 'klen/python-mode'
+Bundle 'vim-scripts/Efficient-python-folding'
+"Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Twinside/vim-hoogle'
+"Bundle 'Shougo/neocomplcache-clang_complete'
+"Bundle 'Rip-Rip/clang_complete'
 "Bundle 'tomtom/tcomment_vim'
 "Bundle 'javacomplete'
 "Bundle 'ZoomWin'
@@ -53,7 +57,6 @@ Bundle 'godlygeek/tabular'
 "Bundle 'vim-ruby/vim-ruby'
 "Bundle 'sickill/vim-pasta'
 "Bundle 'SirVer/ultisnips'
-"Bundle 'mileszs/ack.vim'
 "Bundle 'ervandew/supertab'
 "Bundle 'scrooloose/nerdtree'
 "Bundle 'scrooloose/snipmate-snippets'
@@ -117,7 +120,8 @@ set backspace=eol,start,indent " backspace config
 "set foldmethod=indent
 "set foldmethod=syntax
 "set foldnestmax=10
-set nofoldenable
+"set nofoldenable
+set foldlevelstart=99
 "set foldlevel=1
 
 " omni set - dunno if this is necessary or what it really does
@@ -160,6 +164,7 @@ set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem,*.pyc
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*.swp,*~,._*
 set formatoptions-=o " dont continue comments when pushing o/O
+set formatoptions-=r " dont continue comments when pushing enter
 set mouse=n
 "set ttymouse=xterm2
 set pastetoggle=<F2>
@@ -174,13 +179,14 @@ set sm "automatic brace matching
 
 " tab settings
 set tabstop=4 " tab is 4 spaces
-"set expandtab " replace tabs w/ spaces. insert real tab with C-v tab
+set expandtab " replace tabs w/ spaces. insert real tab with C-v tab
 set autoindent
 set copyindent " copy previous indentation when autoindenting
 set smartindent
 set shiftwidth=4 " number of spaces for autoindenting
 set smarttab " inserts tabs at beginning of line according to shiftwidth instead of tabstop
 set softtabstop=4 "length of 'soft' tabs. should be the same as other tab lengths
+set shiftround "indent to multiple of tab
 
 set list
 "set listchars=tab:>.,trail:.,extends:#,nbsp:. "make vim show all whitespace
@@ -189,3 +195,4 @@ set listchars=tab:»\ ,trail:·,eol:¬,
 
 "make the timeout shorter than the default 1000ms
 set timeoutlen=400
+nnoremap <F5> "=strftime("%Y-%m-%d %H:%M")<CR>P

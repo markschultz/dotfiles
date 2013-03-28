@@ -1,7 +1,7 @@
 
-"""ack
+"""python-mode
 
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+
 
 
 """ctrlp
@@ -107,3 +107,8 @@ let g:haskell_conceal = 0
 """ZoomWin
 
 map <leader>zw :ZoomWin<cr>
+
+
+"""neco-ghc
+
+let g:necoghc_enable_detailed_browse=1
