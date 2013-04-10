@@ -7,12 +7,12 @@
 (package-initialize)
 
 ;; check if the package is installed; if not, install it.
-(mapc
-  (lambda (package)
-    (or (package-installed-p package)
-        (if (y-or-n-p (format "Package %s is missing. Install it? " package))
-          (package-install package))))
-  '(evil surround yasnippet fsharp-mode haskell-mode ghc))
+;;(mapc
+;;  (lambda (package)
+;;    (or (package-installed-p package)
+;;        (if (y-or-n-p (format "Package %s is missing. Install it? " package))
+;;          (package-install package))))
+;;  '(evil surround yasnippet fsharp-mode haskell-mode ghc))
 
 ;;(require 'fsharp-mode)
 

@@ -10,3 +10,5 @@ haskellmode.config
 vim/note_tag_index
 *fonts.dir*
 *fonts.scale*
+emacs.d/elpa
+emacs.d/auto-save-list
