@@ -1,3 +1,7 @@
+Host acm
+    User mxs802
+    Hostname acm-people.case.edu
+
 Host rpi
 	User root
 	Hostname rpi1.case.edu

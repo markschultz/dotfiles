@@ -14,17 +14,7 @@
 ;;          (package-install package))))
 ;;  '(evil surround yasnippet fsharp-mode haskell-mode ghc))
 
-;;(require 'fsharp-mode)
-
-;;(require 'ghc)
-
-;;(require 'evil)
 (evil-mode 1)
-
-;;(require 'surround)
-(global-surround-mode 1)
-
-;;(require 'yasnippet)
 (yas-global-mode t)
 
 (when (require 'auto-complete-config)
@@ -34,3 +24,14 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 (add-to-list 'completion-ignored-extensions ".hi")
 (global-auto-complete-mode 1)
+
+(require 'fsharp-mode)
+(setq inferior-fsharp-program "/usr/local/bin/fsharpi --readline-")
+(setq fsharp-compiler "/usr/local/bin/fsharpc")
+(setq fsharp-ac-use-popup 1)
+(setq fsharp-doc-idle-delay 1)
+(setq fsharp-ac-intellisense-enabled 1)
+(add-hook 'fsharp-mode-hook
+          (lambda ()
+            (define-key fsharp-mode-map (kbd "M-RET") 'fsharp-eval-region)
+            (define-key fsharp-mode-map (kbd "M-C-i") 'completion-at-point)))
