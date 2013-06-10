@@ -24,7 +24,8 @@ autocmd FileType svn, *commit*, *COMMIT* setlocal spell spelllang=en_us
 "autocmd FileType haskell compiler ghc
 autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,config.ru,*.rake} set ft=ruby
 autocmd BufRead,BufNewFile *.json setlocal ft=javascript
-autocmd BufNewFile,BufRead *.gp,*.gnuplot,*.plt setlocal ft=gnuplot
+autocmd BufRead,BufNewFile *.gp,*.gnuplot,*.plt setlocal ft=gnuplot
+autocmd BufRead,BufNewFile *mutt-* setlocal ft=mail
 autocmd BufWritePost *vimrc source ~/.vimrc " when vimrc is saved, reload it
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
