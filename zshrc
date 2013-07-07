@@ -8,6 +8,7 @@ export SDL_VIDEO_FULLSCREEN_HEAD=1
 export FCEDIT=vim
 export EDITOR=vim
 export ALTERNATE_EDITOR=""
+export MONO_GAC_PREFIX=/usr
 #export CLASSPATH=/home/eskimod/android-sdk-linux/platforms/android-15/android.jar:$CLASSPATH
 #export CLASSPATH=/usr/share/java/junit.jar:$CLASSPATH
 #export CLASSPATH=/usr/share/java:$CLASSPATH
