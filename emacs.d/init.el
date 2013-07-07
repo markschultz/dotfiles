@@ -1,5 +1,6 @@
 (custom-set-variables
-  '(inhibit-startup-screen t))
+ '(custom-safe-themes (quote ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+ '(inhibit-startup-screen t))
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
@@ -12,10 +13,16 @@
 ;;    (or (package-installed-p package)
 ;;        (if (y-or-n-p (format "Package %s is missing. Install it? " package))
 ;;          (package-install package))))
-;;  '(evil surround yasnippet fsharp-mode haskell-mode ghc))
+;;  '(evil surround yasnippet auto-complete fsharp-mode haskell-mode ghc))
 
 (evil-mode 1)
 (yas-global-mode t)
+(ido-mode t)
+(ido-everywhere t)
+(ido-ubiquitous-mode 1)
+(setq ido-enable-flex-matching t)
+(setq tramp-default-method "ssh")
+(eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
 
 (when (require 'auto-complete-config)
   (ac-config-default)

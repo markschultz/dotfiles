@@ -37,7 +37,9 @@ export PATH=~/bin:~/.xmonad/bin:~/.cabal/bin:~/android-sdk-linux/platform-tools:
 
 # Customize to your needs...
 #stty -ixon -ixoff
-alias sudo='sudo ' # space after checks next word for alias
+alias sudo='nocorrect sudo ' # space after checks next word for alias
+unalias mv
+unalias mkdir
 alias svim='sudoedit'
 alias emacs='emacsclient -t'
 alias blog='BlogLiterately -w -g --blog http://eskimod.net/blog/xmlrpc.php --user eskimod --password poster'
@@ -48,6 +50,8 @@ alias sar='LANG=C sar'
 alias open='gnome-open'
 alias packers='packer --noedit --noconfirm'
 alias packerd='packer --noedit --noconfirm --devel'
+alias paczfsr='sudo pacman -R zfs zfs-utils spl spl-utils'
+alias paczfsi='sudo packers -S spl-utils && sudo packers -S spl && sudo packers -S zfs-utils && sudo packers -S zfs'
 alias pidgin='NSS_SSL_CBC_RANDOM_IV=0 pidgin'
 alias upgradey='sudo apt-get update && sudo apt-get -y upgrade'
 alias upgrade='sudo apt-get update && sudo apt-get upgrade'

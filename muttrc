@@ -36,6 +36,12 @@ set send_charset = "us-ascii:utf-8"
 set mailcap_path = ~/.mutt/mailcap
 
 auto_view text/html
+alternative_order text/plain text/html *
+set auto_tag = yes
+ignore "Authentication-Results:"
+ignore "DomainKey-Signature:"
+ignore "DKIM-Signature:"
+hdr_order Date From To Cc
 
 set move = no
 set include = yes
