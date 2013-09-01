@@ -27,7 +27,7 @@
 (global-set-key (kbd "C-(") 'er/expand-region)
 (global-set-key (kbd "C-)") 'er/contract-region)
 (pending-delete-mode t)
-(add-hook 'after-init-hook #'global-flycheck-mode)
+;;(add-hook 'after-init-hook #'global-flycheck-mode)
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C-<") 'mc/mark-next-like-this)
@@ -46,13 +46,15 @@
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
-
-
+(require 'emmet-mode)
+(require 'ac-dabbrev)
 (when (require 'auto-complete-config)
   (ac-config-default)
-  (add-to-list 'ac-sources 'ac-source-yasnippet))
+  (add-to-list 'ac-sources 'ac-source-yasnippet ac-source-dabbrev))
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+(add-hook 'sgml-mode-hook 'ac-emmet-html-setup)
+(add-hook 'css-mode-hook 'ac-emmet-css-setup)
 (add-to-list 'completion-ignored-extensions ".hi")
 (global-auto-complete-mode 1)
 
@@ -66,3 +68,11 @@
           (lambda ()
             (define-key fsharp-mode-map (kbd "M-RET") 'fsharp-eval-region)
             (define-key fsharp-mode-map (kbd "M-C-i") 'completion-at-point)))
+
+(require 'elixir-mode)
+(add-to-list 'elixir-mode-hook
+	     (defun auto-activate-ruby-end-mode-for-elixir-mode ()
+	       (set (make-variable-buffer-local 'ruby-end-expand-keywords-before-re)
+		    "\\(?:^\\|\\s-+\\)\\(?:do\\)")
+	       (set (make-variable-buffer-local 'ruby-end-check-statement-modifiers) nil)
+	       (ruby-end-mode +1)))
