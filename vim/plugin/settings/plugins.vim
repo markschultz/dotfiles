@@ -112,3 +112,8 @@ map <leader>zw :ZoomWin<cr>
 """neco-ghc
 
 let g:necoghc_enable_detailed_browse=1
+
+
+"""python-mode
+
+let g:pymode_rope = 0

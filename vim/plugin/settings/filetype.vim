@@ -28,11 +28,6 @@ autocmd BufRead,BufNewFile *.gp,*.gnuplot,*.plt setlocal ft=gnuplot
 autocmd BufRead,BufNewFile *mutt-* setlocal ft=mail
 autocmd BufWritePost *vimrc source ~/.vimrc " when vimrc is saved, reload it
 autocmd BufReadPost fugitive://* set bufhidden=delete
-
-augroup filetypedetect
-	"mail
-	autocmd BufRead,BufNewFile *mutt-*		setfiletype mail
-augroup END
 autocmd FileType mail setlocal spell spelllang=en_us
 autocmd FileType mail nmap <F3> gqap
 autocmd FileType mail nmap <F4> gqqj
