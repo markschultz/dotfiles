@@ -117,3 +117,22 @@ let g:necoghc_enable_detailed_browse=1
 """python-mode
 
 let g:pymode_rope = 0
+
+
+"""ultisnips
+let g:UltiSnipsExpandTrigger="<s-tab>"
+let g:UltiSnipsListSnippets="<c-s-esc>"
+
+
+"""supertab
+
+"let g:SuperTabDefaultCompletionType = '<C-Tab>'
+
+
+"""youcompleteme
+
+"let g:ycm_key_list_select_completion = ['<C-Tab>','<Down>']
+let g:ycm_key_list_previous_completion = ['<C-S-Tab>','<Up>']
+let g:ycm_semantic_triggers = {
+    \ 'fsharp' : ['.'],
+    \}
