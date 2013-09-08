@@ -67,6 +67,21 @@ endif
 "let g:Powerline_symbols = 'compatible'
 
 
+"""airline
+
+"let g:airline_powerline_fonts = 1
+let g:airline_theme = 'solarized'
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+if $POWERLINE==1
+    " unicode symbols
+    let g:airline_symbols = {}
+    let g:airline_symbols.branch = '⭠'
+    let g:airline_symbols.readonly = '⭤'
+    let g:airline_symbols.linenr = '⭡'
+endif
+
+
 """syntastic
 
 " mark syntax errors with :signs
@@ -136,3 +151,4 @@ let g:ycm_key_list_previous_completion = ['<C-S-Tab>','<Up>']
 let g:ycm_semantic_triggers = {
     \ 'fsharp' : ['.'],
     \}
+let g:ycm_auto_start_csharp_server = 1

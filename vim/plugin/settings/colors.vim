@@ -1,4 +1,3 @@
-
 if $SOLARIZED
 	color solarized
 else
