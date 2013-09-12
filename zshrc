@@ -43,6 +43,7 @@ unalias mv
 unalias mkdir
 alias less='less -R'
 alias tmux='TERM=screen-256color-bce tmux'
+alias cvim='POWERLINE=0 SOLARIZED=0 vim'
 alias svim='sudoedit'
 alias emacs='emacsclient -t'
 alias blog='BlogLiterately -w -g --blog http://eskimod.net/blog/xmlrpc.php --user eskimod --password poster'
