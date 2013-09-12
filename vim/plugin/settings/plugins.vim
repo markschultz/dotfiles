@@ -73,12 +73,17 @@ endif
 let g:airline_theme = 'solarized'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
+let g:airline_symbols = {}
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.whitespace = 'Ξ'
 if $POWERLINE==1
     " unicode symbols
-    let g:airline_symbols = {}
     let g:airline_symbols.branch = '⭠'
     let g:airline_symbols.readonly = '⭤'
     let g:airline_symbols.linenr = '⭡'
+else
+    let g:airline_symbols.linenr = '␊'
+    let g:airline_symbols.branch = '⎇'
 endif
 
 
@@ -148,7 +153,19 @@ let g:UltiSnipsListSnippets="<c-s-esc>"
 
 "let g:ycm_key_list_select_completion = ['<C-Tab>','<Down>']
 let g:ycm_key_list_previous_completion = ['<C-S-Tab>','<Up>']
-let g:ycm_semantic_triggers = {
-    \ 'fsharp' : ['.'],
-    \}
+let g:ycm_semantic_triggers =  {
+  \   'c' : ['->', '.'],
+  \   'objc' : ['->', '.'],
+  \   'ocaml' : ['.', '#'],
+  \   'cpp,objcpp' : ['->', '.', '::'],
+  \   'perl' : ['->'],
+  \   'php' : ['->', '::'],
+  \   'cs,java,javascript,d,vim,python,perl6,scala,vb,elixir,go' : ['.'],
+  \   'ruby' : ['.', '::'],
+  \   'lua' : ['.', ':'],
+  \   'erlang' : [':'],
+  \   'fsharp' : ['.'],
+  \   'haskell' : ['.'],
+  \ }
 let g:ycm_auto_start_csharp_server = 1
+let g:ycm_cache_omnifunc = 0

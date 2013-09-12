@@ -41,6 +41,7 @@ export PATH=~/bin:~/.xmonad/bin:~/.cabal/bin:~/android-sdk-linux/platform-tools:
 alias sudo='nocorrect sudo ' # space after checks next word for alias
 unalias mv
 unalias mkdir
+alias less='less -R'
 alias tmux='TERM=screen-256color-bce tmux'
 alias svim='sudoedit'
 alias emacs='emacsclient -t'
