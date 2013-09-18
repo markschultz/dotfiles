@@ -27,7 +27,7 @@ export ZSH_THEME="rkj-repos"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow vundle extract deb rails3 ruby rake gpg-agent ssh-agent)
+plugins=(git git-flow vundle extract deb rails3 ruby rake)
 
 source $ZSH/oh-my-zsh.sh
 if [ -e ~/.zshrc.local ]
