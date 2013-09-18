@@ -39,6 +39,6 @@
 [branch]
 	autosetupmerge = true
 [credential]
-	helper = store
+	helper = /usr/share/git/credential/gnome-keyring/git-credential-gnome-keyring
 [push]
 	default = simple

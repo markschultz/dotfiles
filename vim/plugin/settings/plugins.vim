@@ -8,6 +8,7 @@
 
 " default ctrl-p interferes with yankring
 "let g:ctrlp_map = ',t'
+let g:ctrlp_cmd = 'CtrlPMixed'
 
 " working path mode - the nearest ancestor that contains revision control
 " directory
