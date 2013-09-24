@@ -183,7 +183,7 @@ set incsearch
 set sm "automatic brace matching
 
 " tab settings
-set tabstop=4 " tab is 4 spaces
+set tabstop=8 " tab is 4 spaces
 set expandtab " replace tabs w/ spaces. insert real tab with C-v tab
 set autoindent
 set copyindent " copy previous indentation when autoindenting
