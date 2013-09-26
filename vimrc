@@ -3,46 +3,46 @@ set nocompatible " be iMproved
 filetype off     " required!
 
 set rtp+=~/.vim/bundle/vundle/
-"call vundle#rc()
+call vundle#rc()
 
 " let Vundle manage Vundle
 " required!
-"Bundle 'gmarik/vundle'
+Bundle 'gmarik/vundle'
 
 " My installed bundles
 " github repos
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'tpope/vim-surround'
-"Bundle 'tpope/vim-repeat'
-"Bundle 'tpope/vim-vividchalk'
-"Bundle 'tpope/vim-unimpaired'
-"Bundle 'tpope/vim-endwise'
-"Bundle 'tpope/vim-git'
-"Bundle 'tpope/vim-markdown'
-"Bundle 'tpope/vim-dispatch'
-"Bundle 'bling/vim-airline'
-"Bundle 'timrobinson/fsharp-vim'
-"Bundle 'dag/vim2hs'
-"Bundle 'Raimondi/delimitMate'
-"Bundle 'ujihisa/neco-ghc'
-"Bundle 'altercation/vim-colors-solarized'
-"Bundle 'mattn/gist-vim'
-"Bundle 'mattn/webapi-vim'
-"Bundle 'mattn/emmet-vim'
-"Bundle 'kien/ctrlp.vim'
-"Bundle 'scrooloose/syntastic'
-"Bundle 'majutsushi/tagbar'
-"Bundle 'bitc/lushtags'
-"Bundle 'sjl/gundo.vim'
-"Bundle 'godlygeek/tabular'
-"Bundle 'mileszs/ack.vim'
-"Bundle 'klen/python-mode'
-"Bundle 'Valloric/YouCompleteMe'
-"Bundle 'SirVer/ultisnips'
-"Bundle 'honza/vim-snippets'
-"Bundle 'elixir-lang/vim-elixir'
-"Bundle 'mattonrails/vim-mix'
-"Bundle 'terryma/vim-multiple-cursors'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-vividchalk'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-dispatch'
+Bundle 'bling/vim-airline'
+Bundle 'timrobinson/fsharp-vim'
+Bundle 'dag/vim2hs'
+Bundle 'Raimondi/delimitMate'
+Bundle 'ujihisa/neco-ghc'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/emmet-vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'majutsushi/tagbar'
+Bundle 'bitc/lushtags'
+Bundle 'sjl/gundo.vim'
+Bundle 'godlygeek/tabular'
+Bundle 'mileszs/ack.vim'
+Bundle 'klen/python-mode'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'mattonrails/vim-mix'
+Bundle 'terryma/vim-multiple-cursors'
 
 "Bundle 'Lokaltog/vim-powerline'
 "Bundle 'rstacruz/sparkup'
@@ -99,11 +99,13 @@ set rtp+=~/.vim/bundle/vundle/
 
 filetype plugin indent on " required!
 syntax enable " syntax highlighting
-
+"if filereadable(expand("~/.vim/settings/colors.vim"))
+    "source ~/.vim/settings/colors.vim
+"endif
 " source other files
-"for f in split(glob('~/.vim/plugin/settings/*.vim'), '\n')
-"   exe 'source' f
-"endfor
+for f in split(glob('~/.vim/settings/*.vim'), '\n')
+   exe 'source' f
+endfor
 
 set laststatus=2 " statusline is 2 rows
 set t_Co=256
