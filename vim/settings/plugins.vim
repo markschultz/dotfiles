@@ -70,21 +70,22 @@ endif
 
 """airline
 
-"let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 let g:airline_theme = 'solarized'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
-let g:airline_symbols = {}
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.whitespace = 'Ξ'
+"let g:airline_symbols = {}
+"let g:airline_symbols.paste = 'ρ'
+"let g:airline_symbols.space = ' '
+"let g:airline_symbols.whitespace = 'Ξ'
 if $POWERLINE==1
     " unicode symbols
-    let g:airline_symbols.branch = '⭠'
-    let g:airline_symbols.readonly = '⭤'
-    let g:airline_symbols.linenr = '⭡'
+"    let g:airline_symbols.branch = '⭠'
+"    let g:airline_symbols.readonly = '⭤'
+"    let g:airline_symbols.linenr = '⭡'
 else
-    let g:airline_symbols.linenr = '␊'
-    let g:airline_symbols.branch = '⎇'
+"    let g:airline_symbols.linenr = '␊'
+"    let g:airline_symbols.branch = '⎇'
 endif
 
 

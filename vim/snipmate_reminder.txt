@@ -1,7 +1,0 @@
-to use scrooloose snippets instead of msanders snippets just change
-rakefile to point to snipmate.vim instead of snipmate and then run the
-rakefile.
-
-
-remember that 'snippet .' type snippets can mess with supertab
-by default change python and c snippets files.
