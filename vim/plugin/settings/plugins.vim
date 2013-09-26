@@ -16,10 +16,10 @@ let g:ctrlp_working_path_mode=2
 
 " ctrlp custom ignores
 let g:ctrlp_custom_ignore={
-	\ 'dir':  '\.git$\|\.hg$\|\.svn$',
-	\ 'file': '\.exe$\|\.so$\|\.dll$',
-	\ 'link': '',
-	\ }
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+    \ 'file': '\.exe$\|\.so$\|\.dll$',
+    \ 'link': '',
+    \ }
 
 " for buffer search
 "nnoremap <leader>b :CtrlPBuffer<CR>
@@ -60,10 +60,10 @@ let g:pandoc_auto_format=1
 """powerline
 
 if $POWERLINE==1
-	" 'fancy'/'unicode'/'compatible' symbols for powerline
-	let g:Powerline_symbols = 'fancy'
+    " 'fancy'/'unicode'/'compatible' symbols for powerline
+    let g:Powerline_symbols = 'fancy'
 else
-	let g:Powerline_symbols = 'unicode'
+    let g:Powerline_symbols = 'unicode'
 endif
 "let g:Powerline_symbols = 'compatible'
 
@@ -155,18 +155,18 @@ let g:UltiSnipsListSnippets="<c-s-esc>"
 "let g:ycm_key_list_select_completion = ['<C-Tab>','<Down>']
 let g:ycm_key_list_previous_completion = ['<C-S-Tab>','<Up>']
 let g:ycm_semantic_triggers =  {
-  \   'c' : ['->', '.'],
-  \   'objc' : ['->', '.'],
-  \   'ocaml' : ['.', '#'],
-  \   'cpp,objcpp' : ['->', '.', '::'],
-  \   'perl' : ['->'],
-  \   'php' : ['->', '::'],
-  \   'cs,java,javascript,d,vim,python,perl6,scala,vb,elixir,go' : ['.'],
-  \   'ruby' : ['.', '::'],
-  \   'lua' : ['.', ':'],
-  \   'erlang' : [':'],
-  \   'fsharp' : ['.'],
-  \   'haskell' : ['.'],
-  \ }
+    \   'c' : ['->', '.'],
+    \   'objc' : ['->', '.'],
+    \   'ocaml' : ['.', '#'],
+    \   'cpp,objcpp' : ['->', '.', '::'],
+    \   'perl' : ['->'],
+    \   'php' : ['->', '::'],
+    \   'cs,java,javascript,d,vim,python,perl6,scala,vb,elixir,go' : ['.'],
+    \   'ruby' : ['.', '::'],
+    \   'lua' : ['.', ':'],
+    \   'erlang' : [':'],
+    \   'fsharp' : ['.'],
+    \   'haskell' : ['.'],
+    \ }
 let g:ycm_auto_start_csharp_server = 1
 let g:ycm_cache_omnifunc = 0
