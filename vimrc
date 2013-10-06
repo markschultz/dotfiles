@@ -30,6 +30,7 @@ Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/emmet-vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'JazzCore/ctrlp-cmatcher'
 Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 Bundle 'bitc/lushtags'
@@ -42,6 +43,7 @@ Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'mattonrails/vim-mix'
+Bundle 'rodjek/vim-puppet'
 Bundle 'terryma/vim-multiple-cursors'
 
 "Bundle 'Lokaltog/vim-powerline'
@@ -145,7 +147,7 @@ set colorcolumn=80 " 80 char 'column'
 set autoread " reload file when its been modified from the outside
 set ttyfast
 set showcmd " show last cmd in bottom right corner
-"set number " line numbers
+set number " line numbers
 set relativenumber " relative line numbers
 set ruler
 set so=5 " scroll lines to keep above and below the cursor

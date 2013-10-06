@@ -10,6 +10,9 @@
 "let g:ctrlp_map = ',t'
 let g:ctrlp_cmd = 'CtrlPMixed'
 
+" use external matcher for speed and better fuzzy
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch'}
+
 " working path mode - the nearest ancestor that contains revision control
 " directory
 let g:ctrlp_working_path_mode=2
