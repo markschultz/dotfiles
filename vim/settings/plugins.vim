@@ -100,6 +100,7 @@ let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warning=0
 " show error list automatically
 let g:syntastic_auto_loc_list=2
+let g:syntastic_haskell_checkers=['hdevtools', 'hlint']
 " in active mode passive languages are ignored in passive mode active
 " languages are active
 "let g:syntastic_mode_map = { 'mode': 'active',
@@ -172,5 +173,4 @@ let g:ycm_semantic_triggers =  {
     \   'fsharp' : ['.'],
     \   'haskell' : ['.'],
     \ }
-let g:ycm_auto_start_csharp_server = 1
 let g:ycm_cache_omnifunc = 0

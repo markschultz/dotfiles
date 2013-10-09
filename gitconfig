@@ -43,3 +43,5 @@
         #helper = store
 [push]
 	default = simple
+[diff]
+	ignoreSubmodules = dirty
