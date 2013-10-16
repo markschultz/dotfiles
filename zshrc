@@ -34,7 +34,7 @@ if [ -e ~/.zshrc.local ]
 then
 	source ~/.zshrc.local
 fi
-export PATH=~/bin:~/.xmonad/bin:~/.cabal/bin:~/android-sdk-linux/platform-tools:/usr/local/go/bin:/usr/local/cuda/bin:$HOME/git/rbenv/bin:/root/.gem/ruby/2.0.0/bin:~/.gem/ruby/2.0.0/bin:$PATH
+export PATH=/usr/local/bin:~/bin:~/.xmonad/bin:~/.cabal/bin:~/android-sdk-linux/platform-tools:/usr/local/go/bin:/usr/local/cuda/bin:$HOME/git/rbenv/bin:/root/.gem/ruby/2.0.0/bin:~/.gem/ruby/2.0.0/bin:$PATH
 
 # Customize to your needs...
 #stty -ixon -ixoff

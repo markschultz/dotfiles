@@ -12,6 +12,9 @@ map ; :
 " double tap ; to get regular ; mapping
 noremap ;; ;
 
+" clear search highlight
+nmap // :noh<cr>
+
 " format the entire file
 nmap <leader>fef ggVG=
 
