@@ -1,0 +1,20 @@
+
+"""youcompleteme
+
+"let g:ycm_key_list_select_completion = ['<C-Tab>','<Down>']
+let g:ycm_key_list_previous_completion = ['<C-S-Tab>','<Up>']
+let g:ycm_semantic_triggers =  {
+    \   'c' : ['->', '.'],
+    \   'objc' : ['->', '.'],
+    \   'ocaml' : ['.', '#'],
+    \   'cpp,objcpp' : ['->', '.', '::'],
+    \   'perl' : ['->'],
+    \   'php' : ['->', '::'],
+    \   'cs,java,javascript,d,vim,python,perl6,scala,vb,elixir,go' : ['.'],
+    \   'ruby' : ['.', '::'],
+    \   'lua' : ['.', ':'],
+    \   'erlang' : [':'],
+    \   'fsharp' : ['.'],
+    \   'haskell' : ['.'],
+    \ }
+let g:ycm_cache_omnifunc = 1
