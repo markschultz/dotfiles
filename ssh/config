@@ -36,7 +36,7 @@ Host jinx
 
 Host *
 	Ciphers aes256-cbc,aes256-ctr
-	MACs hmac-sha2-512,hmac-sha2-256,hmac-ripemd160
+	MACs hmac-sha2-512,hmac-sha2-256,hmac-ripemd160,hmac-sha1
 	ControlMaster auto
 	ControlPath /tmp/%r@%h:%p
 	Compression yes

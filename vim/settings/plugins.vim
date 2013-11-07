@@ -1,9 +1,4 @@
 
-"""python-mode
-
-
-
-
 """ctrlp
 
 " default ctrl-p interferes with yankring
@@ -97,9 +92,9 @@ endif
 " mark syntax errors with :signs
 let g:syntastic_enable_signs=1
 " dont care about warnings
-let g:syntastic_quiet_warning=0
+let g:syntastic_quiet_warnings=1
 " show error list automatically
-let g:syntastic_auto_loc_list=2
+let g:syntastic_auto_loc_list=1
 "let g:syntastic_haskell_checkers=['hdevtools', 'hlint']
 " in active mode passive languages are ignored in passive mode active
 " languages are active
@@ -155,3 +150,7 @@ let g:UltiSnipsListSnippets="<c-s-esc>"
 "let g:SuperTabDefaultCompletionType = '<C-Tab>'
 
 
+"""ghcmod
+
+map <LocalLeader>gt :GhcModType
+map <LocalLeader>gc :GhcModTypeClear
