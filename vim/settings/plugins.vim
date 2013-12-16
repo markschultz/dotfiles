@@ -152,5 +152,6 @@ let g:UltiSnipsListSnippets="<c-s-esc>"
 
 """ghcmod
 
-map <LocalLeader>gt :GhcModType
-map <LocalLeader>gc :GhcModTypeClear
+map <leader>gt :GhcModType<cr>
+map <leader>gc :GhcModTypeClear<cr>
+map <leader>gi :GhcModTypeInsert<cr>
