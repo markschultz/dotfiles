@@ -20,5 +20,11 @@
 (depends-on "evil")
 (depends-on "ac-dabbrev")
 (depends-on "solarized-theme")
-;;(depends-on "color-theme-solarized")
-
+(depends-on "flycheck")
+(depends-on "hi2")
+(depends-on "surround")
+(depends-on "markdown-mode")
+(depends-on "emmet-mode")
+(depends-on "ido-ubiquitous")
+(depends-on "flx-ido")
+(depends-on "fsharp-mode")
