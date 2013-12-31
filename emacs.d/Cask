@@ -28,3 +28,8 @@
 (depends-on "ido-ubiquitous")
 (depends-on "flx-ido")
 (depends-on "fsharp-mode")
+(depends-on "autopair")
+(depends-on "undo-tree")
+(depends-on "rainbow-delimiters")
+(depends-on "ack-and-a-half")
+(depends-on "multiple-cursors")
