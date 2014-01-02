@@ -1,5 +1,8 @@
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(custom-safe-themes (quote ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(inhibit-startup-screen t))
 
@@ -9,14 +12,12 @@
 (evil-mode 1)
 (yas-global-mode 1)
 (add-hook 'text-mode-hook 'flyspell-mode)
-(add-hook 'prog-mode-hook 'flyspell-prog-mode)
 (ido-mode 1)
 (ido-everywhere 1)
 (ido-ubiquitous-mode 1)
 (setq ido-enable-flex-matching t)
 (flx-ido-mode 1)
 (menu-bar-mode -1)
-(setq ido-use-faces nil)
 (require 'smartparens-config)
 (smex-initialize)
 (require 'undo-tree)
@@ -27,6 +28,10 @@
 (global-rainbow-delimiters-mode)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'execute-extended-command)
+(setq backup-directory-alist
+    `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+    `((".*" ,temporary-file-directory t)))
 (require 'ack-and-a-half)
 ;; Create shorter aliases
 (defalias 'ack 'ack-and-a-half)
@@ -47,26 +52,14 @@
 (autopair-global-mode)
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (load (f-expand "flycheck-ghcmod.el" user-emacs-directory))
+(load (f-expand "my-haskell-mode-settings.el" user-emacs-directory))
 (eval-after-load 'flycheck
   '(require 'flycheck-ghcmod))
 (when (require 'auto-complete-config)
   (ac-config-default)
   (add-to-list 'ac-sources 'ac-source-yasnippet 'ac-source-dabbrev))
 (global-auto-complete-mode 1)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-(add-hook 'haskell-mode-hook 'turn-on-hi2)
-(add-hook 'haskell-mode-hook '(subword-mode +1))
 (add-to-list 'completion-ignored-extensions ".hi")
-(eval-after-load "haskell-mode"
-  '(progn
-     (define-key haskell-mode-map (kbd "C-x C-d") nil)
-     (define-key haskell-mode-map (kbd "C-c C-z") 'haskell-interactive-switch)
-     (define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-file)
-     (define-key haskell-mode-map (kbd "C-c C-b") 'haskell-interactive-switch)
-     (define-key haskell-mode-map (kbd "C-c C-t") 'haskell-process-do-type)
-     (define-key haskell-mode-map (kbd "C-c C-i") 'haskell-process-do-info)
-     (define-key haskell-mode-map (kbd "C-c M-.") nil)
-     (define-key haskell-mode-map (kbd "C-c C-d") nil)))
 (setq gc-cons-threshold 20000000)
 (require 'fsharp-mode)
 (setq inferior-fsharp-program "/usr/local/bin/fsharpi --readline-")
@@ -77,10 +70,9 @@
 (show-paren-mode 1)
 (setq x-select-enable-primary t)
 (setq x-select-enable-clipboard t)
-(setq backup-directory-alist
-    `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms
-    `((".*" ,temporary-file-directory t)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
-)
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

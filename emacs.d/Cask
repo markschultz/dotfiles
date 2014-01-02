@@ -33,3 +33,4 @@
 (depends-on "rainbow-delimiters")
 (depends-on "ack-and-a-half")
 (depends-on "multiple-cursors")
+(depends-on "omnisharp")
