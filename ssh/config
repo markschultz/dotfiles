@@ -1,23 +1,3 @@
-Host acm
-    User mxs802
-    Hostname acm-people.case.edu
-
-Host rpi
-	User root
-	Hostname rpi1.case.edu
-
-Host vorlon
-	User mxs802
-	Hostname vorlon.case.edu
-
-Host tauron
-	User eskimod
-	Hostname tauron.case.edu
-
-Host picon
-	User razor
-	Hostname picon.case.edu
-
 Host backup
 	User b1237146
 	Hostname hanjin.dreamhost.com
@@ -26,17 +6,9 @@ Host dreamhost
 	User eskimod
 	Hostname m9r1s.com
 
-Host roberto
-	User alpha
-	Hostname robertomini2.case.edu
-	
-Host jinx
-	User jinx
-	Hostname 192.168.0.150
-
 Host *
-	Ciphers aes256-cbc,aes256-ctr
-	MACs hmac-sha2-512,hmac-sha2-256,hmac-ripemd160,hmac-sha1
+	Ciphers aes256-gcm@openssh.com,aes256-ctr,aes256-cbc
+	MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,hmac-ripemd160,hmac-sha1
 	ControlMaster auto
 	ControlPath /tmp/%r@%h:%p
 	Compression yes
