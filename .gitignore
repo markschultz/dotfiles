@@ -12,5 +12,6 @@ vim/note_tag_index
 *fonts.scale*
 emacs.d/elpa
 emacs.d/auto-save-list
+emacs.d/.mc-lists.el
 emacs.d/.cask
 ac-comphist.dat
