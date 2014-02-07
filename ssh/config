@@ -2,6 +2,10 @@ Host backup
 	User b1237146
 	Hostname hanjin.dreamhost.com
 
+Host clot
+	User eskimod
+	Hostname clot.us
+
 Host dreamhost
 	User eskimod
 	Hostname m9r1s.com

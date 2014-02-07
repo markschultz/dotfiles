@@ -3,17 +3,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
- '(haskell-notify-p t)
- '(haskell-process-type (quote cabal-repl))
- '(haskell-stylish-on-save t)
- '(haskell-tags-on-save t)
- '(hi2-show-indentations nil)
+ '(custom-safe-themes (quote ("8f843e5541f51fe3072543d7f666355534c4341e05cea61c5085cebcb181f5ef" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+ ;;'(frame-background-mode (quote dark))
  '(inhibit-startup-screen t))
 
 (require 'cask "~/git/cask/cask.el")
 (cask-initialize)
 
+(add-to-list 'custom-theme-load-path "~/.emacs.d/solarized/")
+(load-theme 'solarized t)
 (evil-mode 1)
 (yas-global-mode 1)
 (add-hook 'text-mode-hook 'flyspell-mode)
@@ -23,7 +21,6 @@
 (setq ido-enable-flex-matching t)
 (flx-ido-mode 1)
 (menu-bar-mode -1)
-(require 'smartparens-config)
 (smex-initialize)
 (require 'undo-tree)
 (global-undo-tree-mode)
@@ -54,10 +51,12 @@
 (pending-delete-mode t)
 (require 'emmet-mode)
 (require 'ac-dabbrev)
-(autopair-global-mode)
 (add-hook 'after-init-hook #'global-flycheck-mode)
+(require 'shm)
 (load (f-expand "flycheck-ghcmod.el" user-emacs-directory))
 (load (f-expand "my-haskell-mode-settings.el" user-emacs-directory))
+(unless 'haskell-mode (require 'smartparens-config))
+(unless 'haskell-mode (autopair-global-mode))
 (eval-after-load 'flycheck
   '(require 'flycheck-ghcmod))
 (when (require 'auto-complete-config)
