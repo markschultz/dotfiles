@@ -25,7 +25,7 @@ Bundle 'timrobinson/fsharp-vim'
 Bundle 'feuerbach/ariadne-vim'
 Bundle 'dag/vim2hs'
 Bundle 'Raimondi/delimitMate'
-Bundle 'ujihisa/neco-ghc'
+Bundle 'eagletmt/neco-ghc'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
@@ -203,5 +203,5 @@ set listchars=tab:»\ ,trail:·,eol:¬,
 "set listchars=tab:▸\ ,eol:¬
 
 "make the timeout shorter than the default 1000ms
-set timeoutlen=400
+"set timeoutlen=400
 nnoremap <F5> "=strftime("%Y-%m-%d %H:%M")<CR>P

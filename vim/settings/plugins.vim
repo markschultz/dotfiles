@@ -33,8 +33,8 @@ let g:easytags_resolve_links=1
 """fugitive
 
 " For fugitive.git, dp means :diffput. Define dg to mean :diffget
-nnoremap <silent> ,dg :diffget<CR>
-nnoremap <silent> ,dp :diffput<CR>
+nnoremap <silent> <leader>rdg :diffget<CR>
+nnoremap <silent> <leader>dp :diffput<CR>
 
 
 """gist
@@ -92,7 +92,7 @@ endif
 " mark syntax errors with :signs
 let g:syntastic_enable_signs=1
 " dont care about warnings
-let g:syntastic_quiet_warnings=1
+let g:syntastic_quiet_messages={'level':'warnings'}
 " show error list automatically
 let g:syntastic_auto_loc_list=1
 "let g:syntastic_haskell_checkers=['hdevtools', 'hlint']

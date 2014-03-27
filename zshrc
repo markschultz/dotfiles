@@ -9,10 +9,6 @@ export FCEDIT=vim
 export EDITOR=vim
 export ALTERNATE_EDITOR=""
 export MONO_GAC_PREFIX=/usr
-#export CLASSPATH=/home/eskimod/android-sdk-linux/platforms/android-15/android.jar:$CLASSPATH
-#export CLASSPATH=/usr/share/java/junit.jar:$CLASSPATH
-#export CLASSPATH=/usr/share/java:$CLASSPATH
-#export PATH=$PATH:
 unsetopt nomatch
 setopt autopushd
 #ulimit -c unlimited
@@ -22,7 +18,8 @@ bindkey -e
 #export ZSH_THEME="flazz"
 #export ZSH_THEME="jreese"
 #export ZSH_THEME="afowler"
-export ZSH_THEME="rkj-repos"
+#export ZSH_THEME="rkj-repos"
+export ZSH_THEME="xiong-chiamiov-plus"
 
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
@@ -45,10 +42,7 @@ alias less='less -R'
 alias tmux='TERM=screen-256color-bce tmux'
 alias cvim='POWERLINE=0 SOLARIZED=0 vim'
 alias svim='sudoedit'
-alias emacs='emacsclient -t'
-alias blog='BlogLiterately -w -g --blog http://eskimod.net/blog/xmlrpc.php --user eskimod --password poster'
-alias irssissh='ssh -L 1234:irc.freenode.net:6667 thenihilistx@clamham.com'
-alias ssheecs='ssh mxs802@eecslinab.case.edu'
+alias emacs='emacsclient'
 alias sshx='ssh -XC'
 alias sar='LANG=C sar'
 alias open='gnome-open'
@@ -62,4 +56,3 @@ alias upgrade='sudo apt-get update && sudo apt-get upgrade'
 export TERM=rxvt-unicode-256color
 #[ -n "$TMUX" ] && export TERM=screen-256color
 eval `dircolors ~/.dircolors.256-dark`
-#eval "$(rbenv init -)"

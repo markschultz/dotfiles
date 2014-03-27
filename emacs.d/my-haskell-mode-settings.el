@@ -45,14 +45,13 @@
 ;; Haskell main editing mode key bindings.
 (defun haskell-hook ()
   ;; Use hi2 indentation.
-  ;;(turn-on-hi2)
-  (structured-haskell-mode)
-  ;; smartparens config
-  (sp-pair "(" ")" :actions :rem)
+  (turn-on-hi2)
+  ;;(structured-haskell-mode)
+  ;;(setq evil-auto-indent nil)
   (turn-on-haskell-doc)
   (turn-on-haskell-decl-scan)
-  ;;(define-key haskell-mode-map (kbd "<return>") 'haskell-simple-indent-newline-same-col)
-  ;;(define-key haskell-mode-map (kbd "C-<return>") 'haskell-simple-indent-newline-indent)
+  (define-key haskell-mode-map (kbd "<return>") 'haskell-simple-indent-newline-same-col)
+  (define-key haskell-mode-map (kbd "C-<return>") 'haskell-simple-indent-newline-indent)
 
   ;; Load the current file (and make a session if not already made).
   (define-key haskell-mode-map [?\C-c ?\C-l] 'haskell-process-load-file)

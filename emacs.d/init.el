@@ -4,7 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes (quote ("8f843e5541f51fe3072543d7f666355534c4341e05cea61c5085cebcb181f5ef" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
- ;;'(frame-background-mode (quote dark))
+ '(frame-background-mode (quote dark))
  '(inhibit-startup-screen t))
 
 (require 'cask "~/git/cask/cask.el")
@@ -52,11 +52,13 @@
 (require 'emmet-mode)
 (require 'ac-dabbrev)
 (add-hook 'after-init-hook #'global-flycheck-mode)
-(require 'shm)
+(add-hook 'python-mode-hook 'jedi:setup)
+;;(require 'shm)
 (load (f-expand "flycheck-ghcmod.el" user-emacs-directory))
 (load (f-expand "my-haskell-mode-settings.el" user-emacs-directory))
-(unless 'haskell-mode (require 'smartparens-config))
-(unless 'haskell-mode (autopair-global-mode))
+;;(add-to-list 'sp-ignore-mode-list "haskell-mode")
+(require 'smartparens-config)
+(smartparens-global-mode 1)
 (eval-after-load 'flycheck
   '(require 'flycheck-ghcmod))
 (when (require 'auto-complete-config)
@@ -71,6 +73,12 @@
 (setq fsharp-ac-use-popup 1)
 (setq fsharp-doc-idle-delay 1)
 (setq fsharp-ac-intellisense-enabled 1)
+(add-to-list 'elixir-mode-hook
+	     (defun auto-activate-ruby-end-mode ()
+	       (set (make-variable-buffer-local 'ruby-end-expand-keywords-before-re)
+		    "\\(?:^\\|\\s-+\\)\\(?:do\\)")
+	       (set (make-variable-buffer-local 'ruby-end-check-statement-modifiers) nil)
+	       (ruby-end-mode +1)))
 (show-paren-mode 1)
 (setq x-select-enable-primary t)
 (setq x-select-enable-clipboard t)
