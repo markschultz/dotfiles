@@ -49,10 +49,10 @@ alias open='gnome-open'
 alias packers='packer --noedit --noconfirm'
 alias packerd='packer --noedit --noconfirm --devel'
 alias paczfsr='sudo pacman -R zfs-git zfs-utils-git spl-git spl-utils-git'
-alias paczfsi='sudo packers -S spl-utils-git && sudo packers -S spl-git && sudo packers -S zfs-utils-git && sudo packers -S zfs-git && sudo zfs mount -a'
+alias paczfsi='sudo yaourt -S zfs-git --noconfirm && sudo zfs mount -a'
 alias pidgin='NSS_SSL_CBC_RANDOM_IV=0 pidgin'
 alias upgradey='sudo apt-get update && sudo apt-get -y upgrade'
 alias upgrade='sudo apt-get update && sudo apt-get upgrade'
-export TERM=rxvt-unicode-256color
+#export TERM=rxvt-unicode-256color
 #[ -n "$TMUX" ] && export TERM=screen-256color
 eval `dircolors ~/.dircolors.256-dark`
