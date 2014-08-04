@@ -36,8 +36,8 @@ export PATH=/usr/local/bin:~/bin:~/.xmonad/bin:~/.cabal/bin:~/android-sdk-linux/
 # Customize to your needs...
 #stty -ixon -ixoff
 alias sudo='nocorrect sudo ' # space after checks next word for alias
-unalias mv
-unalias mkdir
+#unalias mv
+#unalias mkdir
 alias less='less -R'
 alias tmux='TERM=screen-256color-bce tmux'
 alias cvim='POWERLINE=0 SOLARIZED=0 vim'
@@ -56,3 +56,5 @@ alias upgrade='sudo apt-get update && sudo apt-get upgrade'
 #export TERM=rxvt-unicode-256color
 #[ -n "$TMUX" ] && export TERM=screen-256color
 eval `dircolors ~/.dircolors.256-dark`
+envoy
+source <(envoy -p)
