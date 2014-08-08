@@ -58,3 +58,4 @@ alias upgrade='sudo apt-get update && sudo apt-get upgrade'
 eval `dircolors ~/.dircolors.256-dark`
 envoy
 source <(envoy -p)
+xrdb -merge ~/.Xresources
