@@ -155,3 +155,8 @@ let g:UltiSnipsListSnippets="<c-s-esc>"
 map <leader>gt :GhcModType<cr>
 map <leader>gc :GhcModTypeClear<cr>
 map <leader>gi :GhcModTypeInsert<cr>
+
+
+"""vimfiler
+
+let g:vimfiler_as_default_explorer = 1
