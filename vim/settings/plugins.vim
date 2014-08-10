@@ -160,3 +160,18 @@ map <leader>gi :GhcModTypeInsert<cr>
 """vimfiler
 
 let g:vimfiler_as_default_explorer = 1
+
+
+"""unite
+
+let g:unite_source_history_yank_enable = 1
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+nnoremap <leader>y :<C-u>Unite -buffer-name=yank history/yank<cr>
+nnoremap <C-p> :<C-u>Unite -buffer-name=files -start-insert file_rec/async:!<cr>
+nnoremap <leader>/ :<C-u>Unite grep:.<cr>
+nnoremap <leader>b :Unite -buffer-name=buffers -quick-match buffer<cr>
+if executable('ack-grep')
+    let g:unite_source_grep_command = 'ack-grep'
+    let g:unite_source_grep_default_opts = '-i --no-heading --no-color -k -H'
+    let g:unite_source_grep_recursive_opt = ''
+endif
