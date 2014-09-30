@@ -1,4 +1,0 @@
-[gcalcli]
-user: schultzm8
-pw: `gpg2 -dq ~/.schultzm8.gpg`
-24hr: true
