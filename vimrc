@@ -31,7 +31,8 @@ NeoBundle 'mattn/emmet-vim'
 "NeoBundle 'JazzCore/ctrlp-cmatcher'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'majutsushi/tagbar'
-NeoBundle 'bitc/lushtags'
+"NeoBundle 'bitc/lushtags'
+NeoBundle 'marijnh/tern_for_vim', {'build': {'unix': 'npm install'}}
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'klen/python-mode'
@@ -47,6 +48,9 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Shougo/vimproc', {'build': {'unix': 'make -f make_unix.mak', 'windows': 'tools\\update-dll-mingw', 'mac': 'make -f make_mac.mak'}}
 NeoBundle 'eagletmt/ghcmod-vim'
+
+"javascript/angular
+NeoBundle 'burnettk/vim-angular'
 
 "NeoBundle 'sjl/clam.vim'
 "Bundle 'Valloric/YouCompleteMe'
@@ -208,3 +212,6 @@ set listchars=tab:»\ ,trail:·,eol:¬,
 "make the timeout shorter than the default 1000ms
 "set timeoutlen=400
 nnoremap <F5> "=strftime("%Y-%m-%d %H:%M")<CR>P
+
+"for hothasktags
+"set iskeyword+=.

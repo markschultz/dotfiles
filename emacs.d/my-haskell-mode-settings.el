@@ -25,7 +25,7 @@
 (custom-set-variables
  ;; Use cabal-dev for the GHCi session. Ensures our dependencies are in scope.
  '(haskell-process-type 'cabal-repl)
- 
+
  ;; Use notify.el (if you have it installed) at the end of running
  ;; Cabal commands or generally things worth notifying.
  '(haskell-notify-p t)
@@ -37,13 +37,18 @@
  '(hi2-show-indentations nil)
 
  ;; To enable stylish on save.
- '(haskell-stylish-on-save t))
+ '(haskell-stylish-on-save nil))
 
 (add-hook 'haskell-mode-hook 'haskell-hook)
 (add-hook 'haskell-cabal-mode-hook 'haskell-cabal-hook)
 
 ;; Haskell main editing mode key bindings.
 (defun haskell-hook ()
+  ;; Set ghc-mod init
+  (autoload 'ghc-init "ghc" nil t)
+  (autoload 'ghc-debug "ghc" nil t)
+  (ghc-init)
+  (add-to-list 'company-backends '(company-ghc :with company-dabbrev-code))
   ;; Use hi2 indentation.
   (turn-on-hi2)
   ;;(structured-haskell-mode)
