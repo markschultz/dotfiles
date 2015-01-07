@@ -1,6 +1,3 @@
-autocmd FileType haskell map <buffer> <Leader>h :Hoogle
-autocmd FileType haskell map <buffer> <Leader>hc :HoogleClose<CR>
-autocmd FileType haskell map <buffer> <Leader>hl :HoogleLine<CR>
 autocmd FileType haskell setlocal expandtab tabstop=8 shiftwidth=4 softtabstop=0 textwidth=79
 autocmd FileType haskell setlocal foldenable
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
