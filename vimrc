@@ -3,11 +3,13 @@ set nocompatible " be iMproved
 filetype off     " required!
 
 set rtp+=~/.vim/bundle/neobundle.vim/
+"set rtp+=~/.vim/bundle/fsharpbinding-vim/
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My installed bundles
 " github repos
+NeoBundle 'wting/rust.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
@@ -19,6 +21,7 @@ NeoBundle 'tpope/vim-markdown'
 NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'timrobinson/fsharp-vim'
+"NeoBundle 'fsharp/fsharpbinding', {'build': {'unix': 'make -C vim install'}}
 "NeoBundle 'feuerbach/ariadne-vim'
 NeoBundle 'dag/vim2hs'
 NeoBundle 'Raimondi/delimitMate'
@@ -46,8 +49,10 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
+NeoBundle 'OmniSharp/omnisharp-vim', {'autoload': {'filetypes': ['cs']}, 'build': {'unix': 'xbuild server/OmniSharp.sln'}}
 NeoBundle 'Shougo/vimproc', {'build': {'unix': 'make -f make_unix.mak', 'windows': 'tools\\update-dll-mingw', 'mac': 'make -f make_mac.mak'}}
 NeoBundle 'eagletmt/ghcmod-vim'
+NeoBundle 'eagletmt/unite-haddock'
 
 "javascript/angular
 NeoBundle 'burnettk/vim-angular'

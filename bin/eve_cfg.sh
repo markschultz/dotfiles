@@ -3,4 +3,4 @@
 WINE=winecfg
 PREFIX=~/.PlayOnLinux/wineprefix/EVEonline
 
-WINEPREFIX=$PREFIX $WINE 
+WINEPREFIX=$PREFIX $WINE

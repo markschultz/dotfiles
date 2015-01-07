@@ -56,6 +56,10 @@ alias upgrade='sudo apt-get update && sudo apt-get upgrade'
 #export TERM=rxvt-unicode-256color
 #[ -n "$TMUX" ] && export TERM=screen-256color
 eval `dircolors ~/.dircolors.256-dark`
+eval "$(hub alias -s)"
 envoy
 source <(envoy -p)
-xrdb -merge ~/.Xresources
+alias grep="/usr/bin/grep $GREP_OPTIONS"
+unset GREP_OPTIONS
+
+[ -s "/home/eskimod/.kre/kvm/kvm.sh" ] && . "/home/eskimod/.kre/kvm/kvm.sh" # Load kvm
