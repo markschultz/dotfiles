@@ -1,4 +1,3 @@
-"TODO make keybinding for :%!stylish-haskell
 set nocompatible " be iMproved
 filetype off     " required!
 
@@ -7,8 +6,6 @@ set rtp+=~/.vim/bundle/neobundle.vim/
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" My installed bundles
-" github repos
 NeoBundle 'wting/rust.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
@@ -19,14 +16,14 @@ NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tpope/vim-git'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'tpope/vim-dispatch'
+NeoBundle 'tpope/vim-commentary'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'timrobinson/fsharp-vim'
 "NeoBundle 'fsharp/fsharpbinding', {'build': {'unix': 'make -C vim install'}}
 "NeoBundle 'feuerbach/ariadne-vim'
-NeoBundle 'dag/vim2hs'
 NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'eagletmt/neco-ghc'
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'michaeljsmith/vim-indent-object'
 "NeoBundle 'mattn/gist-vim'
 "NeoBundle 'mattn/webapi-vim'
 NeoBundle 'mattn/emmet-vim'
@@ -35,14 +32,17 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'majutsushi/tagbar'
 "NeoBundle 'bitc/lushtags'
-NeoBundle 'marijnh/tern_for_vim', {'build': {'unix': 'npm install'}}
+"NeoBundle 'marijnh/tern_for_vim', {'build': {'unix': 'npm install'}}
 NeoBundle 'sjl/gundo.vim'
+NeoBundle 'jgdavey/tslime.vim'
+NeoBundle 'int3/vim-extradite'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'klen/python-mode'
 NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'mattonrails/vim-mix'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'Shougo/vimshell'
+NeoBundle 'vim-scripts/gitignore'
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
@@ -51,11 +51,16 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'OmniSharp/omnisharp-vim', {'autoload': {'filetypes': ['cs']}, 'build': {'unix': 'xbuild server/OmniSharp.sln'}}
 NeoBundle 'Shougo/vimproc', {'build': {'unix': 'make -f make_unix.mak', 'windows': 'tools\\update-dll-mingw', 'mac': 'make -f make_mac.mak'}}
+"
+" Haskell
+"NeoBundle 'raichoo/haskell-vim'
 NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'eagletmt/unite-haddock'
+NeoBundle 'eagletmt/neco-ghc'
+NeoBundle 'dag/vim2hs'
 
 "javascript/angular
-NeoBundle 'burnettk/vim-angular'
+"NeoBundle 'burnettk/vim-angular'
 
 "NeoBundle 'sjl/clam.vim'
 "Bundle 'Valloric/YouCompleteMe'
@@ -220,3 +225,4 @@ nnoremap <F5> "=strftime("%Y-%m-%d %H:%M")<CR>P
 
 "for hothasktags
 "set iskeyword+=.
+set tags+=codex.tags

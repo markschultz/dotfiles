@@ -53,3 +53,26 @@ inoremap <down> <nop>
 " when lines wrap this doent skip long ones
 nnoremap j gj
 nnoremap k gk
+
+map <leader>tg :!codex update<cr>:call system("git hscope")<cr><cr>:call LoadHscope()<cr>
+
+nnoremap <silent> <Leader>cf :cs find c <C-R>=expand("<cword>")<cr><cr>
+function! LoadHscope()
+    let db = findfile("hscope.out", ".;")
+    if(!empty(db))
+        let path = strpart(db, 0, match(db, "/hscope.out$"))
+        set nocscopeverbose " suppress 'suplicate connection' error
+        exe "cs add " . db . " " . path
+        set cscopeverbose
+    endif
+endfunction
+
+function! Pointfree()
+    call setline('.', split(system('pointfree '.shellescape(join(getline(a:firstline, a:lastline), "\n"))), "\n"))
+endfunction
+vnoremap <silent> <leader>h. :call Pointfree()<cr>
+
+function! Pointful()
+    call setline('.', split(system('pointful '.shellescape(join(getline(a:firstline, a:lastline), "\n"))), "\n"))
+endfunction
+vnoremap <silent> <leader>h> :call Pointful()<cr>

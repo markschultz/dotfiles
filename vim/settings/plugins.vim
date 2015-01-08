@@ -215,3 +215,12 @@ let g:unite_source_haddock_browser = 'firefox-beta-bin'
 """fsharpbinding
 
 let g:fsharpbinding_debug = 1
+
+
+"""tslime
+
+vmap <silent> <Leader>rs <Plug>SendSelectionToTmux
+nmap <silent> <Leader>rs <Plug>NormalModeSendToTmux
+nmap <silent> <Leader>rv <Plug>SetTmuxVars
+
+

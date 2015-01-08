@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd $(git rev-parse --show-toplevel)
+git ls-files | grep '\.1\?hs$' | xargs hscope -b "$@"
+cd -

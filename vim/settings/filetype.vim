@@ -1,3 +1,8 @@
+autocmd FileType haskell setlocal csprg=hscope
+autocmd FileType haskell setlocal csto=1
+"autocmd FileType haskell setlocal cst
+autocmd FileType haskell setlocal csverb
+autocmd FileType haskell call LoadHscope()
 autocmd FileType haskell setlocal expandtab tabstop=8 shiftwidth=4 softtabstop=0 textwidth=79
 autocmd FileType haskell setlocal foldenable
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
