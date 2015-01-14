@@ -4,15 +4,12 @@ cd ~/git
 git clone https://github.com/markschultz/dotfiles.git
 git clone https://github.com/gmarik/vundle.git dotfiles/vim/bundle/vundle
 git clone https://github.com/robbyrussell/oh-my-zsh.git dotfiles/oh-my-zsh
-git clone https://github.com/nvie/gitflow.git
+git clone https://github.com/petervanderdoes/gitflow
 git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git gnome-terminal-solarized
 # install solarize for gnome terminal
 gnome-terminal-solarized/install.sh
 # install gitflow
-cd gitflow
-make
-cd ..
-sudo make -C gitflow install
+sudo bash gitflow/contrib/gitflow-installer.sh install develop
 # install dotfiles
 cd dotfiles
 #scp eskimod@eskimod.net:~/files/{gitconfig,netrc} ./

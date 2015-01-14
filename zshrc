@@ -2,7 +2,7 @@ source "$HOME/.antigen/antigen.zsh"
 
 antigen use oh-my-zsh
 antigen bundle git
-antigen bundle git-flow
+antigen bundle petervanderdoes/git-flow-completion
 #antigen bundle extract
 antigen bundle pip
 antigen bundle rsync
@@ -31,6 +31,8 @@ export FCEDIT=vim
 export EDITOR=vim
 export ALTERNATE_EDITOR=""
 export MONO_GAC_PREFIX=/usr
+export _JAVA_AWT_WM_NONREPARENTING=1
+export AWT_TOOLKIT=MToolkit
 export PATH=/usr/local/bin:~/bin:~/.cask/bin:~/.cabal/bin:$PATH
 
 alias less='less -R'
@@ -65,5 +67,8 @@ bindkey '^T' autosuggest-toggle
 [ -s "/home/eskimod/.kre/kvm/kvm.sh" ] && . "/home/eskimod/.kre/kvm/kvm.sh" # Load kvm
 eval `dircolors ~/.dircolors.256-dark`
 eval "$(hub alias -s)"
-envoy
-source <(envoy -p)
+#envoy
+#source <(envoy -p)
+export GPG_TTY=$(tty)
+source <(gpg-agent --enable-ssh-support --daemon)
+wmname LG3D

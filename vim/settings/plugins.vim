@@ -186,7 +186,7 @@ let g:UltiSnipsListSnippets="<c-s-esc>"
 map <leader>gt :GhcModType<cr>
 map <leader>gc :GhcModTypeClear<cr>
 map <leader>gi :GhcModTypeInsert<cr>
-
+let g:ghcmod_should_use_ghc_modi = 1
 
 """vimfiler
 
@@ -201,7 +201,7 @@ nnoremap <leader>y :<C-u>Unite -buffer-name=yank history/yank<cr>
 nnoremap <C-p> :<C-u>Unite -buffer-name=files -start-insert file_rec/async:!<cr>
 nnoremap <leader>/ :<C-u>Unite grep:.<cr>
 nnoremap <leader>b :Unite -buffer-name=buffers -quick-match buffer<cr>
-nnoremap <leader>h :Unite haddock<cr>
+nnoremap <leader>hh :Unite haddock<cr>
 if executable('ack')
     let g:unite_source_grep_command = 'ack'
     let g:unite_source_grep_default_opts = '-i --no-heading --no-color -k -H'
