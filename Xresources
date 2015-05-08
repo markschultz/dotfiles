@@ -1,3 +1,4 @@
+xscreensaver.newLoginCommand: dm-tool switch-to-greeter
 !! urxvt
 Xft.dpi: 96
 Xft.antialias: true

@@ -7,6 +7,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'wting/rust.vim'
+"NeoBundle 'phildawes/racer', { 'build': { 'unix': 'cargo build --release' } }
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
@@ -58,6 +59,7 @@ NeoBundle 'raichoo/haskell-vim'
 NeoBundle 'int3/ghcmod-vim', 'ghc-modi'
 NeoBundle 'eagletmt/unite-haddock'
 NeoBundle 'eagletmt/neco-ghc'
+NeoBundle 'pbrisbin/vim-syntax-shakespeare'
 "NeoBundle 'dag/vim2hs'
 
 "javascript/angular
