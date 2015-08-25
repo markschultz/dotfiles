@@ -22,6 +22,7 @@ antigen apply
 [ -e "{$HOME}/.zshrc_local" ] && source "${HOME}/.zshrc_local"
 
 
+export NO_COLOR=1
 export TEMP=/tmp
 export SOLARIZED=1
 export POWERLINE=1
@@ -58,3 +59,5 @@ export GPG_TTY
 #eval $(keychain --eval -Q -q id_ed25519 id_rsa C3049B4F 88F0835B 440EBCF6)
 eval $(keychain --eval -Q -q id_ed25519 id_rsa)
 wmname LG3D
+
+[ -s "/home/eskimod/.dnx/dnvm/dnvm.sh" ] && . "/home/eskimod/.dnx/dnvm/dnvm.sh" # Load dnvm

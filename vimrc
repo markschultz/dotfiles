@@ -6,7 +6,7 @@ set rtp+=~/.vim/bundle/neobundle.vim/
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'wting/rust.vim'
+"NeoBundle 'wting/rust.vim'
 "NeoBundle 'phildawes/racer', { 'build': { 'unix': 'cargo build --release' } }
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
@@ -54,7 +54,7 @@ NeoBundle 'OmniSharp/omnisharp-vim', {'autoload': {'filetypes': ['cs']}, 'build'
 NeoBundle 'Shougo/vimproc', {'build': {'unix': 'make -f make_unix.mak', 'windows': 'tools\\update-dll-mingw', 'mac': 'make -f make_mac.mak'}}
 "
 " Haskell
-NeoBundle 'raichoo/haskell-vim'
+NeoBundle 'neovimhaskell/haskell-vim'
 "NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'int3/ghcmod-vim', 'ghc-modi'
 NeoBundle 'eagletmt/unite-haddock'
