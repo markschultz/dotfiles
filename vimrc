@@ -54,9 +54,10 @@ NeoBundle 'OmniSharp/omnisharp-vim', {'autoload': {'filetypes': ['cs']}, 'build'
 NeoBundle 'Shougo/vimproc', {'build': {'unix': 'make -f make_unix.mak', 'windows': 'tools\\update-dll-mingw', 'mac': 'make -f make_mac.mak'}}
 "
 " Haskell
+NeoBundle 'nbouscal/vim-stylish-haskell'
 NeoBundle 'neovimhaskell/haskell-vim'
-"NeoBundle 'eagletmt/ghcmod-vim'
-NeoBundle 'int3/ghcmod-vim', 'ghc-modi'
+NeoBundle 'eagletmt/ghcmod-vim'
+"NeoBundle 'int3/ghcmod-vim', 'ghc-modi'
 NeoBundle 'eagletmt/unite-haddock'
 NeoBundle 'eagletmt/neco-ghc'
 NeoBundle 'pbrisbin/vim-syntax-shakespeare'
@@ -229,7 +230,6 @@ nnoremap <F5> "=strftime("%Y-%m-%d %H:%M")<CR>P
 "for hothasktags
 "set iskeyword+=.
 set tags=tags;/,codex.tags;/
-"set tags+=codex.tags
 
 function! DeleteTrailingWS()
     exe "normal mz"
