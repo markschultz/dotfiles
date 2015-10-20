@@ -21,7 +21,6 @@ NeoBundle 'tpope/vim-commentary'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'timrobinson/fsharp-vim'
 "NeoBundle 'fsharp/fsharpbinding', {'build': {'unix': 'make -C vim install'}}
-"NeoBundle 'feuerbach/ariadne-vim'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'michaeljsmith/vim-indent-object'
@@ -50,7 +49,7 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'OmniSharp/omnisharp-vim', {'autoload': {'filetypes': ['cs']}, 'build': {'unix': 'xbuild server/OmniSharp.sln'}}
+"NeoBundle 'OmniSharp/omnisharp-vim', {'autoload': {'filetypes': ['cs']}, 'build': {'unix': 'xbuild server/OmniSharp.sln'}}
 NeoBundle 'Shougo/vimproc', {'build': {'unix': 'make -f make_unix.mak', 'windows': 'tools\\update-dll-mingw', 'mac': 'make -f make_mac.mak'}}
 "
 " Haskell

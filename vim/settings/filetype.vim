@@ -1,6 +1,6 @@
-autocmd FileType haskell setlocal csprg=hscope
 autocmd FileType haskell setlocal csto=1
-"autocmd FileType haskell setlocal cst
+autocmd FileType haskell setlocal csprg=hscope
+autocmd FileType haskell setlocal cst
 autocmd FileType haskell setlocal csverb
 autocmd FileType haskell call LoadHscope()
 autocmd FileType haskell setlocal expandtab tabstop=8 shiftwidth=4 softtabstop=0 textwidth=79
@@ -23,7 +23,6 @@ autocmd FileType make setlocal noexpandtab
 autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
 autocmd FileType python setlocal autoindent softtabstop=4 tabstop=8 shiftwidth=4 textwidth=79 expandtab
 autocmd FileType svn, *commit*, *COMMIT* setlocal spell spelllang=en_us
-"autocmd FileType haskell compiler ghc
 autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,config.ru,*.rake} set ft=ruby
 autocmd BufRead,BufNewFile *.json setlocal ft=javascript
 autocmd BufRead,BufNewFile *.gp,*.gnuplot,*.plt setlocal ft=gnuplot

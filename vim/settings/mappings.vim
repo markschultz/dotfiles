@@ -12,9 +12,6 @@ map ; :
 " double tap ; to get regular ; mapping
 noremap ;; ;
 
-" clear search highlight
-nmap // :noh<cr>
-
 " format the entire file
 nmap <leader>fef ggVG=
 
@@ -54,7 +51,8 @@ inoremap <down> <nop>
 nnoremap j gj
 nnoremap k gk
 
-map <leader>tg :!codex update<cr>:call system("git hscope")<cr><cr>:call LoadHscope()<cr>
+map <leader>tg :!codex update --force<CR>:call system("git hscope -X TemplateHaskell")<CR><CR>:call LoadHscope()<CR>
+nnoremap <silent> <C-\> :cs find c <C-R>=expand("<cword>")<CR><CR>
 
 nnoremap <silent> <Leader>cf :cs find c <C-R>=expand("<cword>")<cr><cr>
 function! LoadHscope()
