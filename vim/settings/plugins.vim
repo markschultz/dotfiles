@@ -108,11 +108,11 @@ let g:syntastic_check_on_wq=0
 
 map <silent> <C-t> :TagbarOpenAutoClose<cr>
 let g:tagbar_type_haskell = {
-    \ 'ctagsbin': 'hasktags',
-    \ 'ctagsargs': '-x -c -o-',
-    \ 'kinds': [
-        \ 'm:modules:0:1',
-        \ 'd:data:0:1',
+    \ 'ctagsbin'  : 'hasktags',
+    \ 'ctagsargs' : '-x -c -o-',
+    \ 'kinds'     : [
+        \  'm:modules:0:1',
+        \  'd:data: 0:1',
         \  'd_gadt: data gadt:0:1',
         \  't:type names:0:1',
         \  'nt:new types:0:1',
@@ -137,8 +137,7 @@ let g:tagbar_type_haskell = {
         \ 'data'   : 'd',
         \ 'type'   : 't'
     \ }
-\}
-
+\ }
 
 """unimpaired
 

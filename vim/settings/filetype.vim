@@ -1,3 +1,4 @@
+autocmd BufWritePost *.hs GhcModCheckAndLintAsync
 autocmd FileType haskell setlocal csto=1
 autocmd FileType haskell setlocal csprg=hscope
 autocmd FileType haskell setlocal cst

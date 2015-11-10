@@ -34,6 +34,7 @@ zle -N zle-line-init
 
 
 export NO_COLOR=1
+export PULSE_LATENCY_MSEC=60
 export TEMP=/tmp
 export SOLARIZED=1
 export POWERLINE=1
@@ -46,6 +47,7 @@ export MONO_GAC_PREFIX=/usr
 export _JAVA_AWT_WM_NONREPARENTING=1
 export AWT_TOOLKIT=MToolkit
 export PATH=~/.local/bin:/usr/local/bin:~/bin:~/.cask/bin:~/.cabal/bin:$PATH
+export VDPAU_DRIVER=nvidia
 
 alias less='less -R'
 alias tmux='TERM=screen-256color-bce tmux'
@@ -68,3 +70,5 @@ GPG_TTY=$(tty)
 export GPG_TTY
 #eval $(keychain --eval -Q -q id_ed25519 id_rsa C3049B4F 88F0835B 440EBCF6)
 eval $(keychain --eval -Q -q id_ed25519 id_rsa)
+
+[ -s "/home/eskimod/.dnx/dnvm/dnvm.sh" ] && . "/home/eskimod/.dnx/dnvm/dnvm.sh" # Load dnvm

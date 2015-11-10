@@ -1,22 +1,36 @@
+Host redmine
+    User bitnami1
+    Hostname bitnami-redmine-4b04.cloudapp.net
+
+Host ap
+    User eskimod
+    Hostname 192.168.2.29
+    MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-ripemd160-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,hmac-ripemd160,umac-128@openssh.com,hmac-sha1
+    KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256,diffie-hellman-group1-sha1
+
+Host router
+    User eskimod
+    Hostname 192.168.2.1
+
 Host backup
-	User b1237146
-	Hostname hanjin.dreamhost.com
+    User b1237146
+    Hostname hanjin.dreamhost.com
 
 Host clot
-	User eskimod
-	Hostname clot.us
+    User eskimod
+    Hostname clot.us
 
 Host dreamhost
-	User eskimod
-	Hostname m9r1s.com
+    User eskimod
+    Hostname m9r1s.com
 
 Host *
-        Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
-	KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
-	MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-ripemd160-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,hmac-ripemd160,umac-128@openssh.com
-	ControlMaster auto
-	ControlPath /tmp/%r@%h:%p
-	Compression yes
-	ServerAliveInterval 300
-	ForwardAgent yes
+    Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
+    KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
+    MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-ripemd160-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,hmac-ripemd160,umac-128@openssh.com
+    ControlMaster auto
+    ControlPath /tmp/%r@%h:%p
+    Compression yes
+    ServerAliveInterval 300
+    ForwardAgent yes
 
