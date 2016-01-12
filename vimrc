@@ -49,7 +49,7 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
-"NeoBundle 'OmniSharp/omnisharp-vim', {'autoload': {'filetypes': ['cs']}, 'build': {'unix': 'xbuild server/OmniSharp.sln'}}
+NeoBundle 'OmniSharp/omnisharp-vim', {'autoload': {'filetypes': ['cs']}, 'build': {'unix': 'xbuild server/OmniSharp.sln'}}
 NeoBundle 'Shougo/vimproc', {'build': {'unix': 'make -f make_unix.mak', 'windows': 'tools\\update-dll-mingw', 'mac': 'make -f make_mac.mak'}}
 "
 " Haskell
@@ -204,7 +204,7 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
-set sm "automatic brace matching
+set noshowmatch "disable automatic brace matching
 
 " tab settings
 set tabstop=8 " tab is 4 spaces

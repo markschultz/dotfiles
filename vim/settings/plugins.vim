@@ -231,4 +231,5 @@ let g:racer_cmd = "~/.vim/bundle/racer/target/release/racer"
 
 """omnisharp
 
-let g:OmniSharp_server_type = 'roslyn'
+"let g:OmniSharp_server_type = 'roslyn'
+let g:OmniSharp_selector_ui = 'unite'
