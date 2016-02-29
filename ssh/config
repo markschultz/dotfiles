@@ -1,3 +1,12 @@
+Host ny-dev
+    Hostname dev-store.nysscpa.org
+    User root
+    IdentityFile ~/.ssh/id_rsa_nysscpa
+
+Host jenkins
+    User azureuser
+    Hostname aura-jenkins.northcentralus.cloudapp.azure.com
+
 Host redmine
     User bitnami1
     Hostname bitnami-redmine-4b04.cloudapp.net

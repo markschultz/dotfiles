@@ -17,7 +17,7 @@ antigen bundle history
 antigen bundle vundle
 antigen bundle zsh-users/zsh-completions src
 #antigen bundle jimmijj/zsh-syntax-highlighting
-#antigen bundle tarruda/zsh-autosuggestions
+antigen bundle tarruda/zsh-autosuggestions --branch=v0.1.x zsh-autosuggestions.zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen theme xiong-chiamiov-plus
@@ -46,7 +46,7 @@ export ALTERNATE_EDITOR=""
 export MONO_GAC_PREFIX=/usr
 export _JAVA_AWT_WM_NONREPARENTING=1
 export AWT_TOOLKIT=MToolkit
-export PATH=~/.local/bin:/usr/local/bin:~/bin:~/.cask/bin:~/.cabal/bin:$PATH
+export PATH=~/.local/bin:/usr/local/bin:~/bin:~/.cask/bin:~/.cargo/bin:~/.cabal/bin:$PATH
 export VDPAU_DRIVER=nvidia
 
 alias less='less -R'
