@@ -47,7 +47,7 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'OmniSharp/omnisharp-vim', {'autoload': {'filetypes': ['cs']}, 'build': {'unix': 'xbuild server/OmniSharp.sln'}}
+NeoBundle 'OmniSharp/omnisharp-vim', {'autoload': {'filetypes': ['cs']}, 'build': {'unix': 'cd omnisharp-roslyn; ./build.sh'}}
 NeoBundle 'Shougo/vimproc', {'build': {'unix': 'make -f make_unix.mak', 'windows': 'tools\\update-dll-mingw', 'mac': 'make -f make_mac.mak'}}
 "
 " Haskell

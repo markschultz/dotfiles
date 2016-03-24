@@ -232,6 +232,6 @@ let $RUST_SRC_PATH="/usr/src/rust/src/"
 
 """omnisharp
 
-"let g:OmniSharp_server_type = 'roslyn'
+let g:OmniSharp_server_type = 'roslyn'
 let g:OmniSharp_selector_ui = 'unite'
 
