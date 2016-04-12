@@ -1,0 +1,50 @@
+;; layers
+(setq-default dotspacemacs-configuration-layers
+              '(haskell
+                elixir
+                rust
+                javascript
+                auto-completion
+                syntax-checking
+                better-defaults
+                emacs-lisp
+                themes-megapack))
+
+;; settings
+(setq-default
+  dotspacemacs-startup-banner 'random
+  dotspacemacs-mode-line-unicode-symbols nil
+  dotspacemacs-themes '(sanityinc-solarized-dark sanityinc-solarized-light)
+  dotspacemacs-leader-key "SPC"
+  dotspacemacs-major-mode-leader-key ",")
+
+
+(defun dotspacemacs/init ()
+  (defun dotspacemacs/user-config ()
+    (setq powerline-default-separator 'nil)
+    (setq-default dotspacemacs-configuration-layers
+                  '((haskell : variables haskell-enable-hindent-style "chris-done")))
+    (custom-set-faces (if (not window-system) '(default ((t (:background "nil"))))))
+  )
+)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ahs-case-fold-search nil)
+ '(ahs-default-range (quote ahs-range-whole-buffer))
+ '(ahs-idle-interval 0.25)
+ '(ahs-idle-timer 0 t)
+ '(ahs-inhibit-face-list nil)
+ '(haskell-stylish-on-save t)
+ '(ring-bell-function (quote ignore) t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:background nil))))
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
