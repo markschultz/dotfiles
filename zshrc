@@ -1,8 +1,6 @@
 source "$HOME/.antigen/antigen.zsh"
-AUTOSUGGESTION_ACCEPT_RIGHT_ARROW=1
-AUTOSUGGESTION_HIGHLIGHT_CURSOR=1
-AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=cyan'
-unset COMPLETION_WAITING_DOTS
+AUTOSUGGESTION_HIGHLIGHT_STYLE='fg=148'
+#unset COMPLETION_WAITING_DOTS
 
 antigen use oh-my-zsh
 antigen bundle git
@@ -17,17 +15,12 @@ antigen bundle history
 antigen bundle vundle
 antigen bundle zsh-users/zsh-completions src
 #antigen bundle jimmijj/zsh-syntax-highlighting
-antigen bundle tarruda/zsh-autosuggestions --branch=v0.1.x zsh-autosuggestions.zsh
+#antigen bundle tarruda/zsh-autosuggestions zsh-autosuggestions.zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen theme xiong-chiamiov-plus
 #antigen bundle vi-mode
 antigen apply
-
-zle-line-init() {
-#    zle autosuggest-start
-}
-zle -N zle-line-init
 
 [ -e "{$HOME}/.zsh_aliases" ] && source "${HOME}/.zsh_aliases"
 [ -e "{$HOME}/.zshrc_local" ] && source "${HOME}/.zshrc_local"
