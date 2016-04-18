@@ -2,9 +2,8 @@
 mkdir ~/git
 cd ~/git
 git clone https://github.com/markschultz/dotfiles.git
-git clone https://github.com/gmarik/vundle.git dotfiles/vim/bundle/vundle
 git clone https://github.com/zsh-users/antigen.git dotfiles/antigen
-git clone https://github.com/Shougo/neobundle.vim dotfiles/bundle/neobundle.vim
+git clone https://github.com/Shougo/neobundle.vim dotfiles/vim/bundle/neobundle.vim
 git clone https://github.com/petervanderdoes/gitflow
 git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git gnome-terminal-solarized
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d

@@ -1,3 +1,6 @@
+antigen/
+config/
+
 mutt/cache/
 vim/bundle/
 vim/_view/
