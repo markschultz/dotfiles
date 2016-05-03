@@ -13,7 +13,7 @@
     path = ~/git/sixarm_git_gitconfig/gitconfig.d/push.txt
     path = ~/git/sixarm_git_gitconfig/gitconfig.d/rerere.txt
 [core]
-    editor = vim -f
+    editor = emacs
     autocrlf = input
     pager = less -FRX
 [user] name = Mark Schultz
