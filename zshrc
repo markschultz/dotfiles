@@ -33,8 +33,8 @@ export SOLARIZED=1
 export POWERLINE=1
 export SDL_VIDEO_FULLSCREEN_DISPLAY=0
 export SDL_VIDEO_FULLSCREEN_HEAD=1
-export FCEDIT=vim
-export EDITOR=vim
+export FCEDIT=emacs
+export EDITOR=emacs
 export ALTERNATE_EDITOR=""
 export MONO_GAC_PREFIX=/usr
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -45,7 +45,8 @@ export VDPAU_DRIVER=nvidia
 alias less='less -R'
 alias tmux='TERM=screen-256color-bce tmux'
 alias cvim='POWERLINE=0 SOLARIZED=0 vim'
-alias svim='sudoedit'
+alias semacs='sudoedit'
+#alias emacs='TERM=xterm-256color emacsclient -c -a ""'
 alias emacs='emacsclient -c -a ""'
 alias sshx='ssh -XC'
 alias sar='LANG=C sar'

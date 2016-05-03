@@ -29,8 +29,8 @@ Host clot
     User eskimod
     Hostname clot.us
 
-Host dreamhost
-    User eskimod
+Host mail
+    User root
     Hostname m9r1s.com
 
 Host *
@@ -45,4 +45,3 @@ Host *
     ServerAliveInterval 300
     UseRoaming no
     ForwardAgent yes
-

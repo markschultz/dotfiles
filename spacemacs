@@ -101,11 +101,12 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(solarized-dark
+                         sanityinc-solarized-dark
                          solarized-light
                          spacemacs-dark
                          spacemacs-light
-                         leuven
                          zenburn
+                         leuven
                          monokai)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -254,6 +255,7 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
+  (global-hl-line-mode -1)
   (custom-set-faces (if (not window-system) '(default ((t (:background "nil"))))))
   (setq powerline-default-separator 'nil)
   (setq-default dotspacemacs-configuration-layers
