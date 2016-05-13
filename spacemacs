@@ -258,6 +258,7 @@ you should place you code here."
   (global-hl-line-mode -1)
   (custom-set-faces (if (not window-system) '(default ((t (:background "nil"))))))
   (setq powerline-default-separator 'nil)
+  (spaceline-compile)
   (setq-default dotspacemacs-configuration-layers
                 '((haskell : variables haskell-enable-hindent-style "chris-done")))
   )
