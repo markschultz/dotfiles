@@ -66,3 +66,4 @@ export GPG_TTY
 eval $(keychain --eval -Q -q id_ed25519 id_rsa)
 
 [ -s "/home/eskimod/.dnx/dnvm/dnvm.sh" ] && . "/home/eskimod/.dnx/dnvm/dnvm.sh" # Load dnvm
+source /usr/share/nvm/init-nvm.sh
