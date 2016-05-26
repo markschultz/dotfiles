@@ -17,7 +17,7 @@
     autocrlf = input
     pager = less -FRX
 [user] name = Mark Schultz
-    email = mxs802@case.edu
+    email = mark@m9r1s.com
 [github]
     user = markschultz
 [color]

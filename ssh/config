@@ -1,3 +1,7 @@
+Host auraestore
+    Hostname auraestore.cloudapp.net
+    User mark
+
 Host ny-dev
     Hostname dev-store.nysscpa.org
     User root
