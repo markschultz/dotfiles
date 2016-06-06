@@ -18,7 +18,8 @@ antigen bundle zsh-users/zsh-completions src
 #antigen bundle tarruda/zsh-autosuggestions zsh-autosuggestions.zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-antigen theme xiong-chiamiov-plus
+#antigen theme xiong-chiamiov-plus
+antigen theme flazz
 #antigen bundle vi-mode
 antigen apply
 
