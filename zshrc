@@ -28,6 +28,7 @@ antigen apply
 
 
 export NO_COLOR=1
+export RUST_SRC_PATH=/usr/src/rust/src
 export PULSE_LATENCY_MSEC=60
 export TEMP=/tmp
 export SOLARIZED=1
@@ -68,3 +69,4 @@ eval $(keychain --eval -Q -q id_ed25519 id_rsa)
 
 [ -s "/home/eskimod/.dnx/dnvm/dnvm.sh" ] && . "/home/eskimod/.dnx/dnvm/dnvm.sh" # Load dnvm
 source /usr/share/nvm/init-nvm.sh
+test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
