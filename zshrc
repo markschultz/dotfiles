@@ -35,13 +35,12 @@ export SOLARIZED=1
 export POWERLINE=1
 export SDL_VIDEO_FULLSCREEN_DISPLAY=0
 export SDL_VIDEO_FULLSCREEN_HEAD=1
-export FCEDIT=emacs
-export EDITOR=emacs
+export FCEDIT=emacsclient
+export EDITOR=emacsclient
 export ALTERNATE_EDITOR=""
 export MONO_GAC_PREFIX=/usr
 export _JAVA_AWT_WM_NONREPARENTING=1
 export AWT_TOOLKIT=MToolkit
-export PATH=~/.local/bin:/usr/local/bin:~/bin:~/.cask/bin:~/.cargo/bin:~/.cabal/bin:$PATH
 export VDPAU_DRIVER=nvidia
 
 alias less='less -R'
