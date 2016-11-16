@@ -7,10 +7,9 @@ Xft.hinting: true
 Xft.hintstyle: hintslight
 URxvt*buffered: true
 URxvt*cursorBlink: true
-URxvt*font: xft:Inconsolata for Powerline:size=14:autohint=true
-!URxvt*font: xft:Inconsolata:size=12:autohint=true
+!URxvt*font: xft:Source Code Pro:size=12:antialias=true:autohint=true
+URxvt*font: xft:Inconsolata-dz for Powerline:size=14:antialias=true:autohint=true
 !URXVT*boldFont: xft:Inconsolata:size=12:style=Bold:autohint=true
-!URxvt*font: xft:Consolas:pixelsize=12:antialias=true:autohint=true
 URxvt*depth: 32
 URxvt*borderless: 1
 URxvt*scrollBar: false

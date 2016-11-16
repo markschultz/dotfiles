@@ -26,7 +26,6 @@ antigen apply
 [ -e "{$HOME}/.zsh_aliases" ] && source "${HOME}/.zsh_aliases"
 [ -e "{$HOME}/.zshrc_local" ] && source "${HOME}/.zshrc_local"
 
-
 export NO_COLOR=1
 export RUST_SRC_PATH=/usr/src/rust/src
 export PULSE_LATENCY_MSEC=60
@@ -35,8 +34,8 @@ export SOLARIZED=1
 export POWERLINE=1
 export SDL_VIDEO_FULLSCREEN_DISPLAY=0
 export SDL_VIDEO_FULLSCREEN_HEAD=1
-export FCEDIT=emacsclient
-export EDITOR=emacsclient
+export FCEDIT="emacsclient -t"
+export EDITOR="emacsclient -t"
 export ALTERNATE_EDITOR=""
 export MONO_GAC_PREFIX=/usr
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -47,13 +46,11 @@ alias less='less -R'
 alias tmux='TERM=screen-256color-bce tmux'
 alias cvim='POWERLINE=0 SOLARIZED=0 vim'
 alias semacs='sudoedit'
-#alias emacs='TERM=xterm-256color emacsclient -c -a ""'
-alias emacs='emacsclient -c -a ""'
+#alias emacs='TERM=xterm-256color emacsclient -c'
+alias emacs='emacsclient -c'
 alias sshx='ssh -XC'
 alias sar='LANG=C sar'
 alias open='gnome-open'
-alias packers='packer --noedit --noconfirm'
-alias packerd='packer --noedit --noconfirm --devel'
 alias paczfsr='sudo pacman -R zfs-git zfs-utils-git spl-git spl-utils-git'
 alias paczfsi='yaourt -S zfs-git --noconfirm && sudo zfs mount -a'
 alias upgradey='sudo apt-get update && sudo apt-get -y upgrade'
@@ -63,9 +60,6 @@ eval `dircolors ~/.dircolors.256-dark`
 eval "$(hub alias -s)"
 GPG_TTY=$(tty)
 export GPG_TTY
-#eval $(keychain --eval -Q -q id_ed25519 id_rsa C3049B4F 88F0835B 440EBCF6)
 eval $(keychain --eval -Q -q id_ed25519 id_rsa)
 
-[ -s "/home/eskimod/.dnx/dnvm/dnvm.sh" ] && . "/home/eskimod/.dnx/dnvm/dnvm.sh" # Load dnvm
-source /usr/share/nvm/init-nvm.sh
 test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"

@@ -235,3 +235,9 @@ let $RUST_SRC_PATH="/usr/src/rust/src/"
 let g:OmniSharp_server_type = 'roslyn'
 let g:OmniSharp_selector_ui = 'unite'
 
+
+"""solarized
+let g:solarized_termtrans = 1
+let g:solarized_termcolors = 256
+set background=dark
+
