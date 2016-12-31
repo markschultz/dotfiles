@@ -34,8 +34,8 @@ export SOLARIZED=1
 export POWERLINE=1
 export SDL_VIDEO_FULLSCREEN_DISPLAY=0
 export SDL_VIDEO_FULLSCREEN_HEAD=1
-export FCEDIT="emacsclient -t"
-export EDITOR="emacsclient -t"
+export FCEDIT="vim"
+export EDITOR="vim"
 export ALTERNATE_EDITOR=""
 export MONO_GAC_PREFIX=/usr
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -63,3 +63,4 @@ export GPG_TTY
 eval $(keychain --eval -Q -q id_ed25519 id_rsa)
 
 test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+source /usr/share/nvm/init-nvm.sh

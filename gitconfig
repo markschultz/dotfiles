@@ -2,7 +2,7 @@
     path = ~/git/sixarm_git_gitconfig/gitconfig
     path = ~/git/sixarm_git_gitconfig/gitconfig.d/specific-to-linux.txt
 [core]
-    editor = emacs
+    editor = vim
     autocrlf = input
     pager = less -FRX
 [user] name = Mark Schultz

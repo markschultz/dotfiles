@@ -75,5 +75,4 @@ Host *
     ControlPath /tmp/%r@%h:%p
     Compression yes
     ServerAliveInterval 300
-    UseRoaming no
     ForwardAgent yes
