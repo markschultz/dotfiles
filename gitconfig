@@ -13,6 +13,7 @@
     ui = true
 [merge]
     tool = fugitive
+    conflictstyle = diff3
 [init]
     templatedir = ~/.git_template
 [alias]

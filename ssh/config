@@ -3,16 +3,6 @@ Host home
     User eskimod
     IdentityFile ~/.ssh/id_ed25519
 
-Host adminb
-    Hostname 54.244.58.65
-    User ec2-user
-    IdentityFile ~/.ssh/aura_aws_key.pem
-
-Host admina
-    Hostname 54.244.204.142
-    User ec2-user
-    IdentityFile ~/.ssh/aura_aws_key.pem
-
 Host mi-prod
     Hostname store.micpa.org
     User root
@@ -34,14 +24,6 @@ Host ny-prod
     Hostname cpe.nysscpa.org
     User root
     IdentityFile ~/.ssh/id_rsa_nysscpa
-
-Host jenkins
-    User azureuser
-    Hostname aura-jenkins.northcentralus.cloudapp.azure.com
-
-Host redmine
-    User bitnami1
-    Hostname bitnami-redmine-4b04.cloudapp.net
 
 Host ap
     Hostname 192.168.2.21
