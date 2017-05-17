@@ -1,5 +1,6 @@
 source "$HOME/.antigen/antigen.zsh"
-AUTOSUGGESTION_HIGHLIGHT_STYLE='fg=148'
+ZSH_AUTOSUGGESTION_HIGHLIGHT_STYLE='fg=148'
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 #unset COMPLETION_WAITING_DOTS
 
 antigen use oh-my-zsh
@@ -13,9 +14,8 @@ antigen bundle command-not-found
 antigen bundle tmux
 antigen bundle history
 antigen bundle vundle
-antigen bundle zsh-users/zsh-completions src
-#antigen bundle jimmijj/zsh-syntax-highlighting
-#antigen bundle tarruda/zsh-autosuggestions zsh-autosuggestions.zsh
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 #antigen theme xiong-chiamiov-plus
@@ -39,6 +39,7 @@ export EDITOR="vim"
 export ALTERNATE_EDITOR=""
 export MONO_GAC_PREFIX=/usr
 export _JAVA_AWT_WM_NONREPARENTING=1
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
 export AWT_TOOLKIT=MToolkit
 export VDPAU_DRIVER=nvidia
 
