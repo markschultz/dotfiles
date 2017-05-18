@@ -7,17 +7,20 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle petervanderdoes/git-flow-completion
 #antigen bundle extract
-antigen bundle pip
+#antigen bundle pip
 antigen bundle rsync
-antigen bundle python
+#antigen bundle python
 antigen bundle command-not-found
 antigen bundle tmux
 antigen bundle history
-antigen bundle vundle
+#antigen bundle vundle
+antigen bundle joel-porquet/zsh-dircolors-solarized
+antigen bundle zlsun/solarized-man
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
+#antigen theme NicoSantangelo/Alpharized alpharized
 #antigen theme xiong-chiamiov-plus
 antigen theme flazz
 #antigen bundle vi-mode
