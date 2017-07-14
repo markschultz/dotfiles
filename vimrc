@@ -207,14 +207,14 @@ set incsearch
 set noshowmatch "disable automatic brace matching
 
 " tab settings
-set tabstop=8 " tab is 4 spaces
+set tabstop=2 " tab is 4 spaces
 set expandtab " replace tabs w/ spaces. insert real tab with C-v tab
 set autoindent
 set copyindent " copy previous indentation when autoindenting
 set smartindent
-set shiftwidth=4 " number of spaces for autoindenting
+set shiftwidth=2 " number of spaces for autoindenting
 set smarttab " inserts tabs at beginning of line according to shiftwidth instead of tabstop
-set softtabstop=4 "length of 'soft' tabs. should be the same as other tab lengths
+set softtabstop=2 "length of 'soft' tabs. should be the same as other tab lengths
 set shiftround "indent to multiple of tab
 
 set list

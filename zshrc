@@ -1,6 +1,4 @@
 source "$HOME/.antigen/antigen.zsh"
-ZSH_AUTOSUGGESTION_HIGHLIGHT_STYLE='fg=148'
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 #unset COMPLETION_WAITING_DOTS
 
 antigen use oh-my-zsh
@@ -29,6 +27,8 @@ antigen apply
 [ -e "{$HOME}/.zsh_aliases" ] && source "${HOME}/.zsh_aliases"
 [ -e "{$HOME}/.zshrc_local" ] && source "${HOME}/.zshrc_local"
 
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
+export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 export NO_COLOR=1
 export RUST_SRC_PATH=/usr/src/rust/src
 export PULSE_LATENCY_MSEC=60
@@ -42,7 +42,7 @@ export EDITOR="vim"
 export ALTERNATE_EDITOR=""
 export MONO_GAC_PREFIX=/usr
 export _JAVA_AWT_WM_NONREPARENTING=1
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
+#export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
 export AWT_TOOLKIT=MToolkit
 export VDPAU_DRIVER=nvidia
 
