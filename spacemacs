@@ -41,7 +41,9 @@ values."
      spell-checking
      syntax-checking
      version-control
-     (haskell :variables haskell-enable-hindent-style "chris-done")
+     (haskell :variables
+              haskell-completion-backend 'ghc-mod
+              haskell-enable-hindent-style "chris-done")
      rust
      (javascript :variables javascript-disable-tern-port-files nil)
      elixir
@@ -137,7 +139,7 @@ values."
                          leuven
                          monokai
                          zenburn
-                        )
+                         )
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -147,7 +149,7 @@ values."
                                :weight normal
                                :width normal
                                :powerline-scale 1.1
-                              )
+                               )
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -318,42 +320,43 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-(defun enable-solarized-in-terminal (frame)
-  ;; cf. http://philipdaniels.com/blog/2017/02/spacemacs---configuring-the-solarized-theme/
-  (unless (display-graphic-p frame)
-    (set-frame-parameter frame 'background-mode 'dark)
-    (set-terminal-parameter frame 'background-mode 'dark)
+  (defun enable-solarized-in-terminal (frame)
+    ;; cf. http://philipdaniels.com/blog/2017/02/spacemacs---configuring-the-solarized-theme/
+    (unless (display-graphic-p frame)
+      (set-frame-parameter frame 'background-mode 'dark)
+      (set-terminal-parameter frame 'background-mode 'dark)
+      (spacemacs/load-theme 'solarized)
+      ))
+
+  (defun enable-solarized-in-gui ()
+    (mapc 'disable-theme custom-enabled-themes)
+    (setup-solarized-theme)
     (spacemacs/load-theme 'solarized)
-    ))
+    )
 
-(defun enable-solarized-in-gui ()
-  (mapc 'disable-theme custom-enabled-themes)
-  (setup-solarized-theme)
-  (spacemacs/load-theme 'solarized)
-  )
+  (defun setup-solarized-theme ()
+    ;; I like a transparent background in the terminal
+    (custom-set-faces
+     '(default (
+                (((type tty) (background dark)) (:background "nil"))
+                )))
+    ;; The frame number indicator has some problems with inverse video
+    (set-face-inverse-video 'spacemacs-motion-face nil)
+    (set-face-inverse-video 'spacemacs-insert-face nil)
+    (set-face-inverse-video 'spacemacs-normal-face nil)
+    (set-face-inverse-video 'spacemacs-visual-face nil)
+    (set-face-inverse-video 'spacemacs-replace-face nil)
+    )
 
-(defun setup-solarized-theme ()
-  ;; I like a transparent background in the terminal
-  (custom-set-faces
-    '(default (
-              (((type tty) (background dark)) (:background "nil"))
-              )))
-  ;; The frame number indicator has some problems with inverse video
-  (set-face-inverse-video 'spacemacs-motion-face nil)
-  (set-face-inverse-video 'spacemacs-insert-face nil)
-  (set-face-inverse-video 'spacemacs-normal-face nil)
-  (set-face-inverse-video 'spacemacs-visual-face nil)
-  (set-face-inverse-video 'spacemacs-replace-face nil)
-  )
+  ;; For GUI clients, after-make-frame-functions is messed up (probably it is
+  ;; called too early), and some colors are messed up. For terminal clients on
+  ;; the other hand, it works perfectly. The background-mode is necessary for
+  ;; terminal clients, but (apparently) not for GUI clients, and has to be set
+  ;; for each frame individually.
+  (spacemacs|do-after-display-system-init (enable-solarized-in-gui))
+  (add-hook 'after-make-frame-functions 'enable-solarized-in-terminal)
 
-;; For GUI clients, after-make-frame-functions is messed up (probably it is
-;; called too early), and some colors are messed up. For terminal clients on
-;; the other hand, it works perfectly. The background-mode is necessary for
-;; terminal clients, but (apparently) not for GUI clients, and has to be set
-;; for each frame individually.
-(spacemacs|do-after-display-system-init (enable-solarized-in-gui))
-(add-hook 'after-make-frame-functions 'enable-solarized-in-terminal)
-
+  ;;(with-eval-after-load 'intero (flycheck-add-next-checker 'intero '(warning . haskell-hlint)))
   (global-hl-line-mode -1)
   ;;(setq-default create-lockfiles nil)
   (use-package vue-mode)
@@ -361,31 +364,31 @@ you should place your code here."
   (spaceline-compile)
   (setq-default helm-hg-base-command "rg")
   (setq-default omnisharp-server-executable-path "/opt/omnisharp-roslyn/OmniSharp.exe")
-)
+  )
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
 This is an auto-generated function, do not modify its content directly, use
 Emacs customize menu instead.
 This function is called at the very end of Spacemacs initialization."
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(evil-want-Y-yank-to-eol nil)
- '(package-selected-packages
-   (quote
-    (color-theme-solarized color-theme zenburn-theme yaml-mode ws-butler winum which-key web-mode web-beautify vue-mode volatile-highlights vi-tilde-fringe uuidgen use-package unfill toml-mode toc-org tagedit spacemacs-theme spaceline solarized-theme smeargle slim-mode scss-mode sass-mode restart-emacs rainbow-delimiters racer quelpa pug-mode popwin persp-mode pcre2el paradox orgit org-projectile org-present org-pomodoro org-plus-contrib org-download org-bullets open-junk-file omnisharp ob-elixir nginx-mode neotree mwim move-text monokai-theme markdown-toc magit-gitflow macrostep lorem-ipsum livid-mode linum-relative link-hint less-css-mode json-mode js2-refactor js-doc intero info+ indent-guide ido-vertical-mode hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-purpose helm-projectile helm-mode-manager helm-make helm-hoogle helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md flyspell-correct-helm flycheck-rust flycheck-pos-tip flycheck-mix flycheck-haskell flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu emmet-mode elisp-slime-nav dumb-jump diff-hl define-word company-web company-tern company-statistics company-ghci company-ghc company-cabal column-enforce-mode coffee-mode cmm-mode clean-aindent-mode cargo auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile alchemist aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
- '(safe-local-variable-values
-   (quote
-    ((haskell-process-use-ghci . t)
-     (haskell-indent-spaces . 4)
-     (elixir-enable-compilation-checking . t)
-     (elixir-enable-compilation-checking)))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-)
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(evil-want-Y-yank-to-eol nil)
+   '(package-selected-packages
+     (quote
+      (symon string-inflection password-generator org-brain impatient-mode fuzzy flycheck-credo evil-org evil-lion editorconfig dante browse-at-remote color-theme-solarized color-theme zenburn-theme yaml-mode ws-butler winum which-key web-mode web-beautify vue-mode volatile-highlights vi-tilde-fringe uuidgen use-package unfill toml-mode toc-org tagedit spacemacs-theme spaceline solarized-theme smeargle slim-mode scss-mode sass-mode restart-emacs rainbow-delimiters racer quelpa pug-mode popwin persp-mode pcre2el paradox orgit org-projectile org-present org-pomodoro org-plus-contrib org-download org-bullets open-junk-file omnisharp ob-elixir nginx-mode neotree mwim move-text monokai-theme markdown-toc magit-gitflow macrostep lorem-ipsum livid-mode linum-relative link-hint less-css-mode json-mode js2-refactor js-doc intero info+ indent-guide ido-vertical-mode hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-purpose helm-projectile helm-mode-manager helm-make helm-hoogle helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md flyspell-correct-helm flycheck-rust flycheck-pos-tip flycheck-mix flycheck-haskell flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu emmet-mode elisp-slime-nav dumb-jump diff-hl define-word company-web company-tern company-statistics company-ghci company-ghc company-cabal column-enforce-mode coffee-mode cmm-mode clean-aindent-mode cargo auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile alchemist aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
+   '(safe-local-variable-values
+     (quote
+      ((haskell-process-use-ghci . t)
+       (haskell-indent-spaces . 4)
+       (elixir-enable-compilation-checking . t)
+       (elixir-enable-compilation-checking)))))
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   )
+  )
