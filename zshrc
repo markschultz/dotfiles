@@ -45,16 +45,17 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 #export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
 export AWT_TOOLKIT=MToolkit
 export VDPAU_DRIVER=nvidia
+export TERM=xterm-256color-italic
 
 alias less='less -R'
-alias tmux='TERM=screen-256color-bce tmux'
+#alias tmux='TERM=screen-256color-bce tmux'
 alias cvim='POWERLINE=0 SOLARIZED=0 vim'
 alias semacs='sudoedit'
 #alias emacs='TERM=xterm-256color emacsclient -c'
 alias emacs='emacsclient -c'
 alias sshx='ssh -XC'
 alias sar='LANG=C sar'
-alias open='gnome-open'
+alias open='kde-open'
 alias paczfsr='sudo pacman -R zfs-git zfs-utils-git spl-git spl-utils-git'
 alias paczfsi='yaourt -S zfs-git --noconfirm && sudo zfs mount -a'
 alias upgradey='sudo apt-get update && sudo apt-get -y upgrade'
@@ -65,6 +66,3 @@ eval "$(hub alias -s)"
 GPG_TTY=$(tty)
 export GPG_TTY
 eval $(keychain --eval -Q -q id_ed25519 id_rsa)
-
-test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
-source /usr/share/nvm/init-nvm.sh

@@ -6,10 +6,12 @@ Host home
 Host mi-prod
     Hostname store.micpa.org
     User root
+    IdentityFile ~/.ssh/id_ed25519_micpa
 
 Host mi-dev
     Hostname devstore.micpa.org
     User root
+    IdentityFile ~/.ssh/id_ed25519_micpa
 
 Host auraestore
     Hostname auraestore.cloudapp.net
@@ -18,12 +20,12 @@ Host auraestore
 Host ny-dev
     Hostname dev-store.nysscpa.org
     User root
-    IdentityFile ~/.ssh/id_rsa_nysscpa
+    IdentityFile ~/.ssh/id_ed25519_nysscpa
 
 Host ny-prod
     Hostname cpe.nysscpa.org
     User root
-    IdentityFile ~/.ssh/id_rsa_nysscpa
+    IdentityFile ~/.ssh/id_ed25519_nysscpa
 
 Host ap
     Hostname 192.168.2.21
