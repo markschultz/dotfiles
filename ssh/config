@@ -44,6 +44,10 @@ Host clot
     User eskimod
     Hostname clot.us
 
+Host pihole
+    User pi
+    Hostname 192.168.2.112
+
 Host mail
     User root
     Hostname m9r1s.com
