@@ -92,7 +92,9 @@ export AWT_TOOLKIT=MToolkit
 export VDPAU_DRIVER=nvidia
 export TERM=xterm-24bit
 export ANDROID_HOME=/mnt/raid/Android-SDK
+export ASPNETCORE_Kestrel__Certificates__Default__Path="/home/eskimod/.dotnet/corefx/cryptography/x509stores/my/localhost.pfx"
 
+alias yay='yay --builddir=/tmp/yay-eskimod --save'
 alias ls='ls --color=auto'
 alias grep='grep --color'
 alias less='less -R'

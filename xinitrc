@@ -5,4 +5,5 @@ KDEWM=awesome
 export KDEWM=awesome
 xset dpms force off; xset dpms force on
 #exec awesome
-exec startkde
+xmodmap ~/.Xmodmap
+exec /usr/bin/startplasma-x11
