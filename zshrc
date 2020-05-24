@@ -87,8 +87,8 @@ export FCEDIT="vim"
 export EDITOR="vim"
 export ALTERNATE_EDITOR=""
 export MONO_GAC_PREFIX=/usr
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 export _JAVA_AWT_WM_NONREPARENTING=1
-export AWT_TOOLKIT=MToolkit
 export VDPAU_DRIVER=nvidia
 export TERM=xterm-24bit
 export ANDROID_HOME=/mnt/raid/Android-SDK

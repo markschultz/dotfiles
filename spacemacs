@@ -54,6 +54,7 @@ This function should only modify configuration layer settings."
                  typescript-fmt-on-save t
                  typescript-backend 'lsp
                  typescript-lsp-linter nil)
+     (csharp :variables csharp-backend 'lsp)
      markdown
      multiple-cursors
      org
@@ -138,7 +139,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil then Spacelpa repository is the primary source to install
    ;; a locked version of packages. If nil then Spacemacs will install the
    ;; latest version of packages from MELPA. (default nil)
-   dotspacemacs-use-spacelpa nil
+   dotspacemacs-use-spacelpa t
 
    ;; If non-nil then verify the signature for downloaded Spacelpa archives.
    ;; (default t)
@@ -405,7 +406,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil, start an Emacs server if one is not already running.
    ;; (default nil)
-   dotspacemacs-enable-server 't
+   dotspacemacs-enable-server t
 
    ;; Set the emacs server socket location.
    ;; If nil, uses whatever the Emacs default is, otherwise a directory path
@@ -416,7 +417,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil, advise quit functions to keep server open when quitting.
    ;; (default nil)
-   dotspacemacs-persistent-server 't
+   dotspacemacs-persistent-server t
 
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `rg', `ag', `pt', `ack' and `grep'.
@@ -502,8 +503,10 @@ before packages are loaded."
   (global-hl-line-mode -1)
   (setq powerline-default-separator 'nil)
   (spaceline-compile)
+  (setq-default
+   ;; web-mode
+   web-mode-markup-indent-offset 2
+   web-mode-attr-indent-offset 2)
 
   )
 
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
