@@ -2,7 +2,7 @@
     path = ~/git/sixarm_git_gitconfig/gitconfig
     path = ~/git/sixarm_git_gitconfig/gitconfig.d/specific-to-linux.txt
 [core]
-    editor = vim
+    editor = nvim
     autocrlf = input
     #pager = less -FRX
     pager = diff-so-fancy | less --tabs=4 -FRX
@@ -19,23 +19,19 @@
     templatedir = ~/.git_template
 [alias]
     ctags = !.git/hooks/ctags
-[web]
-    browser = google-chrome
-[mergetool "fugitive"]
-    cmd = vim -f -c \"Gdiff\" \"$MERGED\"
-[branch]
-    autosetupmerge = true
 [credential]
     #helper = /usr/share/git/credential/gnome-keyring/git-credential-gnome-keyring
     helper = store
 [push]
     default = simple
+[pull]
+    rebase = false
 [diff]
     ignoreSubmodules = dirty
-[pull]
-    rebase = true
 [filter "lfs"]
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
     required = true
+[help]
+    autocorrect = 10

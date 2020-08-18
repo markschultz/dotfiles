@@ -6,7 +6,7 @@ zplug "plugins/command-not-found", from:oh-my-zsh
 zplug "plugins/tmux", from:oh-my-zsh
 zplug "plugins/history", from:oh-my-zsh
 zplug "plugins/vi-mode", from:oh-my-zsh
-zplug "petervanderdoes/git-flow-completion"
+zplug "plugins/safe-paste", from:oh-my-zsh
 zplug "zlsun/solarized-man"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
@@ -47,7 +47,7 @@ export HISTSIZE=11000
 export SAVEHIST=10000
 export HISTFILE=~/.zsh_history
 
-export DEFAULT_USER="adam"
+export DEFAULT_USER="eskimod"
 export DISABLE_AUTO_TITLE=true
 export DISABLE_CORRECTION=true
 #export DISABLE_UNTRACKED_FILES_DIRTY=true # Improves repo status check time.
@@ -83,16 +83,16 @@ export SOLARIZED=1
 export POWERLINE=1
 export SDL_VIDEO_FULLSCREEN_DISPLAY=0
 export SDL_VIDEO_FULLSCREEN_HEAD=1
-export FCEDIT="vim"
-export EDITOR="vim"
+export FCEDIT="nvim"
+export EDITOR="nvim"
 export ALTERNATE_EDITOR=""
 export MONO_GAC_PREFIX=/usr
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 export _JAVA_AWT_WM_NONREPARENTING=1
 export VDPAU_DRIVER=nvidia
-export TERM=xterm-24bit
+#export TERM=xterm-24bit
 export ANDROID_HOME=/mnt/raid/Android-SDK
-export ASPNETCORE_Kestrel__Certificates__Default__Path="/home/eskimod/.dotnet/corefx/cryptography/x509stores/my/localhost.pfx"
+#export ASPNETCORE_Kestrel__Certificates__Default__Path="/home/eskimod/.dotnet/corefx/cryptography/x509stores/my/localhost.pfx"
 
 alias yay='yay --builddir=/tmp/yay-eskimod --save'
 alias ls='ls --color=auto'
@@ -100,12 +100,16 @@ alias grep='grep --color'
 alias less='less -R'
 alias emacs='emacsclient -c'
 alias sshx='ssh -XC'
-alias open='kde-open'
+alias open='kde-open5'
 alias paczfsr='sudo pacman -R zfs-git zfs-utils-git spl-git spl-utils-git'
 alias paczfsi='yaourt -S zfs-git --noconfirm && sudo zfs mount -a'
+alias cadence='sudo docker run --network=host --rm ubercadence/cli:master'
+alias vim='nvim'
 
 eval `dircolors ~/.dircolors.ansi-dark`
 eval "$(hub alias -s)"
+eval $(keychain --eval -Q -q id_ed25519 id_rsa)
 GPG_TTY=$(tty)
 export GPG_TTY
-eval $(keychain --eval -Q -q id_ed25519 id_rsa)
+. /opt/asdf-vm/asdf.sh
+source /usr/share/doc/find-the-command/ftc.zsh noprompt
