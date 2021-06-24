@@ -2,3 +2,5 @@ export PATH=~/.dotnet/tools:~/.yarn/bin:~/.local/bin:/usr/local/bin:/usr/bin:~/b
 
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export QT_PLUGIN_PATH=/usr/local/lib64/plugins:$QT_PLUGIN_PATH
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

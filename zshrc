@@ -1,30 +1,102 @@
-source "$HOME/.zplug/init.zsh"
+# Enable Powerlevel10k instant prompt
+#if [[ -r "${XDG_CACHE_HOME:-${HOME}/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-${HOME}/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
 
-zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/rsync", from:oh-my-zsh
-zplug "plugins/command-not-found", from:oh-my-zsh
-zplug "plugins/tmux", from:oh-my-zsh
-zplug "plugins/history", from:oh-my-zsh
-zplug "plugins/vi-mode", from:oh-my-zsh
-zplug "plugins/safe-paste", from:oh-my-zsh
-zplug "zlsun/solarized-man"
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zdharma/zsh-diff-so-fancy"
-
-#zplug "themes/flazz", from:oh-my-zsh, as:theme
-zplug "PhilsLab/abbr-zsh-theme", as:theme
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-  printf "Install? [y/N]: "
-  if read -q; then
-    echo; zplug install
-  fi
+ZINIT_HOME="${ZINIT_HOME:-${ZPLG_HOME:-${ZDOTDIR:-${HOME}}/.zinit}}"
+ZINIT_BIN_DIR_NAME="${${ZINIT_BIN_DIR_NAME:-${ZPLG_BIN_DIR_NAME}}:-bin}"
+### Added by Zinit's installer
+if [[ ! -f "${ZINIT_HOME}/${ZINIT_BIN_DIR_NAME}/zinit.zsh" ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
+    command mkdir -p "${ZINIT_HOME}" && command chmod g-rwX "${ZINIT_HOME}"
+    command git clone https://github.com/zdharma/zinit "${ZINIT_HOME}/${ZINIT_BIN_DIR_NAME}" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f"
 fi
+source "${ZINIT_HOME}/${ZINIT_BIN_DIR_NAME}/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit installer's chunk
 
-zplug load --verbose
-#zplug load
+##########################
+# OMZ Libs and Plugins   #
+##########################
+
+# IMPORTANT:
+# Ohmyzsh plugins and libs are loaded first as some these sets some defaults which are required later on.
+# Otherwise something will look messed up
+# ie. some settings help zsh-autosuggestions to clear after tab completion
+
+setopt promptsubst
+
+# Explanation:
+# - Loading tmux first, to prevent jumps when tmux is loaded after .zshrc
+# - History plugin is loaded early (as it has some defaults) to prevent empty history stack for other plugins
+zinit lucid for \
+    atinit"ZSH_TMUX_FIXTERM=true; ZSH_TMUX_AUTOSTART=true; ZSH_TMUX_AUTOCONNECT=true; ZSH_TMUX_UNICODE=true;" \
+        OMZP::tmux \
+    atinit"HIST_STAMPS=yyyy-mm-dd" \
+        OMZL::history.zsh \
+
+zinit wait lucid light-mode for \
+    OMZL::clipboard.zsh \
+    OMZL::compfix.zsh \
+    OMZL::completion.zsh \
+    OMZL::correction.zsh \
+    OMZL::directories.zsh \
+    OMZL::git.zsh \
+    OMZL::grep.zsh \
+    OMZL::spectrum.zsh \
+    OMZL::termsupport.zsh \
+    OMZP::archlinux \
+    OMZP::colored-man-pages \
+    OMZP::docker-compose \
+    as"completion" \
+        OMZP::docker/_docker \
+    OMZP::dotnet \
+    OMZP::extract \
+    OMZP::fancy-ctrl-z \
+    OMZP::fzf \
+    OMZP::git \
+    OMZP::github \
+    OMZP::mosh \
+    OMZP::npm \
+    OMZP::rsync \
+    OMZP::systemd \
+    OMZP::yarn \
+
+#####################
+# PLUGINS           #
+#####################
+
+# IMPORTANT:
+# These plugins should be loaded after ohmyzsh plugins
+
+zinit wait lucid for \
+    light-mode atinit"zpcompinit; zpcdreplay" \
+        zdharma/fast-syntax-highlighting \
+    light-mode atinit"ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20" atload"_zsh_autosuggest_start" \
+        zsh-users/zsh-autosuggestions \
+    blockf atpull'zinit creinstall -q .' \
+        zsh-users/zsh-completions \
+
+#####################
+# PROGRAMS          #
+#####################
+
+zinit wait"2" lucid for \
+    light-mode as"program" pick"bin/git-dsf" \
+        zdharma/zsh-diff-so-fancy \
+    light-mode depth"1"\
+        jeffreytse/zsh-vi-mode \
+
+#####################
+# THEMES            #
+#####################
+
+PS1="READY >"
+zinit ice wait'!' lucid atload'source ~/.p10k.zsh; _p9k_precmd' nocd
+zinit light romkatv/powerlevel10k
 
 [ -e "{$HOME}/.zsh_aliases" ] && source "${HOME}/.zsh_aliases"
 [ -e "{$HOME}/.zshrc_local" ] && source "${HOME}/.zshrc_local"
@@ -32,27 +104,20 @@ zplug load --verbose
 ### CONFIG ###
 
 # ZSH history
-setopt append_history
-setopt hist_expire_dups_first
-setopt hist_fcntl_lock
-setopt hist_ignore_all_dups
-setopt hist_lex_words
-setopt hist_reduce_blanks
-setopt hist_save_no_dups
-setopt share_history
+setopt append_history notify
+#setopt hist_fcntl_lock
+#setopt hist_ignore_all_dups
+#setopt hist_lex_words
+#setopt hist_reduce_blanks
+#setopt hist_save_no_dups
 
 export CLICOLOR=1
 export BLOCK_SIZE=human-readable # https://www.gnu.org/software/coreutils/manual/html_node/Block-size.html
-export HISTSIZE=11000
-export SAVEHIST=10000
-export HISTFILE=~/.zsh_history
 
 export DEFAULT_USER="eskimod"
 export DISABLE_AUTO_TITLE=true
 export DISABLE_CORRECTION=true
-#export DISABLE_UNTRACKED_FILES_DIRTY=true # Improves repo status check time.
 export DISABLE_UPDATE_PROMPT=true
-export EDITOR='nvim'
 export FZF_DEFAULT_COMMAND='rg --files --hidden' # Use ripgrep as the default source for fzf
 export FZF_DEFAULT_OPTS='--multi'
 export NOTIFY_COMMAND_COMPLETE_TIMEOUT=300
@@ -61,38 +126,14 @@ export ZSH_PLUGINS_ALIAS_TIPS_TEXT='    '
 export ZSH_CACHE_DIR=$ZSH/cache
 export COMPOSE_HTTP_TIMEOUT=120
 
-
-### AUTOSUGGESTIONS ###
-if zplug check zsh-users/zsh-autosuggestions; then
-  ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(history-substring-search-up history-substring-search-down) # Add history-substring-search-* widgets to list of widgets that clear the autosuggestion
-  ZSH_AUTOSUGGEST_CLEAR_WIDGETS=("${(@)ZSH_AUTOSUGGEST_CLEAR_WIDGETS:#(up|down)-line-or-history}") # Remove *-line-or-history widgets from list of widgets that clear the autosuggestion to avoid conflict with history-substring-search-* widgets
-fi
-
-
 ### KEY BINDINGS ###
 KEYTIMEOUT=1 # Prevents key timeout lag.
-bindkey -v
+#bindkey -v
 
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
-#export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
-export NO_COLOR=1
-export RUST_SRC_PATH=/usr/src/rust/src
-export PULSE_LATENCY_MSEC=60
 export TEMP=/tmp
-export SOLARIZED=1
-export POWERLINE=1
-export SDL_VIDEO_FULLSCREEN_DISPLAY=0
-export SDL_VIDEO_FULLSCREEN_HEAD=1
-export FCEDIT="nvim"
-export EDITOR="nvim"
-export ALTERNATE_EDITOR=""
-export MONO_GAC_PREFIX=/usr
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 export _JAVA_AWT_WM_NONREPARENTING=1
-export VDPAU_DRIVER=nvidia
 #export TERM=xterm-24bit
-export ANDROID_HOME=/mnt/raid/Android-SDK
-#export ASPNETCORE_Kestrel__Certificates__Default__Path="/home/eskimod/.dotnet/corefx/cryptography/x509stores/my/localhost.pfx"
 
 alias yay='yay --builddir=/tmp/yay-eskimod --save'
 alias ls='ls --color=auto'
@@ -106,10 +147,10 @@ alias paczfsi='yaourt -S zfs-git --noconfirm && sudo zfs mount -a'
 alias cadence='sudo docker run --network=host --rm ubercadence/cli:master'
 alias vim='nvim'
 
-eval `dircolors ~/.dircolors.ansi-dark`
-eval "$(hub alias -s)"
+#eval `dircolors ~/.dircolors.ansi-dark`
 eval $(keychain --eval -Q -q id_ed25519 id_rsa)
 GPG_TTY=$(tty)
 export GPG_TTY
 . /opt/asdf-vm/asdf.sh
 source /usr/share/doc/find-the-command/ftc.zsh noprompt
+

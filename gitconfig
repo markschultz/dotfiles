@@ -6,17 +6,16 @@
     autocrlf = input
     #pager = less -FRX
     pager = diff-so-fancy | less --tabs=4 -FRX
-[user] name = Mark Schultz
+[user]
+    name = Mark Schultz
     email = mark@m9r1s.com
 [github]
     user = markschultz
 [color]
     ui = true
-[merge]
-    tool = fugitive
-    conflictstyle = diff3
 [init]
     templatedir = ~/.git_template
+	defaultBranch = master
 [alias]
     ctags = !.git/hooks/ctags
 [credential]

@@ -1,31 +1,12 @@
+Host dev-docker
+    Hostname dev-docker.ocius.net
+    User mschultz
+    IdentityFile ~/.ssh/id_ed25519_zego
+
 Host home
     Hostname tauron.duckdns.org
     User eskimod
     IdentityFile ~/.ssh/id_ed25519
-
-Host mi-prod
-    Hostname store.micpa.org
-    User root
-    IdentityFile ~/.ssh/id_ed25519_micpa
-
-Host mi-dev
-    Hostname devstore.micpa.org
-    User root
-    IdentityFile ~/.ssh/id_ed25519_micpa
-
-Host auraestore
-    Hostname auraestore.cloudapp.net
-    User ubuntu
-
-Host ny-dev
-    Hostname dev-store.nysscpa.org
-    User root
-    IdentityFile ~/.ssh/id_ed25519_nysscpa
-
-Host ny-prod
-    Hostname cpe.nysscpa.org
-    User root
-    IdentityFile ~/.ssh/id_ed25519_nysscpa
 
 Host ap
     Hostname 192.168.2.21
@@ -35,14 +16,6 @@ Host ap
 Host router
     User eskimod
     Hostname 192.168.2.1
-
-Host backup
-    User b1237146
-    Hostname hanjin.dreamhost.com
-
-Host clot
-    User eskimod
-    Hostname clot.us
 
 Host pihole
     User pi
